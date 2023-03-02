@@ -5,20 +5,20 @@ multiple issues per year.
 
 ## Graphs
 
-[![CC](https://github.com/emeryberger/conference-foo/blob/main/graphs/CC.png)]
-[![EuroSys](https://github.com/emeryberger/conference-foo/blob/main/graphs/EuroSys.png)]
-[![FAST](https://github.com/emeryberger/conference-foo/blob/main/graphs/FAST.png)]
-[![HPCA](https://github.com/emeryberger/conference-foo/blob/main/graphs/HPCA.png)]
-[![ICFP](https://github.com/emeryberger/conference-foo/blob/main/graphs/ICFP.png)]
-[![ISCA](https://github.com/emeryberger/conference-foo/blob/main/graphs/ISCA.png)]
-[![ISMM](https://github.com/emeryberger/conference-foo/blob/main/graphs/ISMM.png)]
-[![OOPSLA](https://github.com/emeryberger/conference-foo/blob/main/graphs/OOPSLA.png)]
-[![OSDI](https://github.com/emeryberger/conference-foo/blob/main/graphs/OSDI.png)]
-[![PLDI](https://github.com/emeryberger/conference-foo/blob/main/graphs/PLDI.png)]
-[![POPL](https://github.com/emeryberger/conference-foo/blob/main/graphs/POPL.png)]
-[![PPoPP](https://github.com/emeryberger/conference-foo/blob/main/graphs/PPoPP.png)]
-[![SOSP](https://github.com/emeryberger/conference-foo/blob/main/graphs/SOSP.png)]
-[![USENIX-ATC](https://github.com/emeryberger/conference-foo/blob/main/graphs/USENIX-ATC.png)]
+![CC](https://github.com/emeryberger/conference-foo/blob/main/graphs/CC.png)
+![EuroSys](https://github.com/emeryberger/conference-foo/blob/main/graphs/EuroSys.png)
+![FAST](https://github.com/emeryberger/conference-foo/blob/main/graphs/FAST.png)
+![HPCA](https://github.com/emeryberger/conference-foo/blob/main/graphs/HPCA.png)
+![ICFP](https://github.com/emeryberger/conference-foo/blob/main/graphs/ICFP.png)
+![ISCA](https://github.com/emeryberger/conference-foo/blob/main/graphs/ISCA.png)
+![ISMM](https://github.com/emeryberger/conference-foo/blob/main/graphs/ISMM.png)
+![OOPSLA](https://github.com/emeryberger/conference-foo/blob/main/graphs/OOPSLA.png)
+![OSDI](https://github.com/emeryberger/conference-foo/blob/main/graphs/OSDI.png)
+![PLDI](https://github.com/emeryberger/conference-foo/blob/main/graphs/PLDI.png)
+![POPL](https://github.com/emeryberger/conference-foo/blob/main/graphs/POPL.png)
+![PPoPP](https://github.com/emeryberger/conference-foo/blob/main/graphs/PPoPP.png)
+![SOSP](https://github.com/emeryberger/conference-foo/blob/main/graphs/SOSP.png)
+![USENIX-ATC](https://github.com/emeryberger/conference-foo/blob/main/graphs/USENIX-ATC.png)
 
 ### PDFs
 
