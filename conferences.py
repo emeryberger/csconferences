@@ -58,4 +58,4 @@ plt.ylabel("Accepted / Rejected Papers")
 plt.title(f"{conference_name} Conference Publications by Year")
 
 # Show the plot
-plt.show()
+plt.savefig(f"{conference_name}.pdf", bbox_inches="tight")
