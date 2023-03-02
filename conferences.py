@@ -19,7 +19,10 @@ parser.add_argument("--sort", dest="sort", action="store_const", const=True, hel
 args = parser.parse_args()
 
 if args.sort:
-    conf_data = conf_data.sort_values(['Conference','Year'])
+    conf_data = conf_data.sort_values(['Conference','Year', 'Sequence'])
+    cols = conf_data.columns.tolist()
+    cols = ['Conference','Year','Sequence','Accepted','Submitted']
+    conf_data = conf_data[cols]
     conf_data.to_csv(filename,index=False)
     print(f"Sorted {filename}.")
     sys.exit(0)
