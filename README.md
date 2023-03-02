@@ -19,3 +19,18 @@ multiple issues per year.
 * [PPoPP](graphs/PPoPP.pdf)
 * [SOSP](graphs/SOSP.pdf)
 * [USENIX-ATC](graphs/USENIX-ATC.pdf)
+
+* CC [![CC](https://github.com/emeryberger/conference-foo/blob/master/graphs/CC.png)]
+* EuroSys (https://github.com/emeryberger/conference-foo/blob/master/graphs/EuroSys.png)
+* FAST (https://github.com/emeryberger/conference-foo/blob/master/graphs/FAST.png)
+* HPCA (https://github.com/emeryberger/conference-foo/blob/master/graphs/HPCA.png)
+* ICFP (https://github.com/emeryberger/conference-foo/blob/master/graphs/ICFP.png)
+* ISCA (https://github.com/emeryberger/conference-foo/blob/master/graphs/ISCA.png)
+* ISMM (https://github.com/emeryberger/conference-foo/blob/master/graphs/ISMM.png)
+* OOPSLA (https://github.com/emeryberger/conference-foo/blob/master/graphs/OOPSLA.png)
+* OSDI (https://github.com/emeryberger/conference-foo/blob/master/graphs/OSDI.png)
+* PLDI (https://github.com/emeryberger/conference-foo/blob/master/graphs/PLDI.png)
+* POPL (https://github.com/emeryberger/conference-foo/blob/master/graphs/POPL.png)
+* PPoPP (https://github.com/emeryberger/conference-foo/blob/master/graphs/PPoPP.png)
+* SOSP (https://github.com/emeryberger/conference-foo/blob/master/graphs/SOSP.png)
+* USENIX-ATC (https://github.com/emeryberger/conference-foo/blob/master/graphs/USENIX-ATC.png)
