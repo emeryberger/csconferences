@@ -69,6 +69,15 @@ if args.conference_name:
     conference_name_list = [args.conference_name]
 if args.all:
     conference_name_list = conference_list
+
+# Set the dimensions (in inches) of the plot.
+plt.figure(figsize=(4, 4))
+
+# Set the theme and remove the axes.
+# sns.set_style("ticks")
+sns.set_theme()
+sns.despine()
+
     
 for conference_name in conference_name_list:
     # Filter the data by conference
@@ -83,9 +92,6 @@ for conference_name in conference_name_list:
     # Calculate the number of accepted and rejected papers for each year
     conf_data["Rejected"] = conf_data["Submitted"] - conf_data["Accepted"]
     conf_data["Acceptance Rate"] = conf_data["Accepted"] / conf_data["Submitted"] * 100 # Calculate the acceptance rate
-
-    # Set the dimensions (in inches) of the plot.
-    plt.figure(figsize=(4, 4))
 
     # Create a stacked bar plot of accepted and rejected papers by year
     plt.bar(conf_data["Year"], conf_data["Accepted"], color="green")
@@ -104,12 +110,9 @@ for conference_name in conference_name_list:
     # Set the title of the plot
     plt.title(f"{conference_name} Publications by Year")
 
-    # sns.set_style("ticks")
-    sns.set_theme()
-    sns.despine()
-    
+   
     # Save the plot
-    plt.savefig(f"graphs/{conference_name}.png", bbox_inches="tight")
     plt.savefig(f"graphs/{conference_name}.pdf", bbox_inches="tight")
+    plt.savefig(f"graphs/{conference_name}.png", bbox_inches="tight")
 
     plt.close()
