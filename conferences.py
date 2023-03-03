@@ -81,36 +81,7 @@ plt.figure(figsize=(3, 3))
 
 previous_area = ""
 
-
 # Do this once just to initialize everything.
-
-# Create a stacked bar plot of accepted and rejected papers by year
-conf_data = full_conf_data.copy()
-conference_name = "dummy"
-
-conf_data["Rejected"] = conf_data["Submitted"] - conf_data["Accepted"]
-conf_data["Acceptance Rate"] = conf_data["Accepted"] / conf_data["Submitted"] * 100 # Calculate the acceptance rate
-
-plt.bar(conf_data["Year"], conf_data["Accepted"], color="green")
-plt.bar(conf_data["Year"], conf_data["Rejected"], bottom=conf_data["Accepted"], label="Rejected", color="red")
-
-# Set the x-axis label
-plt.xlabel("Year")
-
-# Force integers on the x-axis
-years = conf_data["Year"].unique().tolist()
-plt.xticks(evenly_spaced_items(years, 5))
-
-# Set the y-axis label
-plt.ylabel("Accepted / Rejected Papers")
-
-# Set the title of the plot
-plt.title(f"{conference_name} Publications by Year")
-
-# Save the plot
-#plt.savefig(f"graphs/{conference_name}.pdf", bbox_inches="tight")
-#plt.savefig(f"graphs/{conference_name}.png", bbox_inches="tight")
-
 plt.close()
 
 for conference_name in conference_name_list:
