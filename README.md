@@ -1,25 +1,33 @@
 # Conference Publication Stats
 
-### Arch
+<details>
+<summary>
+Arch
+</summary>
+<IMG SRC="https://github.com/emeryberger/conference-foo/blob/main/graphs/HPCA.png" WIDTH="500"></IMG>
+<IMG SRC="https://github.com/emeryberger/conference-foo/blob/main/graphs/ISCA.png" WIDTH="500"></IMG>
+</details>
 
-![HPCA](https://github.com/emeryberger/conference-foo/blob/main/graphs/HPCA.png)
-![ISCA](https://github.com/emeryberger/conference-foo/blob/main/graphs/ISCA.png)
+<details>
+<summary>
+OS
+</summary>
+<IMG SRC="https://github.com/emeryberger/conference-foo/blob/main/graphs/EuroSys.png" WIDTH="500"></IMG>
+<IMG SRC="https://github.com/emeryberger/conference-foo/blob/main/graphs/FAST.png" WIDTH="500"></IMG>
+<IMG SRC="https://github.com/emeryberger/conference-foo/blob/main/graphs/OSDI.png" WIDTH="500"></IMG>
+<IMG SRC="https://github.com/emeryberger/conference-foo/blob/main/graphs/SOSP.png" WIDTH="500"></IMG>
+<IMG SRC="https://github.com/emeryberger/conference-foo/blob/main/graphs/USENIX-ATC.png" WIDTH="500"></IMG>
+</details>
 
-### OS
-
-![EuroSys](https://github.com/emeryberger/conference-foo/blob/main/graphs/EuroSys.png)
-![FAST](https://github.com/emeryberger/conference-foo/blob/main/graphs/FAST.png)
-![OSDI](https://github.com/emeryberger/conference-foo/blob/main/graphs/OSDI.png)
-![SOSP](https://github.com/emeryberger/conference-foo/blob/main/graphs/SOSP.png)
-![USENIX-ATC](https://github.com/emeryberger/conference-foo/blob/main/graphs/USENIX-ATC.png)
-
-### PL
-
-![CC](https://github.com/emeryberger/conference-foo/blob/main/graphs/CC.png)
-![ICFP](https://github.com/emeryberger/conference-foo/blob/main/graphs/ICFP.png)
-![ISMM](https://github.com/emeryberger/conference-foo/blob/main/graphs/ISMM.png)
-![OOPSLA](https://github.com/emeryberger/conference-foo/blob/main/graphs/OOPSLA.png)
-![PLDI](https://github.com/emeryberger/conference-foo/blob/main/graphs/PLDI.png)
-![POPL](https://github.com/emeryberger/conference-foo/blob/main/graphs/POPL.png)
-![PPoPP](https://github.com/emeryberger/conference-foo/blob/main/graphs/PPoPP.png)
-
+<details>
+<summary>
+PL
+</summary>
+<IMG SRC="https://github.com/emeryberger/conference-foo/blob/main/graphs/CC.png" WIDTH="500"></IMG>
+<IMG SRC="https://github.com/emeryberger/conference-foo/blob/main/graphs/ICFP.png" WIDTH="500"></IMG>
+<IMG SRC="https://github.com/emeryberger/conference-foo/blob/main/graphs/ISMM.png" WIDTH="500"></IMG>
+<IMG SRC="https://github.com/emeryberger/conference-foo/blob/main/graphs/OOPSLA.png" WIDTH="500"></IMG>
+<IMG SRC="https://github.com/emeryberger/conference-foo/blob/main/graphs/PLDI.png" WIDTH="500"></IMG>
+<IMG SRC="https://github.com/emeryberger/conference-foo/blob/main/graphs/POPL.png" WIDTH="500"></IMG>
+<IMG SRC="https://github.com/emeryberger/conference-foo/blob/main/graphs/PPoPP.png" WIDTH="500"></IMG>
+</details>
