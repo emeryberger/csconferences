@@ -94,7 +94,7 @@ for conference_name in conference_name_list:
 
     if this_area != previous_area:
         previous_area = this_area
-        print(f"### {this_area}")
+        print(f"\n### {this_area}\n")
         
     print(f"![{conference_name}]({URL}/blob/main/graphs/{conference_name}.png)")
     
