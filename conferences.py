@@ -52,6 +52,9 @@ for conference_name in conference_name_list:
     conf_data["Rejected"] = conf_data["Submitted"] - conf_data["Accepted"]
     conf_data["Acceptance Rate"] = conf_data["Accepted"] / conf_data["Submitted"] * 100 # Calculate the acceptance rate
 
+    # Set the dimensions (in inches) of the plot.
+    plt.figure(figsize=(4, 4))
+
     # Create a stacked bar plot of accepted and rejected papers by year
     plt.bar(conf_data["Year"], conf_data["Accepted"], color="green")
     plt.bar(conf_data["Year"], conf_data["Rejected"], bottom=conf_data["Accepted"], label="Rejected", color="red")
