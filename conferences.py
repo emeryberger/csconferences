@@ -93,10 +93,18 @@ for conference_name in conference_name_list:
     this_area = conf_data["Area"].unique().tolist()[0]
 
     if this_area != previous_area:
+        if previous_area != "":
+            print("</details>\n")
+            
         previous_area = this_area
-        print(f"\n### {this_area}\n")
+        # print(f"\n### {this_area}\n")
+        print("<details>")
+        print("<summary>")
+        print(f"{this_area}")
+        print("</summary>")
         
-    print(f"![{conference_name}]({URL}/blob/main/graphs/{conference_name}.png)")
+    # print(f"![{conference_name}]({URL}/blob/main/graphs/{conference_name}.png)")
+    print(f'<IMG SRC="{URL}/blob/main/graphs/{conference_name}.png" WIDTH="500"></IMG>')
     
     # Create a bar plot of acceptance rates by year
     #plt.bar(conf_data["Year"], conf_data["Papers accepted"] / conf_data["Papers submitted"])
@@ -127,3 +135,5 @@ for conference_name in conference_name_list:
     plt.savefig(f"graphs/{conference_name}.png", bbox_inches="tight")
 
     plt.close()
+
+print("</details>")
