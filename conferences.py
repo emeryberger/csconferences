@@ -5,6 +5,7 @@ import seaborn as sns
 import sys
 
 filename = "conferences.csv"
+URL = "https://github.com/emeryberger/conference-foo"
 
 def evenly_spaced_items(lst, N):
     """
@@ -52,9 +53,9 @@ parser.add_argument("--sort", dest="sort", action="store_const", const=True, hel
 args = parser.parse_args()
 
 if args.sort:
-    full_conf_data = full_conf_data.sort_values(['Conference','Year', 'Sequence'])
+    full_conf_data = full_conf_data.sort_values(['Area','Conference','Year', 'Sequence'])
     cols = full_conf_data.columns.tolist()
-    cols = ['Conference','Year','Sequence','Accepted','Submitted']
+    cols = ['Area','Conference','Year','Sequence','Accepted','Submitted']
     full_conf_data = full_conf_data[cols]
     full_conf_data.to_csv(filename,index=False)
     print(f"Sorted {filename}.")
@@ -77,15 +78,23 @@ sns.despine()
 
 # Set the dimensions (in inches) of the plot.
 plt.figure(figsize=(3, 3))
-    
+
+previous_area = ""
+
 for conference_name in conference_name_list:
 
     # Filter the data by conference
     conf_data = full_conf_data.copy()
     conf_data = conf_data.loc[conf_data["Conference"] == conference_name]
 
-    print(conf_data)
+    this_area = conf_data["Area"].unique().tolist()[0]
 
+    if this_area != previous_area:
+        previous_area = this_area
+        print(f"### {this_area}")
+        
+    print(f"![{conference_name}]({URL}/blob/main/graphs/{conference_name}.png)")
+    
     # Create a bar plot of acceptance rates by year
     #plt.bar(conf_data["Year"], conf_data["Papers accepted"] / conf_data["Papers submitted"])
 
