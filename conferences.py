@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
+import seaborn as sns
 import sys
 
 filename = "conferences.csv"
@@ -101,8 +102,12 @@ for conference_name in conference_name_list:
     plt.ylabel("Accepted / Rejected Papers")
 
     # Set the title of the plot
-    plt.title(f"{conference_name} Conference Publications by Year")
-   
+    plt.title(f"{conference_name} Publications by Year")
+
+    # sns.set_style("ticks")
+    sns.set_theme()
+    sns.despine()
+    
     # Save the plot
     plt.savefig(f"graphs/{conference_name}.png", bbox_inches="tight")
     plt.savefig(f"graphs/{conference_name}.pdf", bbox_inches="tight")
