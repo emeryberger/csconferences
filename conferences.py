@@ -1,8 +1,39 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
 import sys
 
 filename = "conferences.csv"
+
+def evenly_spaced_items(lst, N):
+    """
+    Returns a new list with only N items, where the N items are evenly spaced in the original list.
+    
+    Args:
+    lst (list): The original list of items.
+    N (int): The number of items to include in the new list.
+    
+    Returns:
+    A new list with only N items, where the N items are evenly spaced in the original list.
+    """
+    if N == 1:
+        # Special case: return the middle item
+        return [lst[len(lst)//2]]
+    elif N >= len(lst):
+        # Special case: return the original list
+        return lst.copy()
+    else:
+        # Calculate the step size
+        step = (len(lst) - 1) / (N - 1)
+        
+        # Create the new list
+        new_lst = [lst[0]]
+        for i in range(1, N-1):
+            index = int(i * step)
+            new_lst.append(lst[index])
+        new_lst.append(lst[-1])
+        
+        return new_lst
 
 # Read in the data from the CSV file
 full_conf_data = pd.read_csv(filename)
@@ -62,12 +93,16 @@ for conference_name in conference_name_list:
     # Set the x-axis label
     plt.xlabel("Year")
 
+    # Force integers on the x-axis
+    years = conf_data["Year"].unique().tolist()
+    plt.xticks(evenly_spaced_items(years, 5))
+    
     # Set the y-axis label
     plt.ylabel("Accepted / Rejected Papers")
 
     # Set the title of the plot
     plt.title(f"{conference_name} Conference Publications by Year")
-
+   
     # Save the plot
     plt.savefig(f"graphs/{conference_name}.png", bbox_inches="tight")
     plt.savefig(f"graphs/{conference_name}.pdf", bbox_inches="tight")
