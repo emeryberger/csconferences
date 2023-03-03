@@ -70,16 +70,16 @@ if args.conference_name:
 if args.all:
     conference_name_list = conference_list
 
-# Set the dimensions (in inches) of the plot.
-plt.figure(figsize=(4, 4))
-
 # Set the theme and remove the axes.
 # sns.set_style("ticks")
 sns.set_theme()
 sns.despine()
 
+# Set the dimensions (in inches) of the plot.
+plt.figure(figsize=(3, 3))
     
 for conference_name in conference_name_list:
+
     # Filter the data by conference
     conf_data = full_conf_data.copy()
     conf_data = conf_data.loc[conf_data["Conference"] == conference_name]
@@ -110,7 +110,6 @@ for conference_name in conference_name_list:
     # Set the title of the plot
     plt.title(f"{conference_name} Publications by Year")
 
-   
     # Save the plot
     plt.savefig(f"graphs/{conference_name}.pdf", bbox_inches="tight")
     plt.savefig(f"graphs/{conference_name}.png", bbox_inches="tight")
