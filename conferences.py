@@ -5,10 +5,10 @@ import sys
 filename = "conferences.csv"
 
 # Read in the data from the CSV file
-conf_data = pd.read_csv(filename)
+full_conf_data = pd.read_csv(filename)
 
 # Get a list of conference names from the CSV file
-conference_list = conf_data['Conference'].unique().tolist()
+conference_list = full_conf_data['Conference'].unique().tolist()
 
 # Parse command line arguments
 import argparse
@@ -20,11 +20,11 @@ parser.add_argument("--sort", dest="sort", action="store_const", const=True, hel
 args = parser.parse_args()
 
 if args.sort:
-    conf_data = conf_data.sort_values(['Conference','Year', 'Sequence'])
-    cols = conf_data.columns.tolist()
+    full_conf_data = full_conf_data.sort_values(['Conference','Year', 'Sequence'])
+    cols = full_conf_data.columns.tolist()
     cols = ['Conference','Year','Sequence','Accepted','Submitted']
-    conf_data = conf_data[cols]
-    conf_data.to_csv(filename,index=False)
+    full_conf_data = full_conf_data[cols]
+    full_conf_data.to_csv(filename,index=False)
     print(f"Sorted {filename}.")
     sys.exit(0)
     
@@ -38,8 +38,6 @@ if args.conference_name:
 if args.all:
     conference_name_list = conference_list
     
-full_conf_data = conf_data.copy()
-
 for conference_name in conference_name_list:
     # Filter the data by conference
     conf_data = full_conf_data.copy()
@@ -70,3 +68,5 @@ for conference_name in conference_name_list:
     # Save the plot
     plt.savefig(f"graphs/{conference_name}.png", bbox_inches="tight")
     plt.savefig(f"graphs/{conference_name}.pdf", bbox_inches="tight")
+
+    plt.close()
