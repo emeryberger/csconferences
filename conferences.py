@@ -57,6 +57,7 @@ if args.sort:
     cols = full_conf_data.columns.tolist()
     cols = ['Area','Conference','Year','Sequence','Accepted','Submitted']
     full_conf_data = full_conf_data[cols]
+    full_conf_data = full_conf_data.drop_duplicates()
     full_conf_data.to_csv(filename,index=False)
     print(f"Sorted {filename}.")
     sys.exit(0)
