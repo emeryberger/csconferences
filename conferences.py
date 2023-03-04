@@ -84,6 +84,9 @@ previous_area = ""
 # Do this once just to initialize everything.
 plt.close()
 
+# Combine the values for each year, conference, and area (since there may be different Sequence numbers).
+full_conf_data = full_conf_data.groupby(['Year', 'Conference', 'Area']).agg({'Accepted': 'sum', 'Submitted': 'sum'}).reset_index()
+
 for conference_name in conference_name_list:
 
     # Filter the data by conference
