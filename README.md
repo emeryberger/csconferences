@@ -7,6 +7,7 @@ Arch
 <IMG SRC="https://github.com/emeryberger/conference-foo/blob/main/graphs/ASPLOS.png" WIDTH="500"></IMG>
 <IMG SRC="https://github.com/emeryberger/conference-foo/blob/main/graphs/HPCA.png" WIDTH="500"></IMG>
 <IMG SRC="https://github.com/emeryberger/conference-foo/blob/main/graphs/ISCA.png" WIDTH="500"></IMG>
+<IMG SRC="https://github.com/emeryberger/conference-foo/blob/main/graphs/MICRO.png" WIDTH="500"></IMG>
 </details>
 
 <details>
