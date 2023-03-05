@@ -5,7 +5,7 @@ import seaborn as sns
 import sys
 
 filename = "conferences.csv"
-URL = "https://github.com/emeryberger/conference-foo"
+URL = "https://github.com/emeryberger/csconferences"
 
 def evenly_spaced_items(lst, N):
     """
