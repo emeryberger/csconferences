@@ -43,3 +43,11 @@ Security
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/Oakland.png" WIDTH="500"></IMG>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/UsenixSec.png" WIDTH="500"></IMG>
 </details>
+
+<hr>
+
+Data sources:
+* Front matter in conference proceedings
+* HotCRP.com
+* https://www.openresearch.org/wiki/
+* https://people.engr.tamu.edu/guofei/sec_conf_stat.htm
