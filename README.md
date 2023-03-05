@@ -40,5 +40,6 @@ Security
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CCS.png" WIDTH="500"></IMG>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/NDSS.png" WIDTH="500"></IMG>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/Oakland.png" WIDTH="500"></IMG>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/UsenixSec.png" WIDTH="500"></IMG>
 </details>
