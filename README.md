@@ -53,6 +53,13 @@ PL
 
 <details>
 <summary>
+SE
+</summary>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICSE.png" WIDTH="500"></IMG>
+</details>
+
+<details>
+<summary>
 Security
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CCS.png" WIDTH="500"></IMG>
