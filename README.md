@@ -1,4 +1,4 @@
-# Conference Publication Stats
+# Computer Science Conference Publication Stats
 
 <details>
 <summary>
