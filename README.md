@@ -12,6 +12,23 @@ Arch
 
 <details>
 <summary>
+DB
+</summary>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGMOD.png" WIDTH="500"></IMG>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/VLDB.png" WIDTH="500"></IMG>
+</details>
+
+<details>
+<summary>
+ML
+</summary>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICLR.png" WIDTH="500"></IMG>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICML.png" WIDTH="500"></IMG>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/NeurIPS.png" WIDTH="500"></IMG>
+</details>
+
+<details>
+<summary>
 OS
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EuroSys.png" WIDTH="500"></IMG>
@@ -44,9 +61,8 @@ Security
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/UsenixSec.png" WIDTH="500"></IMG>
 </details>
 
-<hr>
+## Data sources
 
-Data sources:
 * Front matter in conference proceedings
 * HotCRP.com
 * https://www.openresearch.org/wiki/
