@@ -55,6 +55,7 @@ PL
 <summary>
 SE
 </summary>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/FSE.png" WIDTH="500"></IMG>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICSE.png" WIDTH="500"></IMG>
 </details>
 

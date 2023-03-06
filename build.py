@@ -4,7 +4,7 @@ import matplotlib.ticker as ticker
 import seaborn as sns
 import sys
 
-filename = "conferences.csv"
+filename = "csconferences.csv"
 URL = "https://github.com/emeryberger/csconferences"
 
 def evenly_spaced_items(lst, N):
