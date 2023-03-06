@@ -138,6 +138,7 @@ for conference_name in conference_name_list:
     
     # Set the y-axis label for accepted/rejected papers
     ax1.set_ylabel("Accepted / Rejected Papers")
+
     
     # Create a second y-axis for acceptance rate
     ax2 = ax1.twinx()

@@ -29,6 +29,13 @@ ML
 
 <details>
 <summary>
+NLP
+</summary>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ACL.png" WIDTH="500"></IMG>
+</details>
+
+<details>
+<summary>
 OS
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EuroSys.png" WIDTH="500"></IMG>
