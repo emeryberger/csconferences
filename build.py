@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
+from matplotlib.ticker import PercentFormatter
 import seaborn as sns
 import sys
 
@@ -90,6 +91,10 @@ full_conf_data = full_conf_data.groupby(['Year', 'Conference', 'Area']).agg({'Ac
 
 for conference_name in conference_name_list:
 
+    plt.clf()
+    fig = plt.figure()
+    ax1 = fig.add_subplot()
+    
     # Filter the data by conference
     conf_data = full_conf_data.copy()
     conf_data = conf_data.loc[conf_data["Conference"] == conference_name]
@@ -115,21 +120,34 @@ for conference_name in conference_name_list:
 
     # Calculate the number of accepted and rejected papers for each year
     conf_data["Rejected"] = conf_data["Submitted"] - conf_data["Accepted"]
-    conf_data["Acceptance Rate"] = conf_data["Accepted"] / conf_data["Submitted"] * 100 # Calculate the acceptance rate
+    conf_data["Acceptance Rate"] = 100 * conf_data["Accepted"] / conf_data["Submitted"] # Calculate the acceptance rate
 
+    # Create a figure and two axes
+    # fig, ax1 = plt.subplots()
+    
     # Create a stacked bar plot of accepted and rejected papers by year
-    plt.bar(conf_data["Year"], conf_data["Accepted"], color="green")
-    plt.bar(conf_data["Year"], conf_data["Rejected"], bottom=conf_data["Accepted"], label="Rejected", color="red")
-
+    ax1.bar(conf_data["Year"], conf_data["Accepted"], color="green")
+    ax1.bar(conf_data["Year"], conf_data["Rejected"], bottom=conf_data["Accepted"], label="Rejected", color="red")
+    
     # Set the x-axis label
-    plt.xlabel("Year")
-
+    ax1.set_xlabel("Year")
+    
     # Force integers on the x-axis
     years = conf_data["Year"].unique().tolist()
-    plt.xticks(evenly_spaced_items(years, 5))
+    ax1.set_xticks(evenly_spaced_items(years, 5))
     
-    # Set the y-axis label
-    plt.ylabel("Accepted / Rejected Papers")
+    # Set the y-axis label for accepted/rejected papers
+    ax1.set_ylabel("Accepted / Rejected Papers")
+    
+    # Create a second y-axis for acceptance rate
+    ax2 = ax1.twinx()
+    ax2.set_ylim([0, 100])
+    ax2.plot(conf_data["Year"], conf_data["Acceptance Rate"], color="blue")
+    ax2.set_ylabel("Acceptance Rate (%)", color='blue')
+    ax2.yaxis.set_major_formatter(PercentFormatter())
+    ax2.tick_params(axis='y',labelcolor='blue')
+    # Show the legend
+    # ax1.legend()
 
     # Set the title of the plot
     plt.title(f"{conference_name} Publications by Year")
