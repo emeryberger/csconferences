@@ -130,7 +130,7 @@ for conference_name in conference_name_list:
     ax1.bar(conf_data["Year"], conf_data["Rejected"], bottom=conf_data["Accepted"], label="Rejected", color="red")
     
     # Set the x-axis label
-    ax1.set_xlabel("Year")
+    # ax1.set_xlabel("Year")
     
     # Force integers on the x-axis
     years = conf_data["Year"].unique().tolist()
