@@ -86,6 +86,13 @@ Security
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/UsenixSec.png" WIDTH="500"></IMG>
 </details>
 
+<details>
+<summary>
+Theory
+</summary>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/STOC.png" WIDTH="500"></IMG>
+</details>
+
 ## Data sources
 
 * Front matter in conference proceedings
