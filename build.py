@@ -126,8 +126,8 @@ for conference_name in conference_name_list:
     # fig, ax1 = plt.subplots()
     
     # Create a stacked bar plot of accepted and rejected papers by year
-    ax1.bar(conf_data["Year"], conf_data["Accepted"], color="green")
     ax1.bar(conf_data["Year"], conf_data["Rejected"], bottom=conf_data["Accepted"], label="Rejected", color="red")
+    ax1.bar(conf_data["Year"], conf_data["Accepted"], color="green", label="Accepted")
     
     # Set the x-axis label
     # ax1.set_xlabel("Year")
@@ -137,8 +137,9 @@ for conference_name in conference_name_list:
     ax1.set_xticks(evenly_spaced_items(years, 5))
     
     # Set the y-axis label for accepted/rejected papers
-    ax1.set_ylabel("Accepted / Rejected Papers")
-
+    # ax1.set_ylabel("Accepted / Rejected Papers")
+    ax1.set_ylabel('Accepted / Rejected', color='black', fontsize=12)
+    ax1.legend()
     
     # Create a second y-axis for acceptance rate
     ax2 = ax1.twinx()
@@ -151,7 +152,7 @@ for conference_name in conference_name_list:
     # ax1.legend()
 
     # Set the title of the plot
-    plt.title(f"{conference_name} Publications by Year")
+    plt.title(f"{conference_name} Publications by Year", fontsize=16)
 
     # Save the plot
     plt.savefig(f"graphs/{conference_name}.pdf", bbox_inches="tight")
