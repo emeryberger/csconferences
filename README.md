@@ -36,6 +36,14 @@ NLP
 
 <details>
 <summary>
+Networks
+</summary>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/NSDI.png" WIDTH="500"></IMG>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGCOMM.png" WIDTH="500"></IMG>
+</details>
+
+<details>
+<summary>
 OS
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EuroSys.png" WIDTH="500"></IMG>
