@@ -96,7 +96,17 @@ Theory
 
 ## Data sources
 
-* Front matter in conference proceedings
-* HotCRP.com
+* Front matter in conference proceedings (primary source)
+* [HotCRP.com](https://hotcrp.com)
 * https://www.openresearch.org/wiki/
 * https://people.engr.tamu.edu/guofei/sec_conf_stat.htm
+* Personal communications
+
+## Notes on statistics
+
+* When possible, total submitted papers excludes those rejected or withdrawn before review
+* For conferences that make a distinction, these statistics include only "long" papers
+
+## Other info
+
+* This site was developed by and is maintained by [Emery Berger](https://github.com/emeryberger).
