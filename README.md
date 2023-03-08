@@ -58,6 +58,7 @@ OS
 PL
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CC.png" WIDTH="500"></IMG>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CGO.png" WIDTH="500"></IMG>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICFP.png" WIDTH="500"></IMG>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ISMM.png" WIDTH="500"></IMG>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/OOPSLA.png" WIDTH="500"></IMG>
