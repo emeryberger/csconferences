@@ -1,5 +1,6 @@
 # Computer Science Conference Publication Stats
 
+
 <details>
 <summary>
 Arch
@@ -96,6 +97,7 @@ Theory
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/STOC.png" WIDTH="500"></IMG>
 </details>
 
+
 ## Data sources
 
 * Front matter in conference proceedings (primary source)
@@ -111,4 +113,6 @@ Theory
 
 ## Other info
 
+* To regenerate this page and all the graphs, run `python3 build.py --all > README.md` 
 * This site was developed by and is maintained by [Emery Berger](https://github.com/emeryberger).
+

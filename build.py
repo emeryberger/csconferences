@@ -89,6 +89,8 @@ plt.close()
 # Combine the values for each year, conference, and area (since there may be different Sequence numbers).
 full_conf_data = full_conf_data.groupby(['Year', 'Conference', 'Area']).agg({'Accepted': 'sum', 'Submitted': 'sum'}).reset_index()
 
+print("# Computer Science Conference Publication Stats\n\n")
+
 for conference_name in conference_name_list:
 
     plt.clf()
@@ -161,3 +163,24 @@ for conference_name in conference_name_list:
     plt.close()
 
 print("</details>")
+
+print("""
+
+## Data sources
+
+* Front matter in conference proceedings (primary source)
+* [HotCRP.com](https://hotcrp.com)
+* https://www.openresearch.org/wiki/
+* https://people.engr.tamu.edu/guofei/sec_conf_stat.htm
+* Personal communications
+
+## Notes on statistics
+
+* When possible, total submitted papers excludes those rejected or withdrawn before review
+* For conferences that make a distinction, these statistics include only "long" papers
+
+## Other info
+
+* To regenerate this page and all the graphs, run `python3 build.py --all > README.md` 
+* This site was developed by and is maintained by [Emery Berger](https://github.com/emeryberger).
+""")
