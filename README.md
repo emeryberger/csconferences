@@ -21,6 +21,13 @@ DB
 
 <details>
 <summary>
+Logic
+</summary>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CAV.png" WIDTH="500"></IMG>
+</details>
+
+<details>
+<summary>
 ML
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICLR.png" WIDTH="500"></IMG>
