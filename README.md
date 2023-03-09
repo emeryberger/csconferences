@@ -30,6 +30,13 @@ ML
 
 <details>
 <summary>
+Metrics
+</summary>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGMETRICS.png" WIDTH="500"></IMG>
+</details>
+
+<details>
+<summary>
 NLP
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ACL.png" WIDTH="500"></IMG>
@@ -95,13 +102,6 @@ Theory
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/FOCS.png" WIDTH="500"></IMG>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SODA.png" WIDTH="500"></IMG>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/STOC.png" WIDTH="500"></IMG>
-</details>
-
-<details>
-<summary>
-Metrics
-</summary>
-<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGMETRICS.png" WIDTH="500"></IMG>
 </details>
 
 
