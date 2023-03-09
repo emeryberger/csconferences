@@ -97,6 +97,13 @@ Theory
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/STOC.png" WIDTH="500"></IMG>
 </details>
 
+<details>
+<summary>
+Metrics
+</summary>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGMETRICS.png" WIDTH="500"></IMG>
+</details>
+
 
 ## Data sources
 
