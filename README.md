@@ -24,6 +24,7 @@ DB
 Logic
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CAV.png" WIDTH="500"></IMG>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/LICS.png" WIDTH="500"></IMG>
 </details>
 
 <details>
