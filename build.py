@@ -89,7 +89,8 @@ plt.close()
 # Combine the values for each year, conference, and area (since there may be different Sequence numbers).
 full_conf_data = full_conf_data.groupby(['Year', 'Conference', 'Area']).agg({'Accepted': 'sum', 'Submitted': 'sum'}).reset_index()
 
-print("# Computer Science Conference Publication Stats\n\n")
+print('# csconferences.org\n')
+print("## Computer Science Conference Publication Stats\n\n")
 
 for conference_name in conference_name_list:
 
