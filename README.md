@@ -128,6 +128,7 @@ Theory
 Vision
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CVPR.png?raw=true" WIDTH="500">
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ECCV.png?raw=true" WIDTH="500">
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICCV.png?raw=true" WIDTH="500">
 </details>
 
