@@ -8,6 +8,7 @@
 AI
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/AAAI.png?raw=true" WIDTH="500">
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/IJCAI.png?raw=true" WIDTH="500">
 </details>
 
 <details>
@@ -129,6 +130,7 @@ Theory
 * [HotCRP.com](https://hotcrp.com)
 * https://www.openresearch.org/wiki/
 * https://people.engr.tamu.edu/guofei/sec_conf_stat.htm
+* https://github.com/lixin4ever/Conference-Acceptance-Rate
 * Personal communications
 
 ## Notes on statistics

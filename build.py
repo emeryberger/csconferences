@@ -173,6 +173,7 @@ print("""
 * [HotCRP.com](https://hotcrp.com)
 * https://www.openresearch.org/wiki/
 * https://people.engr.tamu.edu/guofei/sec_conf_stat.htm
+* https://github.com/lixin4ever/Conference-Acceptance-Rate
 * Personal communications
 
 ## Notes on statistics
