@@ -3,6 +3,13 @@
 
 <details>
 <summary>
+AI
+</summary>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/AAAI.png" WIDTH="500"></IMG>
+</details>
+
+<details>
+<summary>
 Arch
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ASPLOS.png" WIDTH="500"></IMG>
