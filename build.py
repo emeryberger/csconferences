@@ -115,7 +115,7 @@ for conference_name in conference_name_list:
         print("</summary>")
         
     # print(f"![{conference_name}]({URL}/blob/main/graphs/{conference_name}.png)")
-    print(f'<IMG SRC="{URL}/blob/main/graphs/{conference_name}.png" WIDTH="500"></IMG>')
+    print(f'<IMG SRC="{URL}/blob/main/graphs/{conference_name}.png?raw=true" WIDTH="500"></IMG>')
     
     # Create a bar plot of acceptance rates by year
     #plt.bar(conf_data["Year"], conf_data["Papers accepted"] / conf_data["Papers submitted"])
@@ -181,6 +181,8 @@ print("""
 
 ## Other info
 
-* To regenerate this page and all the graphs, run `python3 build.py --all > README.md` 
+* All code and data for this site is at [https://github.com/emeryberger/csconferences](https://github.com/emeryberger/csconferences).
+* For any corrections or updates, please make a pull request to the above site.
+* To regenerate this page and all the graphs, run `python3 build.py --all > README.md` .
 * This site was developed by and is maintained by [Emery Berger](https://github.com/emeryberger).
 """)
