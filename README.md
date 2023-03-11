@@ -123,6 +123,13 @@ Theory
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/STOC.png?raw=true" WIDTH="500">
 </details>
 
+<details>
+<summary>
+Vision
+</summary>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CVPR.png?raw=true" WIDTH="500">
+</details>
+
 
 ## Data sources
 
@@ -131,6 +138,7 @@ Theory
 * https://www.openresearch.org/wiki/
 * https://people.engr.tamu.edu/guofei/sec_conf_stat.htm
 * https://github.com/lixin4ever/Conference-Acceptance-Rate
+* https://taniai.space/cvconf/
 * Personal communications
 
 ## Notes on statistics

@@ -174,6 +174,7 @@ print("""
 * https://www.openresearch.org/wiki/
 * https://people.engr.tamu.edu/guofei/sec_conf_stat.htm
 * https://github.com/lixin4ever/Conference-Acceptance-Rate
+* https://taniai.space/cvconf/
 * Personal communications
 
 ## Notes on statistics
