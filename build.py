@@ -54,9 +54,9 @@ parser.add_argument("--sort", dest="sort", action="store_const", const=True, hel
 args = parser.parse_args()
 
 if args.sort:
-    full_conf_data = full_conf_data.sort_values(['Area','Conference','Year', 'Sequence'])
+    full_conf_data = full_conf_data.sort_values(['Area','Conference','Year', 'Sequence','Notes'])
     cols = full_conf_data.columns.tolist()
-    cols = ['Area','Conference','Year','Sequence','Accepted','Submitted']
+    cols = ['Area','Conference','Year','Sequence','Accepted','Submitted','Notes']
     full_conf_data = full_conf_data[cols]
     full_conf_data = full_conf_data.drop_duplicates()
     full_conf_data.to_csv(filename,index=False)
