@@ -26,6 +26,7 @@ Arch
 Crypt
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CRYPTO.png?raw=true" WIDTH="500">
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EuroCrypt.png?raw=true" WIDTH="500">
 </details>
 
 <details>
