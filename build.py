@@ -8,6 +8,33 @@ import sys
 filename = "csconferences.csv"
 URL = "https://github.com/emeryberger/csconferences"
 
+areas_dict = {
+    'AI': 'Artificial intelligence',
+    'Vision': 'Computer vision',
+    'ML': 'Machine learning',
+    'NLP': 'Natural language processing',
+    'IR': 'The web & information retrieval',
+    'Arch': 'Computer architecture',
+    'Networks': 'Computer networks',
+    'Security': 'Computer security',
+    'DB': 'Databases',
+    'Metrics' : 'Measurement & perf. analysis',
+    'OS': 'Operating systems',
+    'PL': 'Programming languages',
+    'SE': 'Software engineering',
+    'Theory': 'Algorithms & complexity',
+    'Logic': 'Logic & verification',
+    'Crypt': 'Cryptography',
+    'Graphics': 'Computer graphics',
+    'HCI': 'Human-computer interaction',
+}
+
+def sort_areas(areas):
+    return sorted(areas, key=lambda x: areas_dict[x]) # list(areas_dict.keys()).index(x) if x in areas_dict else float('inf'))
+
+def get_human_readable_area(area):
+    return areas_dict.get(area, area)
+
 def evenly_spaced_items(lst, N):
     """
     Returns a new list with only N items, where the N items are evenly spaced in the original list.
@@ -109,10 +136,9 @@ for conference_name in conference_name_list:
             print("</details>\n")
             
         previous_area = this_area
-        # print(f"\n### {this_area}\n")
         print("<details>")
         print("<summary>")
-        print(f"{this_area}")
+        print(f"_{this_area}_: {get_human_readable_area(this_area)}")
         print("</summary>")
         
     # print(f"![{conference_name}]({URL}/blob/main/graphs/{conference_name}.png)")
