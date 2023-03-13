@@ -23,6 +23,13 @@ Arch
 
 <details>
 <summary>
+Crypt
+</summary>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CRYPTO.png?raw=true" WIDTH="500">
+</details>
+
+<details>
+<summary>
 DB
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICDE.png?raw=true" WIDTH="500">
