@@ -5,7 +5,7 @@
 
 <details>
 <summary>
-<em>AI</em> : Artificial intelligence
+<em>AI</em>: <b>Artificial intelligence</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/AAAI.png?raw=true" WIDTH="500">
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/IJCAI.png?raw=true" WIDTH="500">
@@ -13,7 +13,7 @@
 
 <details>
 <summary>
-<em>Arch</em> : Computer architecture
+<em>Arch</em>: <b>Computer architecture</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ASPLOS.png?raw=true" WIDTH="500">
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/HPCA.png?raw=true" WIDTH="500">
@@ -23,7 +23,7 @@
 
 <details>
 <summary>
-<em>Crypt</em> : Cryptography
+<em>Crypt</em>: <b>Cryptography</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CRYPTO.png?raw=true" WIDTH="500">
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EuroCrypt.png?raw=true" WIDTH="500">
@@ -31,7 +31,7 @@
 
 <details>
 <summary>
-<em>DB</em> : Databases
+<em>DB</em>: <b>Databases</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICDE.png?raw=true" WIDTH="500">
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/PODS.png?raw=true" WIDTH="500">
@@ -41,14 +41,14 @@
 
 <details>
 <summary>
-<em>HCI</em> : Human-computer interaction
+<em>HCI</em>: <b>Human-computer interaction</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CHI.png?raw=true" WIDTH="500">
 </details>
 
 <details>
 <summary>
-<em>Logic</em> : Logic & verification
+<em>Logic</em>: <b>Logic & verification</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CAV.png?raw=true" WIDTH="500">
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/LICS.png?raw=true" WIDTH="500">
@@ -56,7 +56,7 @@
 
 <details>
 <summary>
-<em>ML</em> : Machine learning
+<em>ML</em>: <b>Machine learning</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICLR.png?raw=true" WIDTH="500">
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICML.png?raw=true" WIDTH="500">
@@ -65,21 +65,21 @@
 
 <details>
 <summary>
-<em>Metrics</em> : Measurement & perf. analysis
+<em>Metrics</em>: <b>Measurement & perf. analysis</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGMETRICS.png?raw=true" WIDTH="500">
 </details>
 
 <details>
 <summary>
-<em>NLP</em> : Natural language processing
+<em>NLP</em>: <b>Natural language processing</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ACL.png?raw=true" WIDTH="500">
 </details>
 
 <details>
 <summary>
-<em>Networks</em> : Computer networks
+<em>Networks</em>: <b>Computer networks</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/NSDI.png?raw=true" WIDTH="500">
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGCOMM.png?raw=true" WIDTH="500">
@@ -87,7 +87,7 @@
 
 <details>
 <summary>
-<em>OS</em> : Operating systems
+<em>OS</em>: <b>Operating systems</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EuroSys.png?raw=true" WIDTH="500">
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/FAST.png?raw=true" WIDTH="500">
@@ -98,7 +98,7 @@
 
 <details>
 <summary>
-<em>PL</em> : Programming languages
+<em>PL</em>: <b>Programming languages</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CC.png?raw=true" WIDTH="500">
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CGO.png?raw=true" WIDTH="500">
@@ -113,7 +113,7 @@
 
 <details>
 <summary>
-<em>SE</em> : Software engineering
+<em>SE</em>: <b>Software engineering</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ASE.png?raw=true" WIDTH="500">
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/FSE.png?raw=true" WIDTH="500">
@@ -123,7 +123,7 @@
 
 <details>
 <summary>
-<em>Security</em> : Computer security
+<em>Security</em>: <b>Computer security</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CCS.png?raw=true" WIDTH="500">
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/NDSS.png?raw=true" WIDTH="500">
@@ -133,7 +133,7 @@
 
 <details>
 <summary>
-<em>Theory</em> : Algorithms & complexity
+<em>Theory</em>: <b>Algorithms & complexity</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/FOCS.png?raw=true" WIDTH="500">
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SODA.png?raw=true" WIDTH="500">
@@ -142,7 +142,7 @@
 
 <details>
 <summary>
-<em>Vision</em> : Computer vision
+<em>Vision</em>: <b>Computer vision</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CVPR.png?raw=true" WIDTH="500">
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ECCV.png?raw=true" WIDTH="500">
