@@ -41,6 +41,13 @@ DB
 
 <details>
 <summary>
+HCI
+</summary>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CHI.png?raw=true" WIDTH="500">
+</details>
+
+<details>
+<summary>
 Logic
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CAV.png?raw=true" WIDTH="500">

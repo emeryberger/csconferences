@@ -233,6 +233,17 @@ DB,VLDB,2016,1,187,527,none
 DB,VLDB,2017,1,104,559,none
 DB,VLDB,2018,1,213,1014,none
 DB,VLDB,2019,1,128,677,none
+HCI,CHI,2011,1,306,1012,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F1978942
+HCI,CHI,2013,1,316,1347,https://dl.acm.org/doi/proceedings/10.1145/2470654
+HCI,CHI,2014,1,382,1428,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F2556288
+HCI,CHI,2015,1,486,1520,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F2702123
+HCI,CHI,2016,1,600,2200,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F2858036
+HCI,CHI,2017,1,600,2400,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3025453
+HCI,CHI,2018,1,666,2592,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3173574
+HCI,CHI,2019,1,703,2958,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3290605
+HCI,CHI,2020,1,758,3126,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3313831
+HCI,CHI,2021,1,747,2845,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3411764
+HCI,CHI,2022,1,637,2579,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3491102
 Logic,CAV,1992,1,31,75,none
 Logic,CAV,1993,1,37,84,none
 Logic,CAV,1994,1,37,121,none
