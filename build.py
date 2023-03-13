@@ -138,7 +138,7 @@ for conference_name in conference_name_list:
         previous_area = this_area
         print("<details>")
         print("<summary>")
-        print(f"_{this_area}_: {get_human_readable_area(this_area)}")
+        print(f"<em>{this_area}</em>: <b>{get_human_readable_area(this_area)}</b>")
         print("</summary>")
         
     # print(f"![{conference_name}]({URL}/blob/main/graphs/{conference_name}.png)")
