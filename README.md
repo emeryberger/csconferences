@@ -129,6 +129,13 @@
 
 <details>
 <summary>
+<em>Robotics</em>: <b>Robotics</b>
+</summary>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICRA.png?raw=true" WIDTH="500">
+</details>
+
+<details>
+<summary>
 <em>SE</em>: <b>Software engineering</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ASE.png?raw=true" WIDTH="500">
@@ -174,6 +181,7 @@
 * https://people.engr.tamu.edu/guofei/sec_conf_stat.htm
 * https://github.com/lixin4ever/Conference-Acceptance-Rate
 * https://taniai.space/cvconf/
+* https://unit.aist.go.jp/hcmrc/mr-rt/acceptance-rate.html
 * Personal communications
 
 ## Notes on statistics

@@ -202,6 +202,7 @@ print("""
 * https://people.engr.tamu.edu/guofei/sec_conf_stat.htm
 * https://github.com/lixin4ever/Conference-Acceptance-Rate
 * https://taniai.space/cvconf/
+* https://unit.aist.go.jp/hcmrc/mr-rt/acceptance-rate.html
 * Personal communications
 
 ## Notes on statistics
