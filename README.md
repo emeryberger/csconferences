@@ -80,6 +80,13 @@
 
 <details>
 <summary>
+<em>Mobile</em>: <b>Mobile computing</b>
+</summary>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/MobiCom.png?raw=true" WIDTH="500">
+</details>
+
+<details>
+<summary>
 <em>NLP</em>: <b>Natural language processing</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ACL.png?raw=true" WIDTH="500">

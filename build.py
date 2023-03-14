@@ -19,6 +19,7 @@ areas_dict = {
     'Security': 'Computer security',
     'DB': 'Databases',
     'Metrics' : 'Measurement & perf. analysis',
+    'Mobile': 'Mobile computing',
     'OS': 'Operating systems',
     'PL': 'Programming languages',
     'SE': 'Software engineering',
