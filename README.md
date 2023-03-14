@@ -67,6 +67,7 @@
 <summary>
 <em>Metrics</em>: <b>Measurement & perf. analysis</b>
 </summary>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/IMC.png?raw=true" WIDTH="500">
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGMETRICS.png?raw=true" WIDTH="500">
 </details>
 
