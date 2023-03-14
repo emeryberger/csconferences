@@ -41,6 +41,13 @@
 
 <details>
 <summary>
+<em>Graphics</em>: <b>Computer graphics</b>
+</summary>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGGRAPH.png?raw=true" WIDTH="500">
+</details>
+
+<details>
+<summary>
 <em>HCI</em>: <b>Human-computer interaction</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CHI.png?raw=true" WIDTH="500">
