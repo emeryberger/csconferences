@@ -178,6 +178,7 @@
 <em>Web+IR</em>: <b>The web & information retrieval</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGIR.png?raw=true" WIDTH="500">
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/WSDM.png?raw=true" WIDTH="500">
 </details>
 
 
