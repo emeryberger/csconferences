@@ -75,6 +75,7 @@
 <em>NLP</em>: <b>Natural language processing</b>
 </summary>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ACL.png?raw=true" WIDTH="500">
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EMNLP.png?raw=true" WIDTH="500">
 </details>
 
 <details>
