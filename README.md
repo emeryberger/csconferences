@@ -173,6 +173,13 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICCV.png?raw=true" WIDTH="500">
 </details>
 
+<details>
+<summary>
+<em>Web+IR</em>: <b>The web & information retrieval</b>
+</summary>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGIR.png?raw=true" WIDTH="500">
+</details>
+
 
 ## Data sources
 

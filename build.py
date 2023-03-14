@@ -13,7 +13,7 @@ areas_dict = {
     'Vision': 'Computer vision',
     'ML': 'Machine learning',
     'NLP': 'Natural language processing',
-    'IR': 'The web & information retrieval',
+    'Web+IR': 'The web & information retrieval',
     'Arch': 'Computer architecture',
     'Networks': 'Computer networks',
     'Security': 'Computer security',
