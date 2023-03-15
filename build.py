@@ -143,7 +143,9 @@ for conference_name in conference_name_list:
         print("</summary>")
         
     # print(f"![{conference_name}]({URL}/blob/main/graphs/{conference_name}.png)")
+    print(f'<A NAME="{conference_name}">')
     print(f'<IMG SRC="{URL}/blob/main/graphs/{conference_name}.png?raw=true" WIDTH="500">')
+    print('</A>')
     
     # Create a bar plot of acceptance rates by year
     #plt.bar(conf_data["Year"], conf_data["Papers accepted"] / conf_data["Papers submitted"])
