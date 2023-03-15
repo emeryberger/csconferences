@@ -143,7 +143,11 @@ for conference_name in conference_name_list:
         print("</summary>")
         
     # print(f"![{conference_name}]({URL}/blob/main/graphs/{conference_name}.png)")
+
+    dblp_url = f'https://dblp.org/db/conf/{conference_name.lower()}/index.html'
+    
     print(f'<A NAME="{conference_name}">')
+    print(f'<P><B><A HREF="{dblp_url}">{conference_name}</A><B></P>')
     print(f'<IMG SRC="{URL}/blob/main/graphs/{conference_name}.png?raw=true" WIDTH="500">')
     print('</A>')
     
