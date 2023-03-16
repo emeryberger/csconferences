@@ -28,6 +28,7 @@ areas_dict = {
     'Crypt': 'Cryptography',
     'Graphics': 'Computer graphics',
     'HCI': 'Human-computer interaction',
+    'BED': 'Embedded & real-time systems',
 }
 
 def sort_areas(areas):
