@@ -136,6 +136,19 @@ Arch,MICRO,2019,1,79,345,,
 Arch,MICRO,2020,1,82,424,,
 Arch,MICRO,2021,1,94,423,,
 Arch,MICRO,2022,1,83,348,,
+BED,RTAS,2010,1,33,149,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5465955
+BED,RTAS,2011,1,29,139,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5767127
+BED,RTAS,2012,1,30,127,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6200068
+BED,RTAS,2013,1,28,96,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6531073
+BED,RTAS,2014,1,27,133,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6925983
+BED,RTAS,2015,1,27,124,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7108389
+BED,RTAS,2016,1,25,92,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7461314
+BED,RTAS,2017,1,29,85,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7938833
+BED,RTAS,2018,1,27,79,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7108389
+BED,RTAS,2019,1,30,116,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8743309
+BED,RTAS,2020,1,29,108,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9113091
+BED,RTAS,2021,1,31,114,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9470480
+BED,RTAS,2022,1,22,91,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9804650
 BED,RTSS,2010,1,36,142,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5702254,
 BED,RTSS,2011,1,33,158,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6121415,
 BED,RTSS,2012,1,35,157,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6424780,
@@ -947,3 +960,4 @@ Web+IR,WSDM,2018,1,84,514,https://dl.acm.org/doi/proceedings/10.1145/3159652,
 Web+IR,WSDM,2019,1,84,511,https://dl.acm.org/doi/proceedings/10.1145/3289600,
 Web+IR,WSDM,2020,1,91,615,https://dl.acm.org/doi/proceedings/10.1145/3336191,
 Web+IR,WSDM,2023,1,123,690,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3539597,
+
