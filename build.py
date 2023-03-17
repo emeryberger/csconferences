@@ -28,6 +28,7 @@ areas_dict = {
     'Crypt': 'Cryptography',
     'Graphics': 'Computer graphics',
     'HCI': 'Human-computer interaction',
+    'BED': 'Embedded & real-time systems',
 }
 
 def sort_areas(areas):
@@ -78,7 +79,7 @@ parser = argparse.ArgumentParser(description="Publication analysis for conferenc
 parser.add_argument("--conference_name", help="Name of conference to analyze", choices=conference_list)
 parser.add_argument("--all", dest="all", action="store_const", const=True, help="Produce graphs for all conferences")
 parser.add_argument("--sort", dest="sort", action="store_const", const=True, help="Sort the conferences.csv file.")
-
+parser.add_argument("--readme", dest="readme", action="store_const", const=True, help="Produce README and exit.")
 args = parser.parse_args()
 
 if args.sort:
@@ -91,14 +92,14 @@ if args.sort:
     print(f"Sorted {filename}.")
     sys.exit(0)
     
-if not args.conference_name and not args.all:
+if not args.conference_name and not args.all and not args.readme:
     parser.print_help()
     sys.exit(0)
 
 conference_name_list = []
 if args.conference_name:
     conference_name_list = [args.conference_name]
-if args.all:
+if args.all or args.readme:
     conference_name_list = conference_list
 
 # Set the theme and remove the axes.
@@ -109,96 +110,49 @@ sns.despine()
 # Set the dimensions (in inches) of the plot.
 plt.figure(figsize=(3, 3))
 
-previous_area = ""
-
 # Do this once just to initialize everything.
 plt.close()
 
 # Combine the values for each year, conference, and area (since there may be different Sequence numbers).
 full_conf_data = full_conf_data.groupby(['Year', 'Conference', 'Area']).agg({'Accepted': 'sum', 'Submitted': 'sum'}).reset_index()
 
-print('# csconferences.org\n')
-print("## Computer Science Conference Publication Stats\n\n")
+# Print first, then regenerate plots.
 
-for conference_name in conference_name_list:
+def print_readme():
+    print('# csconferences.org\n')
+    print("## Computer Science Conference Publication Stats\n\n")
 
-    plt.clf()
-    fig = plt.figure()
-    ax1 = fig.add_subplot()
-    
-    # Filter the data by conference
-    conf_data = full_conf_data.copy()
-    conf_data = conf_data.loc[conf_data["Conference"] == conference_name]
+    previous_area = ''
 
-    this_area = conf_data["Area"].unique().tolist()[0]
+    for conference_name in conference_name_list:
+        # Filter the data by conference
+        conf_data = full_conf_data.copy()
+        conf_data = conf_data.loc[conf_data["Conference"] == conference_name]
 
-    if this_area != previous_area:
-        if previous_area != "":
-            print("</details>\n")
-            
-        previous_area = this_area
-        print("<details>")
-        print("<summary>")
-        print(f"<em>{this_area}</em>: <b>{get_human_readable_area(this_area)}</b>")
-        print("</summary>")
-        
-    # print(f"![{conference_name}]({URL}/blob/main/graphs/{conference_name}.png)")
+        this_area = conf_data["Area"].unique().tolist()[0]
 
-    dblp_url = f'https://dblp.org/db/conf/{conference_name.lower()}/index.html'
-    
-    print(f'<A NAME="{conference_name}">')
-    print(f'<P><B><A HREF="{dblp_url}">{conference_name}</A></B></P>')
-    print(f'<IMG SRC="{URL}/blob/main/graphs/{conference_name}.png?raw=true" WIDTH="500">')
-    print('</A>')
-    
-    # Create a bar plot of acceptance rates by year
-    #plt.bar(conf_data["Year"], conf_data["Papers accepted"] / conf_data["Papers submitted"])
+        if this_area != previous_area:
+            if previous_area != "":
+                print("</details>\n")
 
-    # Calculate the number of accepted and rejected papers for each year
-    conf_data["Rejected"] = conf_data["Submitted"] - conf_data["Accepted"]
-    conf_data["Acceptance Rate"] = 100 * conf_data["Accepted"] / conf_data["Submitted"] # Calculate the acceptance rate
+            previous_area = this_area
+            print("<details>")
+            print("<summary>")
+            print(f"<em>{this_area}</em>: <b>{get_human_readable_area(this_area)}</b>")
+            print("</summary>")
 
-    # Create a figure and two axes
-    # fig, ax1 = plt.subplots()
-    
-    # Create a stacked bar plot of accepted and rejected papers by year
-    ax1.bar(conf_data["Year"], conf_data["Rejected"], bottom=conf_data["Accepted"], label="Rejected", color="red")
-    ax1.bar(conf_data["Year"], conf_data["Accepted"], color="green", label="Accepted")
-    
-    # Set the x-axis label
-    # ax1.set_xlabel("Year")
-    
-    # Force integers on the x-axis
-    years = conf_data["Year"].unique().tolist()
-    ax1.set_xticks(evenly_spaced_items(years, 5))
-    
-    # Set the y-axis label for accepted/rejected papers
-    # ax1.set_ylabel("Accepted / Rejected Papers")
-    ax1.set_ylabel('Accepted / Rejected', color='black', fontsize=12)
-    ax1.legend()
-    
-    # Create a second y-axis for acceptance rate
-    ax2 = ax1.twinx()
-    ax2.set_ylim([0, 100])
-    ax2.plot(conf_data["Year"], conf_data["Acceptance Rate"], color="blue")
-    ax2.set_ylabel("Acceptance Rate (%)", color='blue')
-    ax2.yaxis.set_major_formatter(PercentFormatter())
-    ax2.tick_params(axis='y',labelcolor='blue')
-    # Show the legend
-    # ax1.legend()
+        # print(f"![{conference_name}]({URL}/blob/main/graphs/{conference_name}.png)")
 
-    # Set the title of the plot
-    plt.title(f"{conference_name} Publications by Year", fontsize=16)
+        dblp_url = f'https://dblp.org/db/conf/{conference_name.lower()}/index.html'
 
-    # Save the plot
-    plt.savefig(f"graphs/{conference_name}.pdf", bbox_inches="tight")
-    plt.savefig(f"graphs/{conference_name}.png", bbox_inches="tight")
+        print(f'<A NAME="{conference_name}">')
+        print(f'<P><B><A HREF="{dblp_url}">{conference_name}</A></B></P>')
+        print(f'<IMG SRC="{URL}/blob/main/graphs/{conference_name}.png?raw=true" WIDTH="500">')
+        print('</A>')
 
-    plt.close()
+    print("</details>")
 
-print("</details>")
-
-print("""
+    print("""
 
 ## Data sources
 
@@ -222,4 +176,60 @@ print("""
 * For any corrections or updates, please make a pull request to the above site.
 * To regenerate this page and all the graphs, run `python3 build.py --all > README.md` .
 * This site was developed by and is maintained by [Emery Berger](https://github.com/emeryberger).
-""")
+    """)
+
+async def generate_plot(conference_name):
+    plt.clf()
+    fig = plt.figure()
+    ax1 = fig.add_subplot()
+    
+    # Filter the data by conference
+    conf_data = full_conf_data.copy()
+    conf_data = conf_data.loc[conf_data["Conference"] == conference_name]
+
+    # Calculate the number of accepted and rejected papers for each year
+    conf_data["Rejected"] = conf_data["Submitted"] - conf_data["Accepted"]
+    conf_data["Acceptance Rate"] = 100 * conf_data["Accepted"] / conf_data["Submitted"] # Calculate the acceptance rate
+
+    # Create a stacked bar plot of accepted and rejected papers by year
+    ax1.bar(conf_data["Year"], conf_data["Rejected"], bottom=conf_data["Accepted"], label="Rejected", color="red")
+    ax1.bar(conf_data["Year"], conf_data["Accepted"], color="green", label="Accepted")
+    
+    # Force integers on the x-axis
+    years = conf_data["Year"].unique().tolist()
+    ax1.set_xticks(evenly_spaced_items(years, 5))
+    
+    # Set the y-axis label for accepted/rejected papers
+    ax1.set_ylabel('Accepted / Rejected', color='black', fontsize=12)
+    ax1.legend()
+    
+    # Create a second y-axis for acceptance rate
+    ax2 = ax1.twinx()
+    ax2.set_ylim([0, 100])
+    ax2.plot(conf_data["Year"], conf_data["Acceptance Rate"], color="blue")
+    ax2.set_ylabel("Acceptance Rate (%)", color='blue')
+    ax2.yaxis.set_major_formatter(PercentFormatter())
+    ax2.tick_params(axis='y',labelcolor='blue')
+
+    # Set the title of the plot
+    plt.title(f"{conference_name} Publications by Year", fontsize=16)
+
+    # Save the plot
+    plt.savefig(f"graphs/{conference_name}.pdf", bbox_inches="tight")
+    plt.savefig(f"graphs/{conference_name}.png", bbox_inches="tight")
+
+    plt.close()
+
+import asyncio
+
+async def generate_plots(conference_name_list):
+    tasks = [generate_plot(conference_name) for conference_name in conference_name_list]
+    await asyncio.gather(*tasks)
+
+def main():
+    print_readme()
+    if args.readme:
+        sys.exit(0)
+    asyncio.run(generate_plots(conference_name_list))
+
+main()

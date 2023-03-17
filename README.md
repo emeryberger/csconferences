@@ -41,6 +41,16 @@
 
 <details>
 <summary>
+<em>BED</em>: <b>Embedded & real-time systems</b>
+</summary>
+<A NAME="RTSS">
+<P><B><A HREF="https://dblp.org/db/conf/rtss/index.html">RTSS</A></B></P>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/RTSS.png?raw=true" WIDTH="500">
+</A>
+</details>
+
+<details>
+<summary>
 <em>Crypt</em>: <b>Cryptography</b>
 </summary>
 <A NAME="CRYPTO">
