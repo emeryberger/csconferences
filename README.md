@@ -107,6 +107,10 @@
 <P><B><A HREF="https://dblp.org/db/conf/chi/index.html">CHI</A></B></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CHI.png?raw=true" WIDTH="500">
 </A>
+<A NAME="UIST">
+<P><B><A HREF="https://dblp.org/db/conf/uist/index.html">UIST</A></B></P>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/UIST.png?raw=true" WIDTH="500">
+</A>
 </details>
 
 <details>
