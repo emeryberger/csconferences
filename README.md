@@ -41,8 +41,12 @@
 
 <details>
 <summary>
-<em>BED</em>: <b>Embedded & real-time systems</b>
+<em>Bed</em>: <b>Embedded & real-time systems</b>
 </summary>
+<A NAME="RTAS">
+<P><B><A HREF="https://dblp.org/db/conf/rtas/index.html">RTAS</A></B></P>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/RTAS.png?raw=true" WIDTH="500">
+</A>
 <A NAME="RTSS">
 <P><B><A HREF="https://dblp.org/db/conf/rtss/index.html">RTSS</A></B></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/RTSS.png?raw=true" WIDTH="500">
@@ -388,4 +392,4 @@
 * For any corrections or updates, please make a pull request to the above site.
 * To regenerate this page and all the graphs, run `python3 build.py --all > README.md` .
 * This site was developed by and is maintained by [Emery Berger](https://github.com/emeryberger).
-
+    
