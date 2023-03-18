@@ -17,6 +17,7 @@
  <em>mean acceptance rate, last 5 years: 16%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/IJCAI.png?raw=true" WIDTH="500" />
 
+
 </details>
 
 <details>
@@ -43,6 +44,7 @@
  <em>mean acceptance rate, last 5 years: 22%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/MICRO.png?raw=true" WIDTH="500" />
 
+
 </details>
 
 <details>
@@ -59,6 +61,7 @@
  <em>mean acceptance rate, last 5 years: 25%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/RTSS.png?raw=true" WIDTH="500" />
 
+
 </details>
 
 <details>
@@ -74,6 +77,7 @@
 <P><B><A HREF="https://dblp.org/db/conf/eurocrypt/index.html">EuroCrypt</A></B>
  <em>mean acceptance rate, last 5 years: 22%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EuroCrypt.png?raw=true" WIDTH="500" />
+
 
 </details>
 
@@ -101,6 +105,7 @@
  <em>mean acceptance rate, last 5 years: 23%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/VLDB.png?raw=true" WIDTH="500" />
 
+
 </details>
 
 <details>
@@ -112,6 +117,7 @@
  <em>mean acceptance rate, last 5 years: 25%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EC.png?raw=true" WIDTH="500" />
 
+
 </details>
 
 <details>
@@ -122,6 +128,7 @@
 <P><B><A HREF="https://dblp.org/db/conf/siggraph/index.html">SIGGRAPH</A></B>
  <em>mean acceptance rate, last 5 years: 28%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGGRAPH.png?raw=true" WIDTH="500" />
+
 
 </details>
 
@@ -139,6 +146,7 @@
  <em>mean acceptance rate, last 5 years: 24%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/UIST.png?raw=true" WIDTH="500" />
 
+
 </details>
 
 <details>
@@ -154,6 +162,7 @@
 <P><B><A HREF="https://dblp.org/db/conf/lics/index.html">LICS</A></B>
  <em>mean acceptance rate, last 5 years: 39%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/LICS.png?raw=true" WIDTH="500" />
+
 
 </details>
 
@@ -176,6 +185,7 @@
  <em>mean acceptance rate, last 5 years: 22%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/NeurIPS.png?raw=true" WIDTH="500" />
 
+
 </details>
 
 <details>
@@ -192,6 +202,7 @@
  <em>mean acceptance rate, last 5 years: 17%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGMETRICS.png?raw=true" WIDTH="500" />
 
+
 </details>
 
 <details>
@@ -202,6 +213,7 @@
 <P><B><A HREF="https://dblp.org/db/conf/mobicom/index.html">MobiCom</A></B>
  <em>mean acceptance rate, last 5 years: 18%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/MobiCom.png?raw=true" WIDTH="500" />
+
 
 </details>
 
@@ -219,6 +231,7 @@
  <em>mean acceptance rate, last 5 years: 25%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EMNLP.png?raw=true" WIDTH="500" />
 
+
 </details>
 
 <details>
@@ -234,6 +247,7 @@
 <P><B><A HREF="https://dblp.org/db/conf/sigcomm/index.html">SIGCOMM</A></B>
  <em>mean acceptance rate, last 5 years: 19%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGCOMM.png?raw=true" WIDTH="500" />
+
 
 </details>
 
@@ -265,6 +279,7 @@
 <P><B><A HREF="https://dblp.org/db/conf/usenix-atc/index.html">USENIX-ATC</A></B>
  <em>mean acceptance rate, last 5 years: 20%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/USENIX-ATC.png?raw=true" WIDTH="500" />
+
 
 </details>
 
@@ -317,6 +332,7 @@
  <em>mean acceptance rate, last 5 years: 22%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/PPoPP.png?raw=true" WIDTH="500" />
 
+
 </details>
 
 <details>
@@ -332,6 +348,7 @@
 <P><B><A HREF="https://dblp.org/db/conf/iros/index.html">IROS</A></B>
  <em>mean acceptance rate, last 5 years: 46%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/IROS.png?raw=true" WIDTH="500" />
+
 
 </details>
 
@@ -359,6 +376,7 @@
  <em>mean acceptance rate, last 5 years: 24%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ISSTA.png?raw=true" WIDTH="500" />
 
+
 </details>
 
 <details>
@@ -385,6 +403,7 @@
  <em>mean acceptance rate, last 5 years: 22%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/UsenixSec.png?raw=true" WIDTH="500" />
 
+
 </details>
 
 <details>
@@ -406,6 +425,7 @@
  <em>mean acceptance rate, last 5 years: 27%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/STOC.png?raw=true" WIDTH="500" />
 
+
 </details>
 
 <details>
@@ -426,6 +446,7 @@
 <P><B><A HREF="https://dblp.org/db/conf/iccv/index.html">ICCV</A></B>
  <em>mean acceptance rate, last 5 years: 28%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICCV.png?raw=true" WIDTH="500" />
+
 
 </details>
 
