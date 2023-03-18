@@ -7,13 +7,15 @@
  <summary>
 <em>AI</em>: <b>Artificial intelligence</b>
 </summary>
- <A ID="AAAI" />
+ <A ID="AAAI"></A>
 <P><B><A HREF="https://dblp.org/db/conf/aaai/index.html">AAAI</A></B>
- <em>mean acceptance rate, last 5 years: 19%</em><br>
+ <em>mean acceptance rate, last 5 years: 19%</em>
+  </P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/AAAI.png?raw=true" WIDTH="500">
-<A ID="IJCAI" />
+ <A ID="IJCAI"></A>
 <P><B><A HREF="https://dblp.org/db/conf/ijcai/index.html">IJCAI</A></B>
- <em>mean acceptance rate, last 5 years: 16%</em><br>
+ <em>mean acceptance rate, last 5 years: 16%</em>
+ </P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/IJCAI.png?raw=true" WIDTH="500">
 </details>
  
