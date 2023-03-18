@@ -129,6 +129,9 @@ def print_readme():
         conf_data = full_conf_data.copy()
         conf_data = conf_data.loc[conf_data["Conference"] == conference_name]
 
+        reversed_conf_data = conf_data.sort_values('Year', ascending=False)
+        last_5_years = reversed_conf_data.head(5)
+        acceptance_rates = last_5_years['Accepted'] / last_5_years['Submitted']
         this_area = conf_data["Area"].unique().tolist()[0]
 
         if this_area != previous_area:
@@ -146,7 +149,8 @@ def print_readme():
         dblp_url = f'https://dblp.org/db/conf/{conference_name.lower()}/index.html'
 
         print(f'<A NAME="{conference_name}">')
-        print(f'<P><B><A HREF="{dblp_url}">{conference_name}</A></B></P>')
+        print(f'<P><B><A HREF="{dblp_url}">{conference_name}</A></B>')
+        print(f" <em>mean acceptance rate, last 5 years: {acceptance_rates.mean()*100:.0f}%</em></BR>")
         print(f'<IMG SRC="{URL}/blob/main/graphs/{conference_name}.png?raw=true" WIDTH="500">')
         print('</A>')
 
