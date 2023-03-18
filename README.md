@@ -4,10 +4,12 @@
 
 
 <details>
-<summary>
+
+ <summary>
 <em>AI</em>: <b>Artificial intelligence</b>
 </summary>
-<A ID="AAAI">
+
+ <A ID="AAAI">
 <P><B><A HREF="https://dblp.org/db/conf/aaai/index.html">AAAI</A></B>
  <em>mean acceptance rate, last 5 years: 19%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/AAAI.png?raw=true" WIDTH="500">
@@ -18,11 +20,14 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/IJCAI.png?raw=true" WIDTH="500">
  </A>
 </details>
+ 
 <details>
-<summary>
+
+ <summary>
 <em>Arch</em>: <b>Computer architecture</b>
 </summary>
-<A NAME="ASPLOS">
+
+ <A NAME="ASPLOS">
 <P><B><A HREF="https://dblp.org/db/conf/asplos/index.html">ASPLOS</A></B>
  <em>mean acceptance rate, last 5 years: 21%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ASPLOS.png?raw=true" WIDTH="500">
@@ -39,6 +44,7 @@
  <em>mean acceptance rate, last 5 years: 22%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/MICRO.png?raw=true" WIDTH="500">
 </details>
+ 
 <details>
 <summary>
 <em>Bed</em>: <b>Embedded & real-time systems</b>
