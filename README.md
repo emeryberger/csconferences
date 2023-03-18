@@ -16,7 +16,6 @@
  <em>mean acceptance rate, last 5 years: 16%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/IJCAI.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>Arch</em>: <b>Computer architecture</b>
@@ -38,7 +37,6 @@
  <em>mean acceptance rate, last 5 years: 22%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/MICRO.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>Bed</em>: <b>Embedded & real-time systems</b>
@@ -52,7 +50,6 @@
  <em>mean acceptance rate, last 5 years: 25%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/RTSS.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>Crypt</em>: <b>Cryptography</b>
@@ -66,7 +63,6 @@
  <em>mean acceptance rate, last 5 years: 22%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EuroCrypt.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>DB</em>: <b>Databases</b>
@@ -88,7 +84,6 @@
  <em>mean acceptance rate, last 5 years: 23%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/VLDB.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>ECom</em>: <b>Economics & computation</b>
@@ -98,7 +93,6 @@
  <em>mean acceptance rate, last 5 years: 25%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EC.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>Graphics</em>: <b>Computer graphics</b>
@@ -108,7 +102,6 @@
  <em>mean acceptance rate, last 5 years: 28%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGGRAPH.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>HCI</em>: <b>Human-computer interaction</b>
@@ -122,7 +115,6 @@
  <em>mean acceptance rate, last 5 years: 24%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/UIST.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>Logic</em>: <b>Logic & verification</b>
@@ -136,7 +128,6 @@
  <em>mean acceptance rate, last 5 years: 39%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/LICS.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>ML</em>: <b>Machine learning</b>
@@ -154,7 +145,6 @@
  <em>mean acceptance rate, last 5 years: 22%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/NeurIPS.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>Metrics</em>: <b>Measurement & perf. analysis</b>
@@ -168,7 +158,6 @@
  <em>mean acceptance rate, last 5 years: 17%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGMETRICS.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>Mobile</em>: <b>Mobile computing</b>
@@ -178,7 +167,6 @@
  <em>mean acceptance rate, last 5 years: 18%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/MobiCom.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>NLP</em>: <b>Natural language processing</b>
@@ -192,7 +180,6 @@
  <em>mean acceptance rate, last 5 years: 25%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EMNLP.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>Networks</em>: <b>Computer networks</b>
@@ -206,7 +193,6 @@
  <em>mean acceptance rate, last 5 years: 19%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGCOMM.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>OS</em>: <b>Operating systems</b>
@@ -232,7 +218,6 @@
  <em>mean acceptance rate, last 5 years: 20%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/USENIX-ATC.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>PL</em>: <b>Programming languages</b>
@@ -274,7 +259,6 @@
  <em>mean acceptance rate, last 5 years: 22%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/PPoPP.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>Robotics</em>: <b>Robotics</b>
@@ -288,7 +272,6 @@
  <em>mean acceptance rate, last 5 years: 46%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/IROS.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>SE</em>: <b>Software engineering</b>
@@ -310,7 +293,6 @@
  <em>mean acceptance rate, last 5 years: 24%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ISSTA.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>Security</em>: <b>Computer security</b>
@@ -332,7 +314,6 @@
  <em>mean acceptance rate, last 5 years: 22%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/UsenixSec.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>Theory</em>: <b>Algorithms & complexity</b>
@@ -350,7 +331,6 @@
  <em>mean acceptance rate, last 5 years: 27%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/STOC.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>Vision</em>: <b>Computer vision</b>
@@ -368,7 +348,6 @@
  <em>mean acceptance rate, last 5 years: 28%</em><br>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICCV.png?raw=true" WIDTH="500">
 </details>
-
 <details>
 <summary>
 <em>Web+IR</em>: <b>The web & information retrieval</b>
