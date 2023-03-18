@@ -153,6 +153,7 @@ def print_readme():
         print(f'<P><B><A HREF="{dblp_url}">{conference_name}</A></B>')
         print(f" <em>mean acceptance rate, last 5 years: {acceptance_rates.mean()*100:.0f}%</em><br />")
         print(f'<IMG SRC="{URL}/blob/main/graphs/{conference_name}.png?raw=true" WIDTH="500">')
+        print('</A>')
 
     print("</details>")
 
