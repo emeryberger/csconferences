@@ -4,11 +4,9 @@
 
 
 <details>
-
  <summary>
 <em>AI</em>: <b>Artificial intelligence</b>
 </summary>
-
  <A ID="AAAI" />
 <P><B><A HREF="https://dblp.org/db/conf/aaai/index.html">AAAI</A></B>
  <em>mean acceptance rate, last 5 years: 19%</em><br>
@@ -20,11 +18,9 @@
 </details>
  
 <details>
-
  <summary>
 <em>Arch</em>: <b>Computer architecture</b>
 </summary>
-
  <A NAME="ASPLOS">
 <P><B><A HREF="https://dblp.org/db/conf/asplos/index.html">ASPLOS</A></B>
  <em>mean acceptance rate, last 5 years: 21%</em><br>
