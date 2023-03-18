@@ -137,7 +137,7 @@ def print_readme():
 
         if this_area != previous_area:
             if previous_area != "":
-                print("\n</details>\n")
+                print("</details>\n")
 
             previous_area = this_area
             print("<details>")
