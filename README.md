@@ -105,6 +105,17 @@
 
 <details>
 <summary>
+<em>ECom</em>: <b>Economics & computation</b>
+</summary>
+<A NAME="EC">
+<P><B><A HREF="https://dblp.org/db/conf/ec/index.html">EC</A></B>
+ <em>mean acceptance rate, last 5 years: 25%</em></BR>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EC.png?raw=true" WIDTH="500">
+</A>
+</details>
+
+<details>
+<summary>
 <em>Graphics</em>: <b>Computer graphics</b>
 </summary>
 <A NAME="SIGGRAPH">

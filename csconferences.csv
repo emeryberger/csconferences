@@ -269,6 +269,19 @@ DB,VLDB,2016,1,187,527,,
 DB,VLDB,2017,1,104,559,,
 DB,VLDB,2018,1,213,1014,,
 DB,VLDB,2019,1,128,677,,
+ECom,EC,2010,1,45,136,https://dl.acm.org/doi/proceedings/10.1145/1807342,includes those treated as abstracts
+ECom,EC,2011,1,49,189,https://dl.acm.org/doi/proceedings/10.1145/1993574,includes those treated as abstracts
+ECom,EC,2012,1,73,219,https://dl.acm.org/doi/proceedings/10.1145/2229012,includes those treated as abstracts
+ECom,EC,2013,1,72,221,https://dl.acm.org/doi/proceedings/10.1145/2492002,includes those treated as abstracts
+ECom,EC,2014,1,80,290,https://dl.acm.org/doi/proceedings/10.1145/2600057,includes those treated as abstracts
+ECom,EC,2015,1,72,220,https://dl.acm.org/doi/proceedings/10.1145/2764468,includes those treated as abstracts
+ECom,EC,2016,1,80,242,https://dl.acm.org/doi/proceedings/10.1145/2940716,includes those treated as abstracts
+ECom,EC,2017,1,75,257,https://dl.acm.org/doi/proceedings/10.1145/3033274,includes those treated as abstracts
+ECom,EC,2018,1,70,269,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3219166,includes those treated as abstracts
+ECom,EC,2019,1,106,382,https://dl.acm.org/doi/proceedings/10.1145/3328526,
+ECom,EC,2020,1,99,491,https://dl.acm.org/doi/proceedings/10.1145/3391403,
+ECom,EC,2021,1,130,500,https://dl.acm.org/doi/proceedings/10.1145/3465456,
+ECom,EC,2022,1,150,549,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3490486,
 Graphics,SIGGRAPH,2010,1,103,390,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F1778765,
 Graphics,SIGGRAPH,2014,1,127,505,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F2601097,
 Graphics,SIGGRAPH,2015,1,118,462,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F2809654,
