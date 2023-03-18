@@ -149,9 +149,9 @@ def print_readme():
 
         dblp_url = f'https://dblp.org/db/conf/{conference_name.lower()}/index.html'
 
-        print(f'<A NAME="{conference_name}">')
+        print(f'<A NAME="{conference_name}"></A>')
         print(f'<P><B><A HREF="{dblp_url}">{conference_name}</A></B>')
-        print(f" <em>mean acceptance rate, last 5 years: {acceptance_rates.mean()*100:.0f}%</em><br>")
+        print(f" <em>mean acceptance rate, last 5 years: {acceptance_rates.mean()*100:.0f}%</em></P>")
         print(f'<IMG SRC="{URL}/blob/main/graphs/{conference_name}.png?raw=true" WIDTH="500">')
 
     print("</details>")
