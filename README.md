@@ -10,11 +10,12 @@
 <A NAME="AAAI">
 <P><B><A HREF="https://dblp.org/db/conf/aaai/index.html">AAAI</A></B>
  <em>mean acceptance rate, last 5 years: 19%</em><br>
-<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/AAAI.png?raw=true" WIDTH="500">
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/AAAI.png?raw=true" WIDTH="500"/>
 <A NAME="IJCAI">
 <P><B><A HREF="https://dblp.org/db/conf/ijcai/index.html">IJCAI</A></B>
  <em>mean acceptance rate, last 5 years: 16%</em><br>
-<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/IJCAI.png?raw=true" WIDTH="500">
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/IJCAI.png?raw=true" WIDTH="500"/>
+ </A>
 </details>
 <details>
 <summary>
