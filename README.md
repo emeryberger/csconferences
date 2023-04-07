@@ -311,7 +311,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/Oakland.png?raw=true" WIDTH="500">
 <A NAME="UsenixSec"></A>
 <P><B><A HREF="https://dblp.org/db/conf/usenixsec/index.html">UsenixSec</A></B>
- <em>mean acceptance rate, last 5 years: 22%</em></P>
+ <em>mean acceptance rate, last 5 years: 17%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/UsenixSec.png?raw=true" WIDTH="500">
 </details>
 <details>
