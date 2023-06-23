@@ -248,7 +248,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/OOPSLA.png?raw=true" WIDTH="500">
 <A NAME="PLDI"></A>
 <P><B><A HREF="https://dblp.org/db/conf/pldi/index.html">PLDI</A></B>
- <em>mean acceptance rate, last 5 years: 24%</em></P>
+ <em>mean acceptance rate, last 5 years: 25%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/PLDI.png?raw=true" WIDTH="500">
 <A NAME="POPL"></A>
 <P><B><A HREF="https://dblp.org/db/conf/popl/index.html">POPL</A></B>
