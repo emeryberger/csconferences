@@ -77,7 +77,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/PODS.png?raw=true" WIDTH="500">
 <A NAME="SIGMOD"></A>
 <P><B><A HREF="https://dblp.org/db/conf/sigmod/index.html">SIGMOD</A></B>
- <em>mean acceptance rate, last 5 years: 28%</em></P>
+ <em>mean acceptance rate, last 5 years: 29%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGMOD.png?raw=true" WIDTH="500">
 <A NAME="VLDB"></A>
 <P><B><A HREF="https://dblp.org/db/conf/vldb/index.html">VLDB</A></B>
@@ -387,6 +387,6 @@
 
 * All code and data for this site is at [https://github.com/emeryberger/csconferences](https://github.com/emeryberger/csconferences).
 * For any corrections or updates, please make a pull request to the above site.
-* To regenerate this page and all the graphs, run `make` .
+* To regenerate this page and all the graphs, run `python3 build.py --all > README.md` .
 * This site was developed by and is maintained by [Emery Berger](https://github.com/emeryberger).
     
