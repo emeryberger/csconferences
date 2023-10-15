@@ -387,6 +387,6 @@
 
 * All code and data for this site is at [https://github.com/emeryberger/csconferences](https://github.com/emeryberger/csconferences).
 * For any corrections or updates, please make a pull request to the above site.
-* To regenerate this page and all the graphs, run `python3 build.py --all > README.md` .
+* To regenerate this page and all the graphs, run `make` (you may first need to install some Python packages, via `python3 -m pip install -r requirements.txt`).
 * This site was developed by and is maintained by [Emery Berger](https://github.com/emeryberger).
     
