@@ -162,11 +162,11 @@ def print_readme():
 
 * Front matter in conference proceedings (primary source)
 * [HotCRP.com](https://hotcrp.com)
-* https://www.openresearch.org/wiki/
-* https://people.engr.tamu.edu/guofei/sec_conf_stat.htm
-* https://github.com/lixin4ever/Conference-Acceptance-Rate
-* https://taniai.space/cvconf/
-* https://unit.aist.go.jp/hcmrc/mr-rt/acceptance-rate.html
+* [https://www.openresearch.org/wiki/](https://www.openresearch.org/wiki/)
+* [https://people.engr.tamu.edu/guofei/sec_conf_stat.htm](https://people.engr.tamu.edu/guofei/sec_conf_stat.htm)
+* [https://github.com/lixin4ever/Conference-Acceptance-Rate](https://github.com/lixin4ever/Conference-Acceptance-Rate)
+* [https://taniai.space/cvconf/](https://taniai.space/cvconf/)
+* [https://unit.aist.go.jp/hcmrc/mr-rt/acceptance-rate.html](https://unit.aist.go.jp/hcmrc/mr-rt/acceptance-rate.html)
 * Personal communications
 
 ## Notes on statistics
