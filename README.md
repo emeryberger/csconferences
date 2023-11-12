@@ -142,7 +142,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICML.png?raw=true" WIDTH="500">
 <A NAME="NeurIPS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/neurips/index.html">NeurIPS</A></B>
- <em>mean acceptance rate, last 5 years: 22%</em></P>
+ <em>mean acceptance rate, last 5 years: 23%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/NeurIPS.png?raw=true" WIDTH="500">
 </details>
 <details>
@@ -236,15 +236,15 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ECOOP.png?raw=true" WIDTH="500">
 <A NAME="ICFP"></A>
 <P><B><A HREF="https://dblp.org/db/conf/icfp/index.html">ICFP</A></B>
- <em>mean acceptance rate, last 5 years: 34%</em></P>
+ <em>mean acceptance rate, last 5 years: 35%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICFP.png?raw=true" WIDTH="500">
 <A NAME="ISMM"></A>
 <P><B><A HREF="https://dblp.org/db/conf/ismm/index.html">ISMM</A></B>
- <em>mean acceptance rate, last 5 years: 52%</em></P>
+ <em>mean acceptance rate, last 5 years: 54%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ISMM.png?raw=true" WIDTH="500">
 <A NAME="OOPSLA"></A>
 <P><B><A HREF="https://dblp.org/db/conf/oopsla/index.html">OOPSLA</A></B>
- <em>mean acceptance rate, last 5 years: 34%</em></P>
+ <em>mean acceptance rate, last 5 years: 35%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/OOPSLA.png?raw=true" WIDTH="500">
 <A NAME="PLDI"></A>
 <P><B><A HREF="https://dblp.org/db/conf/pldi/index.html">PLDI</A></B>
@@ -252,7 +252,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/PLDI.png?raw=true" WIDTH="500">
 <A NAME="POPL"></A>
 <P><B><A HREF="https://dblp.org/db/conf/popl/index.html">POPL</A></B>
- <em>mean acceptance rate, last 5 years: 25%</em></P>
+ <em>mean acceptance rate, last 5 years: 26%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/POPL.png?raw=true" WIDTH="500">
 <A NAME="PPoPP"></A>
 <P><B><A HREF="https://dblp.org/db/conf/ppopp/index.html">PPoPP</A></B>
@@ -387,6 +387,6 @@
 
 * All code and data for this site is at [https://github.com/emeryberger/csconferences](https://github.com/emeryberger/csconferences).
 * For any corrections or updates, please make a pull request to the above site.
-* To regenerate this page and all the graphs, run `make` (you may first need to install some Python packages, via `python3 -m pip install -r requirements.txt`).
+* To regenerate this page and all the graphs, run `make` (you may first need to install some Python packages, via python3 -m pip install -r requirements.txt).
 * This site was developed by and is maintained by [Emery Berger](https://github.com/emeryberger).
     
