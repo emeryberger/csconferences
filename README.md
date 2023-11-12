@@ -345,7 +345,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ECCV.png?raw=true" WIDTH="500">
 <A NAME="ICCV"></A>
 <P><B><A HREF="https://dblp.org/db/conf/iccv/index.html">ICCV</A></B>
- <em>mean acceptance rate, last 5 years: 28%</em></P>
+ <em>mean acceptance rate, last 5 years: 27%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICCV.png?raw=true" WIDTH="500">
 </details>
 <details>
@@ -362,7 +362,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/WSDM.png?raw=true" WIDTH="500">
 <A NAME="WWW"></A>
 <P><B><A HREF="https://dblp.org/db/conf/www/index.html">WWW</A></B>
- <em>mean acceptance rate, last 5 years: 18%</em></P>
+ <em>mean acceptance rate, last 5 years: 19%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/WWW.png?raw=true" WIDTH="500">
 </details>
 
