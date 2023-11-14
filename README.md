@@ -232,7 +232,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CGO.png?raw=true" WIDTH="500">
 <A NAME="ECOOP"></A>
 <P><B><A HREF="https://dblp.org/db/conf/ecoop/index.html">ECOOP</A></B>
- <em>mean acceptance rate, last 5 years: 41%</em></P>
+ <em>mean acceptance rate, last 5 years: 42%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ECOOP.png?raw=true" WIDTH="500">
 <A NAME="ICFP"></A>
 <P><B><A HREF="https://dblp.org/db/conf/icfp/index.html">ICFP</A></B>
