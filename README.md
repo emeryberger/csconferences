@@ -203,7 +203,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EuroSys.png?raw=true" WIDTH="500">
 <A NAME="FAST"></A>
 <P><B><A HREF="https://dblp.org/db/conf/fast/index.html">FAST</A></B>
- <em>mean acceptance rate, last 5 years: 19%</em></P>
+ <em>mean acceptance rate, last 5 years: 20%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/FAST.png?raw=true" WIDTH="500">
 <A NAME="OSDI"></A>
 <P><B><A HREF="https://dblp.org/db/conf/osdi/index.html">OSDI</A></B>
