@@ -232,7 +232,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CGO.png?raw=true" WIDTH="500">
 <A NAME="ECOOP"></A>
 <P><B><A HREF="https://dblp.org/db/conf/ecoop/index.html">ECOOP</A></B>
- <em>mean acceptance rate, last 5 years: 42%</em></P>
+ <em>mean acceptance rate, last 5 years: 43%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ECOOP.png?raw=true" WIDTH="500">
 <A NAME="ICFP"></A>
 <P><B><A HREF="https://dblp.org/db/conf/icfp/index.html">ICFP</A></B>
@@ -387,6 +387,6 @@
 
 * All code and data for this site is at [https://github.com/emeryberger/csconferences](https://github.com/emeryberger/csconferences).
 * For any corrections or updates, please make a pull request to the above site.
-* To regenerate this page and all the graphs, run `make` (you may first need to install some Python packages, via python3 -m pip install -r requirements.txt).
+* To regenerate this page and all the graphs, run `make` (you may first need to install some Python packages, via `python3 -m pip install -r requirements.txt`).
 * This site was developed by and is maintained by [Emery Berger](https://github.com/emeryberger).
     

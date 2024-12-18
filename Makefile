@@ -1,3 +1,5 @@
+PYTHON = python3
+
 all:
-	python3 build.py --sort
-	python3 build.py --all > README.md
+	$(PYTHON) build.py --sort
+	$(PYTHON) build.py --all > README.md
