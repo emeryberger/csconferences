@@ -286,7 +286,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/FSE.png?raw=true" WIDTH="500">
 <A NAME="ICSE"></A>
 <P><B><A HREF="https://dblp.org/db/conf/icse/index.html">ICSE</A></B>
- <em>mean acceptance rate, last 5 years: 23%</em></P>
+ <em>mean acceptance rate, last 5 years: 24%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICSE.png?raw=true" WIDTH="500">
 <A NAME="ISSTA"></A>
 <P><B><A HREF="https://dblp.org/db/conf/issta/index.html">ISSTA</A></B>
