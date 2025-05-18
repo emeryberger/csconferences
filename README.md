@@ -9,11 +9,11 @@
 </summary>
 <A NAME="AAAI"></A>
 <P><B><A HREF="https://dblp.org/db/conf/aaai/index.html">AAAI</A></B>
- <em>mean acceptance rate, last 5 years: 19%</em></P>
+ <em>mean acceptance rate, last 5 years: 21%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/AAAI.png?raw=true" WIDTH="500">
 <A NAME="IJCAI"></A>
 <P><B><A HREF="https://dblp.org/db/conf/ijcai/index.html">IJCAI</A></B>
- <em>mean acceptance rate, last 5 years: 16%</em></P>
+ <em>mean acceptance rate, last 5 years: 15%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/IJCAI.png?raw=true" WIDTH="500">
 </details>
 <details>
@@ -134,15 +134,15 @@
 </summary>
 <A NAME="ICLR"></A>
 <P><B><A HREF="https://dblp.org/db/conf/iclr/index.html">ICLR</A></B>
- <em>mean acceptance rate, last 5 years: 30%</em></P>
+ <em>mean acceptance rate, last 5 years: 31%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICLR.png?raw=true" WIDTH="500">
 <A NAME="ICML"></A>
 <P><B><A HREF="https://dblp.org/db/conf/icml/index.html">ICML</A></B>
- <em>mean acceptance rate, last 5 years: 23%</em></P>
+ <em>mean acceptance rate, last 5 years: 24%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICML.png?raw=true" WIDTH="500">
 <A NAME="NeurIPS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/neurips/index.html">NeurIPS</A></B>
- <em>mean acceptance rate, last 5 years: 24%</em></P>
+ <em>mean acceptance rate, last 5 years: 25%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/NeurIPS.png?raw=true" WIDTH="500">
 </details>
 <details>
