@@ -199,7 +199,7 @@
 </summary>
 <A NAME="EuroSys"></A>
 <P><B><A HREF="https://dblp.org/db/conf/eurosys/index.html">EuroSys</A></B>
- <em>mean acceptance rate, last 5 years: 21%</em></P>
+ <em>mean acceptance rate, last 5 years: 19%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EuroSys.png?raw=true" WIDTH="500">
 <A NAME="FAST"></A>
 <P><B><A HREF="https://dblp.org/db/conf/fast/index.html">FAST</A></B>
