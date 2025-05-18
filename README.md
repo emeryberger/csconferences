@@ -22,7 +22,7 @@
 </summary>
 <A NAME="ASPLOS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/asplos/index.html">ASPLOS</A></B>
- <em>mean acceptance rate, last 5 years: 21%</em></P>
+ <em>mean acceptance rate, last 5 years: 20%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ASPLOS.png?raw=true" WIDTH="500">
 <A NAME="HPCA"></A>
 <P><B><A HREF="https://dblp.org/db/conf/hpca/index.html">HPCA</A></B>
