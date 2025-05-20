@@ -278,7 +278,7 @@
 </summary>
 <A NAME="ASE"></A>
 <P><B><A HREF="https://dblp.org/db/conf/ase/index.html">ASE</A></B>
- <em>mean acceptance rate, last 5 years: 21%</em></P>
+ <em>mean acceptance rate, last 5 years: 22%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ASE.png?raw=true" WIDTH="500">
 <A NAME="FSE"></A>
 <P><B><A HREF="https://dblp.org/db/conf/fse/index.html">FSE</A></B>
