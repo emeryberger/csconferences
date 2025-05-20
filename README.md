@@ -299,7 +299,7 @@
 </summary>
 <A NAME="CCS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/ccs/index.html">CCS</A></B>
- <em>mean acceptance rate, last 5 years: 18%</em></P>
+ <em>mean acceptance rate, last 5 years: 19%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CCS.png?raw=true" WIDTH="500">
 <A NAME="NDSS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/ndss/index.html">NDSS</A></B>
