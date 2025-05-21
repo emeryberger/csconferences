@@ -34,6 +34,7 @@ areas_dict = {
 
 
 dblp_dir_overrides = {
+    'ASE': 'kbse',
     'FSE': 'sigsoft',
     'EC': 'sigecom',
     'Oakland': 'sp',
