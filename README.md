@@ -56,7 +56,7 @@
 </summary>
 <A NAME="CRYPTO"></A>
 <P><B><A HREF="https://dblp.org/db/conf/crypto/index.html">CRYPTO</A></B>
- <em>mean acceptance rate, last 5 years: 23%</em></P>
+ <em>mean acceptance rate, last 5 years: 24%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CRYPTO.png?raw=true" WIDTH="500">
 <A NAME="EuroCrypt"></A>
 <P><B><A HREF="https://dblp.org/db/conf/eurocrypt/index.html">EuroCrypt</A></B>
