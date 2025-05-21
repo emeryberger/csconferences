@@ -303,15 +303,15 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CCS.png?raw=true" WIDTH="500">
 <A NAME="NDSS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/ndss/index.html">NDSS</A></B>
- <em>mean acceptance rate, last 5 years: 17%</em></P>
+ <em>mean acceptance rate, last 5 years: 18%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/NDSS.png?raw=true" WIDTH="500">
 <A NAME="Oakland"></A>
 <P><B><A HREF="https://dblp.org/db/conf/oakland/index.html">Oakland</A></B>
- <em>mean acceptance rate, last 5 years: 13%</em></P>
+ <em>mean acceptance rate, last 5 years: 15%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/Oakland.png?raw=true" WIDTH="500">
 <A NAME="UsenixSec"></A>
 <P><B><A HREF="https://dblp.org/db/conf/usenixsec/index.html">UsenixSec</A></B>
- <em>mean acceptance rate, last 5 years: 17%</em></P>
+ <em>mean acceptance rate, last 5 years: 20%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/UsenixSec.png?raw=true" WIDTH="500">
 </details>
 <details>
