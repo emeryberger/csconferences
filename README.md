@@ -89,7 +89,7 @@
 <em>ECom</em>: <b>Economics & computation</b>
 </summary>
 <A NAME="EC"></A>
-<P><B><A HREF="https://dblp.org/db/conf/ec/index.html">EC</A></B>
+<P><B><A HREF="https://dblp.org/db/conf/sigecom/index.html">EC</A></B>
  <em>mean acceptance rate, last 5 years: 25%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EC.png?raw=true" WIDTH="500">
 </details>
@@ -281,7 +281,7 @@
  <em>mean acceptance rate, last 5 years: 22%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ASE.png?raw=true" WIDTH="500">
 <A NAME="FSE"></A>
-<P><B><A HREF="https://dblp.org/db/conf/fse/index.html">FSE</A></B>
+<P><B><A HREF="https://dblp.org/db/conf/sigsoft/index.html">FSE</A></B>
  <em>mean acceptance rate, last 5 years: 25%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/FSE.png?raw=true" WIDTH="500">
 <A NAME="ICSE"></A>
@@ -306,11 +306,11 @@
  <em>mean acceptance rate, last 5 years: 17%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/NDSS.png?raw=true" WIDTH="500">
 <A NAME="Oakland"></A>
-<P><B><A HREF="https://dblp.org/db/conf/oakland/index.html">Oakland</A></B>
+<P><B><A HREF="https://dblp.org/db/conf/sp/index.html">Oakland</A></B>
  <em>mean acceptance rate, last 5 years: 15%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/Oakland.png?raw=true" WIDTH="500">
 <A NAME="UsenixSec"></A>
-<P><B><A HREF="https://dblp.org/db/conf/usenixsec/index.html">UsenixSec</A></B>
+<P><B><A HREF="https://dblp.org/db/conf/uss/index.html">UsenixSec</A></B>
  <em>mean acceptance rate, last 5 years: 20%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/UsenixSec.png?raw=true" WIDTH="500">
 </details>
