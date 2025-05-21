@@ -236,8 +236,8 @@ async def generate_plot(conference_name):
     plt.title(f"{conference_name} Publications by Year", fontsize=16)
 
     # Save the plot
-    plt.savefig(f"graphs/{conference_name}.pdf", bbox_inches="tight")
-    plt.savefig(f"graphs/{conference_name}.png", bbox_inches="tight")
+    plt.savefig(f"graphs/{conference_name}.pdf", bbox_inches="tight", metadata=None)
+    plt.savefig(f"graphs/{conference_name}.png", bbox_inches="tight", metadata=None)
 
     plt.close()
 

@@ -26,11 +26,11 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ASPLOS.png?raw=true" WIDTH="500">
 <A NAME="HPCA"></A>
 <P><B><A HREF="https://dblp.org/db/conf/hpca/index.html">HPCA</A></B>
- <em>mean acceptance rate, last 5 years: 25%</em></P>
+ <em>mean acceptance rate, last 5 years: 24%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/HPCA.png?raw=true" WIDTH="500">
 <A NAME="ISCA"></A>
 <P><B><A HREF="https://dblp.org/db/conf/isca/index.html">ISCA</A></B>
- <em>mean acceptance rate, last 5 years: 18%</em></P>
+ <em>mean acceptance rate, last 5 years: 19%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ISCA.png?raw=true" WIDTH="500">
 <A NAME="MICRO"></A>
 <P><B><A HREF="https://dblp.org/db/conf/micro/index.html">MICRO</A></B>
