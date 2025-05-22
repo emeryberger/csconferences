@@ -215,7 +215,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SOSP.png?raw=true" WIDTH="500">
 <A NAME="USENIX-ATC"></A>
 <P><B><A HREF="https://dblp.org/db/conf/usenix-atc/index.html">USENIX-ATC</A></B>
- <em>mean acceptance rate, last 5 years: 18%</em></P>
+ <em>mean acceptance rate, last 5 years: 17%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/USENIX-ATC.png?raw=true" WIDTH="500">
 </details>
 <details>
