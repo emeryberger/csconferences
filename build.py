@@ -32,6 +32,23 @@ areas_dict = {
     'ECom': 'Economics & computation'
 }
 
+
+dblp_dir_overrides = {
+    'ASE': 'kbse',
+    'FSE': 'sigsoft',
+    'EC': 'sigecom',
+    'Oakland': 'sp',
+    'UsenixSec': 'uss',
+}
+
+def dblp_dir(conference: str) -> str:
+    """
+    Return the correct directory segment for a DBLP conference URL.
+
+    Falls back on lower-cased conference name when no override is present.
+    """
+    return dblp_dir_overrides.get(conference, conference.lower())
+
 def sort_areas(areas):
     return sorted(areas, key=lambda x: areas_dict[x]) # list(areas_dict.keys()).index(x) if x in areas_dict else float('inf'))
 
@@ -147,7 +164,7 @@ def print_readme():
 
         # print(f"![{conference_name}]({URL}/blob/main/graphs/{conference_name}.png)")
 
-        dblp_url = f'https://dblp.org/db/conf/{conference_name.lower()}/index.html'
+        dblp_url = f"https://dblp.org/db/conf/{dblp_dir(conference_name)}/index.html"
 
         print(f'<A NAME="{conference_name}"></A>')
         print(f'<P><B><A HREF="{dblp_url}">{conference_name}</A></B>')
@@ -219,8 +236,10 @@ async def generate_plot(conference_name):
     plt.title(f"{conference_name} Publications by Year", fontsize=16)
 
     # Save the plot
-    plt.savefig(f"graphs/{conference_name}.pdf", bbox_inches="tight")
-    plt.savefig(f"graphs/{conference_name}.png", bbox_inches="tight")
+    mtadata = { 'CreationDate': None,
+                'ModDate': None }
+    plt.savefig(f"graphs/{conference_name}.pdf", bbox_inches="tight", metadata=mtadata)
+    plt.savefig(f"graphs/{conference_name}.png", bbox_inches="tight", metadata=mtadata)
 
     plt.close()
 
