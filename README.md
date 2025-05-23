@@ -43,7 +43,7 @@
 </summary>
 <A NAME="RTAS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/rtas/index.html">RTAS</A></B>
- <em>mean acceptance rate, last 5 years: 28%</em></P>
+ <em>mean acceptance rate, last 5 years: 26%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/RTAS.png?raw=true" WIDTH="500">
 <A NAME="RTSS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/rtss/index.html">RTSS</A></B>
