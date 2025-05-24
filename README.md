@@ -108,11 +108,11 @@
 </summary>
 <A NAME="CHI"></A>
 <P><B><A HREF="https://dblp.org/db/conf/chi/index.html">CHI</A></B>
- <em>mean acceptance rate, last 5 years: 25%</em></P>
+ <em>mean acceptance rate, last 5 years: 26%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CHI.png?raw=true" WIDTH="500">
 <A NAME="UIST"></A>
 <P><B><A HREF="https://dblp.org/db/conf/uist/index.html">UIST</A></B>
- <em>mean acceptance rate, last 5 years: 24%</em></P>
+ <em>mean acceptance rate, last 5 years: 25%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/UIST.png?raw=true" WIDTH="500">
 </details>
 <details>
