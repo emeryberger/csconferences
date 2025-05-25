@@ -69,7 +69,7 @@
 </summary>
 <A NAME="ICDE"></A>
 <P><B><A HREF="https://dblp.org/db/conf/icde/index.html">ICDE</A></B>
- <em>mean acceptance rate, last 5 years: 24%</em></P>
+ <em>mean acceptance rate, last 5 years: 26%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICDE.png?raw=true" WIDTH="500">
 <A NAME="PODS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/pods/index.html">PODS</A></B>
