@@ -237,7 +237,9 @@ async def generate_plot(conference_name):
 
     # Save the plot
     mtadata = { 'CreationDate': None,
-                'ModDate': None }
+                'ModDate': None,
+                'Creator' : None,
+                'Producer': None }
     plt.savefig(f"graphs/{conference_name}.pdf", bbox_inches="tight", metadata=mtadata)
     plt.savefig(f"graphs/{conference_name}.png", bbox_inches="tight", metadata=mtadata)
 
