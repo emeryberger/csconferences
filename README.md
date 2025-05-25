@@ -73,7 +73,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICDE.png?raw=true" WIDTH="500">
 <A NAME="PODS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/pods/index.html">PODS</A></B>
- <em>mean acceptance rate, last 5 years: 36%</em></P>
+ <em>mean acceptance rate, last 5 years: 35%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/PODS.png?raw=true" WIDTH="500">
 <A NAME="SIGMOD"></A>
 <P><B><A HREF="https://dblp.org/db/conf/sigmod/index.html">SIGMOD</A></B>
