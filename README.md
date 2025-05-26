@@ -69,7 +69,7 @@
 </summary>
 <A NAME="ICDE"></A>
 <P><B><A HREF="https://dblp.org/db/conf/icde/index.html">ICDE</A></B>
- <em>mean acceptance rate, last 5 years: 26%</em></P>
+ <em>mean acceptance rate, last 5 years: 27%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICDE.png?raw=true" WIDTH="500">
 <A NAME="PODS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/pods/index.html">PODS</A></B>
@@ -121,11 +121,11 @@
 </summary>
 <A NAME="CAV"></A>
 <P><B><A HREF="https://dblp.org/db/conf/cav/index.html">CAV</A></B>
- <em>mean acceptance rate, last 5 years: 20%</em></P>
+ <em>mean acceptance rate, last 5 years: 19%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CAV.png?raw=true" WIDTH="500">
 <A NAME="LICS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/lics/index.html">LICS</A></B>
- <em>mean acceptance rate, last 5 years: 39%</em></P>
+ <em>mean acceptance rate, last 5 years: 36%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/LICS.png?raw=true" WIDTH="500">
 </details>
 <details>
