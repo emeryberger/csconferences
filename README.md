@@ -151,7 +151,7 @@
 </summary>
 <A NAME="IMC"></A>
 <P><B><A HREF="https://dblp.org/db/conf/imc/index.html">IMC</A></B>
- <em>mean acceptance rate, last 5 years: 31%</em></P>
+ <em>mean acceptance rate, last 5 years: 28%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/IMC.png?raw=true" WIDTH="500">
 <A NAME="SIGMETRICS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/sigmetrics/index.html">SIGMETRICS</A></B>
