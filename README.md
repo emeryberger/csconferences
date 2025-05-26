@@ -173,11 +173,11 @@
 </summary>
 <A NAME="ACL"></A>
 <P><B><A HREF="https://dblp.org/db/conf/acl/index.html">ACL</A></B>
- <em>mean acceptance rate, last 5 years: 26%</em></P>
+ <em>mean acceptance rate, last 5 years: 22%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ACL.png?raw=true" WIDTH="500">
 <A NAME="EMNLP"></A>
 <P><B><A HREF="https://dblp.org/db/conf/emnlp/index.html">EMNLP</A></B>
- <em>mean acceptance rate, last 5 years: 25%</em></P>
+ <em>mean acceptance rate, last 5 years: 23%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EMNLP.png?raw=true" WIDTH="500">
 </details>
 <details>
