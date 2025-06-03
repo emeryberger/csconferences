@@ -164,7 +164,7 @@
 </summary>
 <A NAME="MobiCom"></A>
 <P><B><A HREF="https://dblp.org/db/conf/mobicom/index.html">MobiCom</A></B>
- <em>mean acceptance rate, last 5 years: 18%</em></P>
+ <em>mean acceptance rate, last 5 years: 21%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/MobiCom.png?raw=true" WIDTH="500">
 </details>
 <details>
