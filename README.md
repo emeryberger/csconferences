@@ -92,6 +92,10 @@
 <P><B><A HREF="https://dblp.org/db/conf/sigecom/index.html">EC</A></B>
  <em>mean acceptance rate, last 5 years: 25%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EC.png?raw=true" WIDTH="500">
+<A NAME="WINE"></A>
+<P><B><A HREF="https://dblp.org/db/conf/wine/index.html">WINE</A></B>
+ <em>mean acceptance rate, last 5 years: 21%</em></P>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/WINE.png?raw=true" WIDTH="500">
 </details>
 <details>
 <summary>
