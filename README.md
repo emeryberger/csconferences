@@ -211,7 +211,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/FAST.png?raw=true" WIDTH="500">
 <A NAME="OSDI"></A>
 <P><B><A HREF="https://dblp.org/db/conf/osdi/index.html">OSDI</A></B>
- <em>mean acceptance rate, last 5 years: 19%</em></P>
+ <em>mean acceptance rate, last 5 years: 18%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/OSDI.png?raw=true" WIDTH="500">
 <A NAME="SOSP"></A>
 <P><B><A HREF="https://dblp.org/db/conf/sosp/index.html">SOSP</A></B>
