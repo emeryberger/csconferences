@@ -170,6 +170,14 @@
 <P><B><A HREF="https://dblp.org/db/conf/mobicom/index.html">MobiCom</A></B>
  <em>mean acceptance rate, last 5 years: 20%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/MobiCom.png?raw=true" WIDTH="500">
+<A NAME="MobiSys"></A>
+<P><B><A HREF="https://dblp.org/db/conf/mobisys/index.html">MobiSys</A></B>
+ <em>mean acceptance rate, last 5 years: 20%</em></P>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/MobiSys.png?raw=true" WIDTH="500">
+<A NAME="SenSys"></A>
+<P><B><A HREF="https://dblp.org/db/conf/sensys/index.html">SenSys</A></B>
+ <em>mean acceptance rate, last 5 years: 20%</em></P>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SenSys.png?raw=true" WIDTH="500">
 </details>
 <details>
 <summary>
@@ -282,7 +290,7 @@
 </summary>
 <A NAME="ASE"></A>
 <P><B><A HREF="https://dblp.org/db/conf/kbse/index.html">ASE</A></B>
- <em>mean acceptance rate, last 5 years: 22%</em></P>
+ <em>mean acceptance rate, last 5 years: 24%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ASE.png?raw=true" WIDTH="500">
 <A NAME="FSE"></A>
 <P><B><A HREF="https://dblp.org/db/conf/sigsoft/index.html">FSE</A></B>
