@@ -16,11 +16,11 @@ The following sources were used to update conference acceptance statistics:
 
 #### Robotics Conferences
 - **AIST Robotics Acceptance Rate History**: https://staff.aist.go.jp/k.koide/acceptance-rate.html
-  - ICRA and IROS 2023-2024 data
+  - ICRA and IROS 2020-2025 data
 
 #### Graphics Conferences
 - **Paper Copilot SIGGRAPH Statistics**: https://papercopilot.com/statistics/siggraph-statistics/
-  - SIGGRAPH 2023-2024 (journal + dual track combined)
+  - SIGGRAPH 2011-2025 (journal + dual track combined)
 
 #### Security Conferences
 - **Computer Security Conference Acceptance Rate GitHub**: https://github.com/puzhuoliu/Computer-Security-Conference-Acceptance-Rate
@@ -63,6 +63,22 @@ The following sources were used to update conference acceptance statistics:
 | WINE | 2024 | 34 | 248 | Springer LNCS 15534 |
 | EC | 2023 | 163 | - | DBLP |
 | EC | 2024 | 205 | - | DBLP |
+| EC | 2025 | 207 | - | DBLP API |
+| ICRA | 2020 | 1277 | 2902 | AIST |
+| ICRA | 2025 | 1606 | 4153 | AIST |
+| IROS | 2025 | 1991 | 4306 | AIST |
+| SIGGRAPH | 2011 | 82 | 432 | Paper Copilot |
+| SIGGRAPH | 2012 | 94 | 449 | Paper Copilot |
+| SIGGRAPH | 2013 | 115 | 480 | Paper Copilot |
+| SIGGRAPH | 2025 | 306 | 710 | Paper Copilot |
+| SIGCOMM | 2025 | 89 | - | DBLP API |
+| ICSE | 2012 | 87 | 408 | ACM DL |
+| ICSE | 2025 | 245 | 1150 | Front matter |
+| ISCA | 2014 | 47 | 226 | IEEE DL |
+| ISCA | 2025 | 136 | - | DBLP API |
+| MICRO | 2017 | 62 | - | DBLP API |
+| WSDM | 2022 | 80 | 505 | ACM DL |
+| WSDM | 2024 | 125 | 661 | ACM DL |
 
 ### Notable Trends and Surprising Increases
 
@@ -125,6 +141,21 @@ From various sources (primarily ACM DL front matter), EC acceptance patterns sho
 - EC 2024: 205 accepted, submissions unknown
 
 EC 2023 and EC 2024 submission counts require direct access to front matter or organizer confirmation.
+
+### Conferences Still Missing 2025 Data
+
+The following conferences are still missing 2025 data (as of December 2025):
+- **NLP**: ACL, EMNLP
+- **Theory**: CAV, CRYPTO, FOCS, LICS
+- **Vision**: ECCV (biennial - 2024 is latest), ICCV (biennial - 2025 expected)
+- **PL**: ECOOP, ICFP, PLDI, PODS
+- **DB**: ICDE, SIGMOD, VLDB
+- **Mobile/Net**: IMC, MobiCom, MobiSys
+- **SE**: ISSTA, ISMM
+- **Arch**: MICRO (2025 not yet held)
+- **Real-time**: RTAS, RTSS
+- **IR**: SIGIR, SIGMETRICS
+- **Econ**: WINE
 
 ### Pre-approved Sites for Web Fetching
 

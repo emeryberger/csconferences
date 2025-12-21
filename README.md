@@ -90,7 +90,7 @@
 </summary>
 <A NAME="EC"></A>
 <P><B><A HREF="https://dblp.org/db/conf/sigecom/index.html">EC</A></B>
- <em>mean acceptance rate, last 5 years: inf%</em></P>
+ <em>mean acceptance rate, last 5 years: 25%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EC.png?raw=true" WIDTH="500">
 <A NAME="WINE"></A>
 <P><B><A HREF="https://dblp.org/db/conf/wine/index.html">WINE</A></B>
@@ -103,7 +103,7 @@
 </summary>
 <A NAME="SIGGRAPH"></A>
 <P><B><A HREF="https://dblp.org/db/conf/siggraph/index.html">SIGGRAPH</A></B>
- <em>mean acceptance rate, last 5 years: 30%</em></P>
+ <em>mean acceptance rate, last 5 years: 33%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGGRAPH.png?raw=true" WIDTH="500">
 </details>
 <details>
@@ -277,7 +277,7 @@
 </summary>
 <A NAME="ICRA"></A>
 <P><B><A HREF="https://dblp.org/db/conf/icra/index.html">ICRA</A></B>
- <em>mean acceptance rate, last 5 years: 44%</em></P>
+ <em>mean acceptance rate, last 5 years: 43%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICRA.png?raw=true" WIDTH="500">
 <A NAME="IROS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/iros/index.html">IROS</A></B>
@@ -370,7 +370,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGIR.png?raw=true" WIDTH="500">
 <A NAME="WSDM"></A>
 <P><B><A HREF="https://dblp.org/db/conf/wsdm/index.html">WSDM</A></B>
- <em>mean acceptance rate, last 5 years: 17%</em></P>
+ <em>mean acceptance rate, last 5 years: 18%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/WSDM.png?raw=true" WIDTH="500">
 <A NAME="WWW"></A>
 <P><B><A HREF="https://dblp.org/db/conf/www/index.html">WWW</A></B>
