@@ -290,7 +290,11 @@
 </summary>
 <A NAME="ASE"></A>
 <P><B><A HREF="https://dblp.org/db/conf/kbse/index.html">ASE</A></B>
+<<<<<<< HEAD
  <em>mean acceptance rate, last 5 years: 23%</em></P>
+=======
+ <em>mean acceptance rate, last 5 years: 24%</em></P>
+>>>>>>> 8f9de8beb8a28adbf735e436926e22198b69f1e6
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ASE.png?raw=true" WIDTH="500">
 <A NAME="FSE"></A>
 <P><B><A HREF="https://dblp.org/db/conf/sigsoft/index.html">FSE</A></B>
