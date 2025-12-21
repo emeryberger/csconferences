@@ -277,7 +277,7 @@
 </summary>
 <A NAME="ICRA"></A>
 <P><B><A HREF="https://dblp.org/db/conf/icra/index.html">ICRA</A></B>
- <em>mean acceptance rate, last 5 years: 43%</em></P>
+ <em>mean acceptance rate, last 5 years: 44%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICRA.png?raw=true" WIDTH="500">
 <A NAME="IROS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/iros/index.html">IROS</A></B>
