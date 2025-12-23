@@ -76,7 +76,7 @@ The following sources were used to update conference acceptance statistics:
 | ICSE | 2025 | 245 | 1150 | Front matter |
 | ISCA | 2014 | 47 | 226 | IEEE DL |
 | ISCA | 2025 | 136 | - | DBLP API |
-| MICRO | 2017 | 62 | - | DBLP API |
+| MICRO | 2017 | 61 | 327 | Proceedings front matter |
 | WSDM | 2022 | 80 | 505 | ACM DL |
 | WSDM | 2024 | 125 | 661 | ACM DL |
 
