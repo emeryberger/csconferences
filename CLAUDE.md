@@ -67,6 +67,10 @@ Verified already long-only (no change): ACL 2013-2018, 2021, 2023; all EMNLP yea
 
 Bottom line: permitted to use, but deprioritize in favor of the underlying primary sources.
 
+### Follow-up: ICML 2026 added
+
+ICML 2026 (held July 6-11, 2026, Seoul; in progress at time of update): **6352 accepted / 23918 submitted (26.6%)**. The 23,918 is a reviewed/considered count (submissions entering review after desk-rejections/withdrawals), consistent with the enforced convention. Source: NTT opening-day report (https://group.ntt/en/topics/2026/07/06/icml2026.html), corroborated by UCL Engineering; numbers trace to the opening-day OpenReview decision release — no official ICML fact-sheet PDF published yet. Paper Copilot still showed only fake placeholder data (418/1). **NeurIPS 2026 not added** — decisions are not released until ~September 2026.
+
 ## Update: December 2025
 
 ### Sources Used
