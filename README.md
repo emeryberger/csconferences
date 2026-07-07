@@ -198,7 +198,7 @@
 </summary>
 <A NAME="NSDI"></A>
 <P><B><A HREF="https://dblp.org/db/conf/nsdi/index.html">NSDI</A></B>
- <em>mean acceptance rate, last 5 years: 17%</em></P>
+ <em>mean acceptance rate, last 5 years: 18%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/NSDI.png?raw=true" WIDTH="500">
 <A NAME="SIGCOMM"></A>
 <P><B><A HREF="https://dblp.org/db/conf/sigcomm/index.html">SIGCOMM</A></B>
@@ -209,13 +209,17 @@
 <summary>
 <em>OS</em>: <b>Operating systems</b>
 </summary>
+<A NAME="ATC"></A>
+<P><B><A HREF="https://dblp.org/db/conf/usenix-atc/index.html">ATC</A></B>
+ <em>mean acceptance rate, last 5 years: 17%</em></P>
+<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ATC.png?raw=true" WIDTH="500">
 <A NAME="EuroSys"></A>
 <P><B><A HREF="https://dblp.org/db/conf/eurosys/index.html">EuroSys</A></B>
- <em>mean acceptance rate, last 5 years: 19%</em></P>
+ <em>mean acceptance rate, last 5 years: 18%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EuroSys.png?raw=true" WIDTH="500">
 <A NAME="FAST"></A>
 <P><B><A HREF="https://dblp.org/db/conf/fast/index.html">FAST</A></B>
- <em>mean acceptance rate, last 5 years: 21%</em></P>
+ <em>mean acceptance rate, last 5 years: 20%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/FAST.png?raw=true" WIDTH="500">
 <A NAME="OSDI"></A>
 <P><B><A HREF="https://dblp.org/db/conf/osdi/index.html">OSDI</A></B>
@@ -225,10 +229,6 @@
 <P><B><A HREF="https://dblp.org/db/conf/sosp/index.html">SOSP</A></B>
  <em>mean acceptance rate, last 5 years: 17%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SOSP.png?raw=true" WIDTH="500">
-<A NAME="USENIX-ATC"></A>
-<P><B><A HREF="https://dblp.org/db/conf/usenix-atc/index.html">USENIX-ATC</A></B>
- <em>mean acceptance rate, last 5 years: 17%</em></P>
-<IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/USENIX-ATC.png?raw=true" WIDTH="500">
 </details>
 <details>
 <summary>

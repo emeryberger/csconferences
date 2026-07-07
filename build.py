@@ -39,6 +39,7 @@ dblp_dir_overrides = {
     'EC': 'sigecom',
     'Oakland': 'sp',
     'UsenixSec': 'uss',
+    'ATC': 'usenix-atc',
 }
 
 def dblp_dir(conference: str) -> str:
