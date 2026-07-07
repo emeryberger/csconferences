@@ -1,5 +1,29 @@
 # CSConferences Update Log
 
+## Workflow learnings (maintenance gotchas)
+
+- **Renaming a conference is a multi-step change.** To rename e.g. `USENIX-ATC` → `ATC`:
+  (1) update the `Conference` column for all its rows in `csconferences.csv`;
+  (2) add a `dblp_dir_overrides` entry in `build.py` if the new name doesn't map to the
+  DBLP directory (e.g. `'ATC': 'usenix-atc'`), else the proceedings link 404s;
+  (3) `git rm` the old `graphs/<OLD>.{png,pdf}` and make sure the new `graphs/<NEW>.{png,pdf}`
+  get **committed** (see glob gotcha below); (4) `make` regenerates README + graphs.
+- **zsh glob-abort can silently drop files from a commit.** `git add graphs/ATC.* graphs/USENIX-ATC.*`
+  in zsh (the default shell here) will match nothing for the already-`git rm`'d
+  `USENIX-ATC.*`, and zsh's `nomatch` aborts the ENTIRE command — so `ATC.*` never got staged
+  either. Result: the rename commit deleted the old graphs but never added the new ones, and
+  the README's `<IMG>` pointed at a file that 404'd on GitHub. **Fix/avoid:** add new graph
+  files by explicit path (no globs), or `git add graphs/` wholesale, and after any graph
+  rename run `git status --short graphs/ | grep <NEW>` to confirm it's staged.
+- **Debugging a "graph not showing on GitHub" report:** check in order —
+  (1) `git ls-files graphs/<NAME>.png` (is it even tracked?),
+  (2) `gh api repos/emeryberger/csconferences/contents/graphs/<NAME>.png` (is it on the remote? 404 = not pushed),
+  (3) `git hash-object` local vs remote `.sha` (identical = file is fine),
+  (4) `curl -sL -w '%{http_code}' https://raw.githubusercontent.com/.../graphs/<NAME>.png`.
+  If local+remote SHAs match and curl returns 200 image/png, the file is fine and it's a
+  client/CDN cache issue (hard-refresh) — NOT a repo problem. (This was the case for ICLR.png;
+  ATC.png was a genuine never-committed miss.)
+
 ## Update: July 2026
 
 Full cross-check pass across all ~65 conferences, dispatched as parallel research agents by area. Numbers verified against front matter (ACM DL showFmPdf, IEEE, Springer LNCS prefaces, ACL Anthology proceedings PDFs, LIPIcs), official conference/PC pages, HotCRP review-system pages, DBLP, Paper Copilot, and AIST (robotics).
