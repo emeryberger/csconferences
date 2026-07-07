@@ -26,15 +26,15 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ASPLOS.png?raw=true" WIDTH="500">
 <A NAME="HPCA"></A>
 <P><B><A HREF="https://dblp.org/db/conf/hpca/index.html">HPCA</A></B>
- <em>mean acceptance rate, last 5 years: 24%</em></P>
+ <em>mean acceptance rate, last 5 years: 23%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/HPCA.png?raw=true" WIDTH="500">
 <A NAME="ISCA"></A>
 <P><B><A HREF="https://dblp.org/db/conf/isca/index.html">ISCA</A></B>
- <em>mean acceptance rate, last 5 years: 19%</em></P>
+ <em>mean acceptance rate, last 5 years: 20%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ISCA.png?raw=true" WIDTH="500">
 <A NAME="MICRO"></A>
 <P><B><A HREF="https://dblp.org/db/conf/micro/index.html">MICRO</A></B>
- <em>mean acceptance rate, last 5 years: 22%</em></P>
+ <em>mean acceptance rate, last 5 years: 23%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/MICRO.png?raw=true" WIDTH="500">
 </details>
 <details>
@@ -47,7 +47,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/RTAS.png?raw=true" WIDTH="500">
 <A NAME="RTSS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/rtss/index.html">RTSS</A></B>
- <em>mean acceptance rate, last 5 years: 25%</em></P>
+ <em>mean acceptance rate, last 5 years: 26%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/RTSS.png?raw=true" WIDTH="500">
 </details>
 <details>
@@ -69,11 +69,11 @@
 </summary>
 <A NAME="ICDE"></A>
 <P><B><A HREF="https://dblp.org/db/conf/icde/index.html">ICDE</A></B>
- <em>mean acceptance rate, last 5 years: 27%</em></P>
+ <em>mean acceptance rate, last 5 years: 26%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICDE.png?raw=true" WIDTH="500">
 <A NAME="PODS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/pods/index.html">PODS</A></B>
- <em>mean acceptance rate, last 5 years: 35%</em></P>
+ <em>mean acceptance rate, last 5 years: 34%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/PODS.png?raw=true" WIDTH="500">
 <A NAME="SIGMOD"></A>
 <P><B><A HREF="https://dblp.org/db/conf/sigmod/index.html">SIGMOD</A></B>
@@ -94,7 +94,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/EC.png?raw=true" WIDTH="500">
 <A NAME="WINE"></A>
 <P><B><A HREF="https://dblp.org/db/conf/wine/index.html">WINE</A></B>
- <em>mean acceptance rate, last 5 years: 19%</em></P>
+ <em>mean acceptance rate, last 5 years: 18%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/WINE.png?raw=true" WIDTH="500">
 </details>
 <details>
@@ -103,7 +103,7 @@
 </summary>
 <A NAME="SIGGRAPH"></A>
 <P><B><A HREF="https://dblp.org/db/conf/siggraph/index.html">SIGGRAPH</A></B>
- <em>mean acceptance rate, last 5 years: 33%</em></P>
+ <em>mean acceptance rate, last 5 years: 30%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGGRAPH.png?raw=true" WIDTH="500">
 </details>
 <details>
@@ -125,11 +125,11 @@
 </summary>
 <A NAME="CAV"></A>
 <P><B><A HREF="https://dblp.org/db/conf/cav/index.html">CAV</A></B>
- <em>mean acceptance rate, last 5 years: 19%</em></P>
+ <em>mean acceptance rate, last 5 years: 18%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/CAV.png?raw=true" WIDTH="500">
 <A NAME="LICS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/lics/index.html">LICS</A></B>
- <em>mean acceptance rate, last 5 years: 36%</em></P>
+ <em>mean acceptance rate, last 5 years: 34%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/LICS.png?raw=true" WIDTH="500">
 </details>
 <details>
@@ -159,7 +159,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/IMC.png?raw=true" WIDTH="500">
 <A NAME="SIGMETRICS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/sigmetrics/index.html">SIGMETRICS</A></B>
- <em>mean acceptance rate, last 5 years: 17%</em></P>
+ <em>mean acceptance rate, last 5 years: 16%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/SIGMETRICS.png?raw=true" WIDTH="500">
 </details>
 <details>
@@ -168,7 +168,7 @@
 </summary>
 <A NAME="MobiCom"></A>
 <P><B><A HREF="https://dblp.org/db/conf/mobicom/index.html">MobiCom</A></B>
- <em>mean acceptance rate, last 5 years: 20%</em></P>
+ <em>mean acceptance rate, last 5 years: 19%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/MobiCom.png?raw=true" WIDTH="500">
 <A NAME="MobiSys"></A>
 <P><B><A HREF="https://dblp.org/db/conf/mobisys/index.html">MobiSys</A></B>
@@ -248,11 +248,11 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ECOOP.png?raw=true" WIDTH="500">
 <A NAME="ICFP"></A>
 <P><B><A HREF="https://dblp.org/db/conf/icfp/index.html">ICFP</A></B>
- <em>mean acceptance rate, last 5 years: 35%</em></P>
+ <em>mean acceptance rate, last 5 years: 34%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICFP.png?raw=true" WIDTH="500">
 <A NAME="ISMM"></A>
 <P><B><A HREF="https://dblp.org/db/conf/ismm/index.html">ISMM</A></B>
- <em>mean acceptance rate, last 5 years: 54%</em></P>
+ <em>mean acceptance rate, last 5 years: 55%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ISMM.png?raw=true" WIDTH="500">
 <A NAME="OOPSLA"></A>
 <P><B><A HREF="https://dblp.org/db/conf/oopsla/index.html">OOPSLA</A></B>
@@ -260,7 +260,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/OOPSLA.png?raw=true" WIDTH="500">
 <A NAME="PLDI"></A>
 <P><B><A HREF="https://dblp.org/db/conf/pldi/index.html">PLDI</A></B>
- <em>mean acceptance rate, last 5 years: 25%</em></P>
+ <em>mean acceptance rate, last 5 years: 27%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/PLDI.png?raw=true" WIDTH="500">
 <A NAME="POPL"></A>
 <P><B><A HREF="https://dblp.org/db/conf/popl/index.html">POPL</A></B>
@@ -277,11 +277,11 @@
 </summary>
 <A NAME="ICRA"></A>
 <P><B><A HREF="https://dblp.org/db/conf/icra/index.html">ICRA</A></B>
- <em>mean acceptance rate, last 5 years: 44%</em></P>
+ <em>mean acceptance rate, last 5 years: 42%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICRA.png?raw=true" WIDTH="500">
 <A NAME="IROS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/iros/index.html">IROS</A></B>
- <em>mean acceptance rate, last 5 years: 46%</em></P>
+ <em>mean acceptance rate, last 5 years: 44%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/IROS.png?raw=true" WIDTH="500">
 </details>
 <details>
@@ -302,7 +302,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICSE.png?raw=true" WIDTH="500">
 <A NAME="ISSTA"></A>
 <P><B><A HREF="https://dblp.org/db/conf/issta/index.html">ISSTA</A></B>
- <em>mean acceptance rate, last 5 years: 24%</em></P>
+ <em>mean acceptance rate, last 5 years: 23%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ISSTA.png?raw=true" WIDTH="500">
 </details>
 <details>
@@ -332,7 +332,7 @@
 </summary>
 <A NAME="FOCS"></A>
 <P><B><A HREF="https://dblp.org/db/conf/focs/index.html">FOCS</A></B>
- <em>mean acceptance rate, last 5 years: 33%</em></P>
+ <em>mean acceptance rate, last 5 years: 32%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/FOCS.png?raw=true" WIDTH="500">
 <A NAME="SODA"></A>
 <P><B><A HREF="https://dblp.org/db/conf/soda/index.html">SODA</A></B>
@@ -357,7 +357,7 @@
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ECCV.png?raw=true" WIDTH="500">
 <A NAME="ICCV"></A>
 <P><B><A HREF="https://dblp.org/db/conf/iccv/index.html">ICCV</A></B>
- <em>mean acceptance rate, last 5 years: 27%</em></P>
+ <em>mean acceptance rate, last 5 years: 26%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICCV.png?raw=true" WIDTH="500">
 </details>
 <details>
