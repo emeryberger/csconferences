@@ -138,7 +138,7 @@
 </summary>
 <A NAME="ICLR"></A>
 <P><B><A HREF="https://dblp.org/db/conf/iclr/index.html">ICLR</A></B>
- <em>mean acceptance rate, last 5 years: 31%</em></P>
+ <em>mean acceptance rate, last 5 years: 33%</em></P>
 <IMG SRC="https://github.com/emeryberger/csconferences/blob/main/graphs/ICLR.png?raw=true" WIDTH="500">
 <A NAME="ICML"></A>
 <P><B><A HREF="https://dblp.org/db/conf/icml/index.html">ICML</A></B>
