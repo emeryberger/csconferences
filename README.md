@@ -3,6 +3,9 @@
 ## Computer Science Conference Publication Stats
 
 
+**[Explore the data interactively →](https://csconferences.org/explore/)** compare conferences over time, filter by area, and see the source for every number.
+
+
 <details>
 <summary>
 <em>AI</em>: <b>Artificial intelligence</b>

@@ -24,6 +24,9 @@
   client/CDN cache issue (hard-refresh) — NOT a repo problem. (This was the case for ICLR.png;
   ATC.png was a genuine never-committed miss.)
 
+- **Interactive explorer (`explore/`)** is served at https://csconferences.org/explore/. GitHub Pages runs a legacy Jekyll build from `main` at `/`. It is a static D3 v7 page (D3 is vendored in `explore/js/`, no CDN) that reads `../csconferences.csv` live, so `make` keeps it current with no extra build step. The styling follows CSrankings: Helvetica, `#05317c` navy, Bootstrap-3-style panels, and the CSrankings super-area grouping from `CSrankings/src/config.ts`. The area colors are CSrankings' hues re-stepped to pass `validate_palette.js --pairs all` in light and dark mode. Two pairs sit in the 6-8 CVD band, so each area also has a distinct marker shape.
+  - **To make the explorer the homepage:** run `make explorer-home`. This writes a root `index.html` that loads `explore/` through `<base href="explore/">`, and Pages prefers `index.html` over `README.md`. Its "Static page" link then points to the GitHub README. While root `index.html` exists, `make` regenerates it automatically. **To revert:** run `make readme-home` (deletes root `index.html`). Commit either change.
+
 ## Update: November 2026
 
 Parallel research pass (6 agents by area), primary sources only for both columns. Spot-checked USENIX Sec/OSDI messages, PVLDB vol 18 front matter, and several HotCRP front pages directly.

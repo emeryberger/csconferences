@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CS Conference Acceptance Rates — Explorer</title>
+<meta name="description" content="Interactive acceptance rates, submissions, and accepted papers for major computer science conferences, with primary sources.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="viz-root">
+<header class="site-header">
+  <div class="container">
+    <h1><a href="../">CS Conference Acceptance Rates</a></h1>
+    <p class="subtitle">Acceptance rates, submissions, and accepted papers for major computer science conferences. Every number links to its source.
+      <span class="header-links"><a href="../" data-static>Static page</a> · <a href="https://github.com/emeryberger/csconferences">GitHub</a> · <a href="../csconferences.csv">Data (CSV)</a></span>
+    </p>
+  </div>
+</header>
+
+<main class="container">
+  <section class="controls panel" aria-label="Filters">
+    <div class="control-row">
+      <div class="area-pills" role="group" aria-label="Area">
+        <button class="area-pill" data-super="AI" aria-pressed="true"><span class="shape" aria-hidden="true"></span>AI</button>
+        <button class="area-pill" data-super="Systems" aria-pressed="true"><span class="shape" aria-hidden="true"></span>Systems</button>
+        <button class="area-pill" data-super="Theory" aria-pressed="true"><span class="shape" aria-hidden="true"></span>Theory</button>
+        <button class="area-pill" data-super="Interdisciplinary" aria-pressed="true"><span class="shape" aria-hidden="true"></span>Interdisciplinary</button>
+      </div>
+      <label class="ctl">From
+        <select id="year-from"></select>
+      </label>
+      <label class="ctl">to
+        <select id="year-to"></select>
+      </label>
+      <label class="ctl search">
+        <input id="search" type="search" placeholder="Filter conferences (e.g. PLDI, vision)" aria-label="Filter conferences">
+      </label>
+      <button id="theme-toggle" class="btn-plain" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-heading">
+      <h2>Compare conferences over time</h2>
+      <div class="chips" id="chips"></div>
+    </div>
+    <p class="hint" id="compare-hint">Click conferences in the table or the scatter plot to add them (up to 8).</p>
+    <div class="chart-title">Acceptance rate</div>
+    <div id="rate-chart" class="chart"></div>
+    <div class="chart-title">Submissions <label class="inline-ctl"><input type="checkbox" id="log-subs" checked> log scale</label></div>
+    <div id="subs-chart" class="chart"></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-heading">
+      <h2>Selectivity vs. size</h2>
+      <span class="muted" id="scatter-caption"></span>
+    </div>
+    <div id="scatter" class="chart"></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-heading">
+      <h2>All conferences</h2>
+      <span class="muted">Click a row to compare · click a column header to sort</span>
+    </div>
+    <div class="table-wrap">
+      <table id="conf-table" class="table">
+        <thead><tr>
+          <th data-sort="conf">Conference</th>
+          <th data-sort="areaName">Area</th>
+          <th data-sort="lastYear" class="num">Latest</th>
+          <th data-sort="accepted" class="num">Accepted</th>
+          <th data-sort="submitted" class="num">Submitted</th>
+          <th data-sort="rate" class="num">Rate</th>
+          <th data-sort="mean5" class="num">5-yr mean</th>
+          <th class="spark-col">Rate trend</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel" id="sources-panel" hidden>
+    <div class="panel-heading"><h2>Data &amp; sources for selected conferences</h2></div>
+    <div class="table-wrap"><table id="sources-table" class="table table-striped">
+      <thead><tr><th>Conference</th><th class="num">Year</th><th class="num">Accepted</th><th class="num">Submitted</th><th class="num">Rate</th><th>Source</th><th>Notes</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </section>
+
+  <footer class="site-footer">
+    <p>Submitted counts exclude papers withdrawn or desk-rejected before review where the source distinguishes them; for conferences that distinguish them, only long/full research papers are counted. Years with multiple cycles are summed. Maintained by <a href="https://github.com/emeryberger">Emery Berger</a>. Corrections welcome via <a href="https://github.com/emeryberger/csconferences">pull request</a>.</p>
+  </footer>
+</main>
+<div id="tooltip" class="tooltip" role="status" aria-live="polite" hidden></div>
+</div>
+<script src="js/d3.v7.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
