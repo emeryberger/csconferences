@@ -139,6 +139,7 @@ Arch,ISCA,2022,1,67,398,,
 Arch,ISCA,2023,1,79,372,,
 Arch,ISCA,2024,1,83,423,https://www.sigarch.org/isca-2024-trip-report-buenos-aires/,83 of 423 (19.6%)
 Arch,ISCA,2025,1,131,570,https://csconfstats.xoveexu.com/conferences/isca/2025/,131 research of 570 (23%)
+Arch,ISCA,2026,1,161,850,https://www.sigarch.org/isca-2026-trip-report/,161 of 850 regular-track per PC chairs; industry track excluded
 Arch,MICRO,2009,1,52,209,,
 Arch,MICRO,2010,1,42,248,,
 Arch,MICRO,2011,1,44,209,,
@@ -172,6 +173,7 @@ Bed,RTAS,2022,1,22,91,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9
 Bed,RTAS,2023,1,25,93,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10155713,
 Bed,RTAS,2024,1,29,124,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10568067,
 Bed,RTAS,2025,1,30,109,https://2025.rtas.org/program/,30 accepted; submitted ~109 (aggregator)
+Bed,RTAS,2026,1,27,115,https://rtas26.hotcrp.com/,27 of 115; HotCRP
 Bed,RTSS,2010,1,36,142,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5702254,
 Bed,RTSS,2011,1,33,158,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6121415,
 Bed,RTSS,2012,1,35,157,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6424780,
@@ -188,6 +190,7 @@ Bed,RTSS,2022,1,37,128,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=
 Bed,RTSS,2023,1,32,126,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10406052,
 Bed,RTSS,2024,1,32,140,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10844781,
 Bed,RTSS,2025,1,44,200,https://2025.rtss.org/program/,44 (conditionally) of 200 evaluated
+Bed,RTSS,2026,1,48,350,https://2026.rtss.org/,350 reviewed; 32 accepted + 18 conditional announced; 48 research papers in final program
 Crypt,CRYPTO,2010,1,39,203,https://link.springer.com/book/10.1007/978-3-642-14623-7,
 Crypt,CRYPTO,2011,1,42,230,https://link.springer.com/content/pdf/bfm:978-3-642-22792-9/1?pdf=chapter%20toc,
 Crypt,CRYPTO,2012,1,48,225,https://link.springer.com/content/pdf/bfm:978-3-642-32009-5/1?pdf=chapter%20toc,
@@ -203,6 +206,8 @@ Crypt,CRYPTO,2021,1,103,430,https://link.springer.com/content/pdf/bfm:978-3-030-
 Crypt,CRYPTO,2022,1,99,455,https://link.springer.com/content/pdf/bfm:978-3-031-15802-5/1?pdf=chapter%20toc,
 Crypt,CRYPTO,2023,1,124,479,https://link.springer.com/book/10.1007/978-3-031-38557-5,
 Crypt,CRYPTO,2024,1,143,526,https://link.springer.com/book/10.1007/978-3-031-68376-3,
+Crypt,CRYPTO,2025,1,156,642,https://link.springer.com/book/10.1007/978-3-032-01855-7,"LNCS preface: 643 received, 1 withdrawn"
+Crypt,CRYPTO,2026,1,189,752,https://link.springer.com/book/10.1007/978-3-032-35367-2,"LNCS preface: 781 received - 29 desk-rejected; 193 accepted, 2 merged pairs + 2 withdrawn -> 189 in proceedings"
 Crypt,EuroCrypt,2010,1,33,188,https://link.springer.com/content/pdf/bfm:978-3-642-13190-5/1?pdf=chapter%20toc,
 Crypt,EuroCrypt,2011,1,31,167,https://link.springer.com/content/pdf/bfm:978-3-642-20465-4/1?pdf=chapter%20toc,
 Crypt,EuroCrypt,2012,1,41,195,https://link.springer.com/content/pdf/bfm:978-3-642-29011-4/1?pdf=chapter%20toc,
@@ -219,6 +224,7 @@ Crypt,EuroCrypt,2022,1,85,372,https://link.springer.com/content/pdf/bfm:978-3-03
 Crypt,EuroCrypt,2023,1,109,415,https://link.springer.com/book/10.1007/978-3-031-30545-0,
 Crypt,EuroCrypt,2024,1,105,500,https://link.springer.com/book/10.1007/978-3-031-58716-0,
 Crypt,EuroCrypt,2025,1,123,602,https://link.springer.com/book/10.1007/978-3-031-91107-1,
+Crypt,EuroCrypt,2026,1,142,675,https://link.springer.com/book/10.1007/978-3-032-25291-3,"LNCS preface: 701 received, 6 withdrawn, 20 desk-rejected"
 DB,ICDE,2005,1,67,521,,
 DB,ICDE,2006,1,89,460,,
 DB,ICDE,2007,1,111,659,,
@@ -239,6 +245,7 @@ DB,ICDE,2022,1,211,780,,
 DB,ICDE,2023,1,229,748,,
 DB,ICDE,2024,1,376,1480,personal communication with Yannis Velegrakis,
 DB,ICDE,2025,1,300,1518,https://csconfstats.xoveexu.com/conferences/icde/2025/,300 of 1518 (19.8%)
+DB,ICDE,2026,1,261,1175,https://ieeexplore.ieee.org/document/11629544,"research track, two rounds; Message from the Chairs"
 DB,PODS,2010,1,27,113,,
 DB,PODS,2011,1,25,113,,
 DB,PODS,2012,1,26,101,,
@@ -285,6 +292,7 @@ DB,SIGMOD,2024,1,18,62,personal communication with Alexandra Meliou,
 DB,SIGMOD,2024,2,50,189,personal communication with Alexandra Meliou,
 DB,SIGMOD,2024,3,71,230,personal communication with Alexandra Meliou,
 DB,SIGMOD,2024,4,74,287,personal communication with Alexandra Meliou,
+DB,SIGMOD,2025,1,250,1008,https://2025.sigmod.org/SigmodPods25-welcome.pdf,research track; 4 PACMMOD cycles combined
 DB,VLDB,1993,1,54,311,,
 DB,VLDB,1994,1,54,293,,
 DB,VLDB,1995,1,52,297,,
@@ -317,6 +325,7 @@ DB,VLDB,2021,1,224,882,personal communication with Divesh Srivastava,research tr
 DB,VLDB,2022,1,252,949,personal communication with Divesh Srivastava,research track
 DB,VLDB,2023,1,266,1074,personal communication with Divesh Srivastava,research track
 DB,VLDB,2024,1,280,1437,personal communication with Jun Yang,research track
+DB,VLDB,2025,1,370,1324,https://www.vldb.org/pvldb/vol18/FrontMatterVol18No13.pdf,"PVLDB Vol 18; 1613 raw, 1324 reviewed after withdrawals/desk-rejects"
 ECom,EC,2010,1,45,136,https://dl.acm.org/doi/proceedings/10.1145/1807342,includes those treated as abstracts
 ECom,EC,2011,1,49,189,https://dl.acm.org/doi/proceedings/10.1145/1993574,includes those treated as abstracts
 ECom,EC,2012,1,73,219,https://dl.acm.org/doi/proceedings/10.1145/2229012,includes those treated as abstracts
@@ -330,6 +339,7 @@ ECom,EC,2019,1,106,382,https://dl.acm.org/doi/proceedings/10.1145/3328526,
 ECom,EC,2020,1,99,491,https://dl.acm.org/doi/proceedings/10.1145/3391403,
 ECom,EC,2021,1,130,500,https://dl.acm.org/doi/proceedings/10.1145/3465456,
 ECom,EC,2022,1,150,549,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3490486,
+ECom,EC,2025,1,206,984,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3736252,front matter: 206 contributed papers selected from 984 submissions (record); DBLP lists 206
 ECom,WINE,2016,1,35,88,https://link.springer.com/book/10.1007/978-3-662-54110-4,
 ECom,WINE,2017,1,28,89,https://link.springer.com/book/10.1007/978-3-319-71924-5,
 ECom,WINE,2018,1,28,119,https://link.springer.com/book/10.1007/978-3-030-04612-5,
@@ -356,6 +366,7 @@ Graphics,SIGGRAPH,2022,1,133,610,https://dl.acm.org/action/showFmPdf?doi=10.1145
 Graphics,SIGGRAPH,2023,1,212,611,https://papercopilot.com/statistics/siggraph-statistics/,journal plus dual track
 Graphics,SIGGRAPH,2024,1,252,844,https://papercopilot.com/statistics/siggraph-statistics/,journal plus dual track
 Graphics,SIGGRAPH,2025,1,306,972,https://s2026.siggraph.org/siggraph-2025-seeks-boundary-defying-work-to-define-the-next-chapter-of-computer-graphics-excellence/,306 of 972 (~31.5%); prior submitted 710 was total accepted incl. posters (error)
+Graphics,SIGGRAPH,2026,1,327,1124,https://s2026.siggraph.org/siggraph-2026-welcomes-computer-graphics-innovations-with-real-world-impact/,1124 submissions (official); 327 = 132 TOG 45(4) journal-track + 195 conference-track per DBLP (same method gives exactly 306 for 2025); was 309 from program count
 HCI,CHI,2011,1,306,1012,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F1978942,
 HCI,CHI,2013,1,316,1347,https://dl.acm.org/doi/proceedings/10.1145/2470654,
 HCI,CHI,2014,1,382,1428,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F2556288,
@@ -370,6 +381,7 @@ HCI,CHI,2022,1,637,2579,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F349110
 HCI,CHI,2023,1,879,3182,,
 HCI,CHI,2024,1,1058,4028,,
 HCI,CHI,2025,1,1249,5020,,
+HCI,CHI,2026,1,1705,5753,https://chi2026.acm.org/2026/02/06/insights-into-the-papers-track-post-pc-meeting-outcomes/,1705 of 6730 complete submissions (official 25.3%); 5753 excludes 485 desk + 492 assisted-desk rejects
 HCI,UIST,2010,1,38,207,https://dl.acm.org/doi/proceedings/10.1145/1866029,
 HCI,UIST,2011,1,67,262,https://dl.acm.org/doi/proceedings/10.1145/2047196,
 HCI,UIST,2012,1,62,288,https://dl.acm.org/doi/proceedings/10.1145/2380116,
@@ -386,6 +398,7 @@ HCI,UIST,2022,1,98,372,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3526113
 HCI,UIST,2023,1,121,483,,
 HCI,UIST,2024,1,146,608,,
 HCI,UIST,2025,1,210,947,note from program co-chairs,
+HCI,UIST,2026,1,251,1175,https://uist.acm.org/2026/announcements/,1175 fully reviewed (1259 complete - 84 desk rejects); 251 = 227 full + 24 short per official program; chairs report 21.4%
 Logic,CAV,1992,1,31,75,,
 Logic,CAV,1993,1,37,84,,
 Logic,CAV,1994,1,37,121,,
@@ -420,6 +433,7 @@ Logic,CAV,2022,1,40,209,,
 Logic,CAV,2023,1,49,261,,
 Logic,CAV,2024,1,51,317,,
 Logic,CAV,2025,1,51,305,https://link.springer.com/book/10.1007/978-3-031-98679-6,51 regular of 305 (research track); LNCS 15931 preface
+Logic,CAV,2026,1,54,319,https://link.springer.com/book/10.1007/978-3-032-32519-8,54 regular of 319 (81 total incl. tool/industrial); LNCS preface
 Logic,LICS,2010,1,39,149,,
 Logic,LICS,2011,1,37,114,,
 Logic,LICS,2012,1,60,171,,
@@ -436,6 +450,7 @@ Logic,LICS,2022,1,63,181,,
 Logic,LICS,2023,1,63,192,,
 Logic,LICS,2024,1,72,236,,
 Logic,LICS,2025,1,66,215,https://lics.siglog.org/lics25/accepted.php,66 of 215 (~30.7%)
+Logic,LICS,2026,1,82,286,https://drops.dagstuhl.de/storage/00lipics/lipics-vol380-lics2026/LIPIcs.LICS.2026.0/LIPIcs.LICS.2026.0.pdf,293 received - 7 desk-rejected; LIPIcs vol 380 preface
 ML,ICLR,2017,1,198,507,,
 ML,ICLR,2018,1,314,981,,
 ML,ICLR,2019,1,500,1591,,
@@ -458,7 +473,7 @@ ML,ICML,2022,1,1235,5630,,
 ML,ICML,2023,1,1827,6538,https://github.com/lixin4ever/Conference-Acceptance-Rate,
 ML,ICML,2024,1,2610,9473,https://github.com/lixin4ever/Conference-Acceptance-Rate,
 ML,ICML,2025,1,3260,12107,https://papercopilot.com/statistics/icml-statistics/icml-2025-statistics/,
-ML,ICML,2026,1,6352,23918,https://group.ntt/en/topics/2026/07/06/icml2026.html,"6352 of 23918 (26.6%); 23918 = submissions entering review (post desk-reject/withdrawal); opening-day figures, no official fact sheet yet"
+ML,ICML,2026,1,6352,23918,https://group.ntt/en/topics/2026/07/06/icml2026.html,"6352 of 23918 main track (26.6%); official fact sheet https://media.icml.cc/Conferences/ICML2026/ICML2026_Fact_Sheet.pdf reports 6552/24661, which appears to include the Position Paper track (213 accepted per virtual site)"
 ML,NeurIPS,2014,1,414,1678,,
 ML,NeurIPS,2015,1,403,1838,,
 ML,NeurIPS,2016,1,569,2403,,
@@ -510,6 +525,7 @@ Metrics,SIGMETRICS,2022,3,59,126,,
 Metrics,SIGMETRICS,2023,1,54,339,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3578338#page=5.08,
 Metrics,SIGMETRICS,2024,1,52,336,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3652963#page=5.08,
 Metrics,SIGMETRICS,2025,1,66,382,https://dl.acm.org/action/showFmPdf?doi=10.1145/3726854,66 of 382 across three cycles (17.3%)
+Metrics,SIGMETRICS,2026,1,82,479,https://sigmetrics26winter.hotcrp.com/,"three cycles: summer 24/112, fall 25/155, winter 33/212 (HotCRP)"
 Mobile,MobiCom,2012,1,32,212,https://dl.acm.org/doi/proceedings/10.1145/2348543,
 Mobile,MobiCom,2013,1,28,207,https://dl.acm.org/doi/proceedings/10.1145/2500423,
 Mobile,MobiCom,2014,1,36,220,https://dl.acm.org/doi/proceedings/10.1145/2639108,
@@ -538,6 +554,7 @@ Mobile,MobiSys,2022,1,38,176,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3
 Mobile,MobiSys,2023,1,41,198,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3581791,
 Mobile,MobiSys,2024,1,43,263,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3643832,Confirmed at https://mobisys24.hotcrp.com/
 Mobile,MobiSys,2025,1,42,233,https://dl.acm.org/action/showFmPdf?doi=10.1145/3711875,42 of 233 (18%); front matter
+Mobile,MobiSys,2026,1,68,302,https://mobisys26.hotcrp.com/,68 of 302; HotCRP
 Mobile,SenSys,2012,1,23,123,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F2426656,
 Mobile,SenSys,2013,1,21,123,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F2517351,
 Mobile,SenSys,2014,1,21,117,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F2668332,
@@ -552,6 +569,7 @@ Mobile,SenSys,2022,1,52,209,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F35
 Mobile,SenSys,2023,1,34,179,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3625687,
 Mobile,SenSys,2024,1,58,313,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3666025,
 Mobile,SenSys,2025,1,45,235,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3715014,
+Mobile,SenSys,2026,1,48,257,https://sensys26.hotcrp.com/,48 of 257; HotCRP
 NLP,ACL,2011,1,163,634,,
 NLP,ACL,2012,1,108,571,,
 NLP,ACL,2013,1,175,662,,
@@ -567,6 +585,7 @@ NLP,ACL,2022,1,604,3378,https://aclanthology.org/volumes/2022.acl-long/,604 long
 NLP,ACL,2023,1,910,3601,https://aclanthology.org/2023.acl-long.0.pdf#page=9.07,
 NLP,ACL,2024,1,864,4407,https://aclanthology.org/volumes/2024.acl-long/,864 long papers to Main Conf of 4407 committed (was 940 incl. 76 short); long-only
 NLP,ACL,2025,1,1602,5501,https://aclanthology.org/volumes/2025.acl-long/,1602 long papers to Main Conf of 5501 committed (was 1699 incl. 97 short); long-only
+NLP,ACL,2026,1,2222,6564,https://aclanthology.org/2026.acl-long.0.pdf,2222 long papers to Main Conf of 6564 committed (2296 main = 2222 long + 74 short); long-only
 NLP,EMNLP,2010,1,125,500,https://aclweb.org/aclwiki/Conference_acceptance_rates,
 NLP,EMNLP,2011,1,149,628,https://aclweb.org/aclwiki/Conference_acceptance_rates,
 NLP,EMNLP,2012,1,139,570,https://aclweb.org/aclwiki/Conference_acceptance_rates,
@@ -583,6 +602,7 @@ NLP,EMNLP,2022,1,715,3242,https://aclanthology.org/2022.emnlp-main.0.pdf#page=7.
 NLP,EMNLP,2023,1,901,3868,https://aclanthology.org/2023.emnlp-main.0.pdf#page=7.07,
 NLP,EMNLP,2024,1,1125,6105,https://aclanthology.org/2024.emnlp-main.0.pdf#page=8.49,
 NLP,EMNLP,2025,1,1668,6726,https://aclanthology.org/2025.emnlp-main.0.pdf,"1668 long papers to Main Conf of 6726 considered (was 1811 incl. 143 short); long-only, matches EMNLP 2024"
+NLP,EMNLP,2026,1,2626,14206,https://aclanthology.org/2026.emnlp-main.0.pdf,2626 long of 14206 considered (17661 - 2033 withdrawn - 1422 desk-rejected); long-only
 Networks,NSDI,2009,1,32,164,,
 Networks,NSDI,2010,1,29,178,,
 Networks,NSDI,2011,1,27,158,,
@@ -614,6 +634,7 @@ Networks,SIGCOMM,2021,1,55,241,,
 Networks,SIGCOMM,2022,1,55,279,,
 Networks,SIGCOMM,2023,1,71,323,,
 Networks,SIGCOMM,2024,1,62,366,,
+Networks,SIGCOMM,2026,1,109,513,https://everythinginsigcomm.group/t/sigcomm26-conference-welcome-awards/499,welcome-session report; 109 incl. 19 one-shot revisions
 OS,ATC,2010,1,24,149,,
 OS,ATC,2011,1,36,180,,
 OS,ATC,2012,1,41,235,,
@@ -626,10 +647,11 @@ OS,ATC,2018,1,79,378,,
 OS,ATC,2019,1,71,352,,
 OS,ATC,2020,1,65,348,,
 OS,ATC,2021,1,64,341,,
-OS,ATC,2022,1,64,394,,
-OS,ATC,2023,1,65,353,,
-OS,ATC,2024,1,77,488,,
-OS,ATC,2025,1,100,634,,
+OS,ATC,2022,1,64,394,https://www.usenix.org/sites/default/files/atc22_message.pdf,"394 submissions (21 OST, 23 short); chairs message"
+OS,ATC,2023,1,65,353,https://www.usenix.org/sites/default/files/atc23_message.pdf,353 submissions across all tracks; chairs message
+OS,ATC,2024,1,77,481,https://www.usenix.org/sites/default/files/atc24-message.pdf,481 reviewed of 488 received (was 488); chairs message
+OS,ATC,2025,1,100,619,https://www.usenix.org/sites/default/files/atc25_message.pdf,619 reviewed in round 1 (345 rejected + 274 to round 2) of 634 received (was 634); last USENIX-run ATC (moved to ACM SIGOPS from 2026); chairs message
+OS,ATC,2026,1,135,935,https://sigops.org/s/conferences/atc/2026/accepted.html,"135 accepted per official list; 935 reviewed = 968 HotCRP submissions - 33 desk-rejected (3 withdrawn after round-2 reviews kept, since reviewed); HotCRP via personal communication from Emery Berger; first ACM SIGOPS-run ATC"
 OS,EuroSys,2014,1,27,147,,
 OS,EuroSys,2015,1,32,150,,
 OS,EuroSys,2016,1,38,180,,
@@ -659,7 +681,7 @@ OS,FAST,2021,1,28,130,,
 OS,FAST,2022,1,28,130,,
 OS,FAST,2023,1,28,122,,
 OS,FAST,2024,1,22,123,,
-OS,FAST,2025,1,37,167,https://www.usenix.org/conference/fast25/technical-sessions,37 accepted per program/DBLP; submitted 167 unverified
+OS,FAST,2025,1,36,167,https://fast25.hotcrp.com/,36 of 167 per HotCRP; DBLP lists 36 (was 37)
 OS,FAST,2026,1,44,253,https://www.usenix.org/sites/default/files/fast26_message_1.pdf,44 of 253 (17.4%); front matter (13 spring + 31 fall)
 OS,OSDI,1994,1,21,178,,
 OS,OSDI,1996,1,19,110,,
@@ -676,10 +698,11 @@ OS,OSDI,2016,1,47,267,,
 OS,OSDI,2018,1,47,257,,
 OS,OSDI,2020,1,70,398,,
 OS,OSDI,2021,1,31,165,,
-OS,OSDI,2022,1,49,251,,
-OS,OSDI,2023,1,50,255,e-mail from PC chairs,
-OS,OSDI,2024,1,49,272,,
-OS,OSDI,2025,1,53,339,announcement by PC chairs,
+OS,OSDI,2022,1,49,253,https://www.usenix.org/sites/default/files/osdi22_message.pdf,49 of 253 (was 251); chairs message
+OS,OSDI,2023,1,50,255,https://www.usenix.org/sites/default/files/osdi23_message.pdf,50 of 255; chairs message
+OS,OSDI,2024,1,49,272,https://www.usenix.org/sites/default/files/osdi24_message.pdf,49 of 272; excludes 4 R&R papers from OSDI 23; chairs message
+OS,OSDI,2025,1,48,339,https://www.usenix.org/sites/default/files/osdi25-message.pdf,"48 of 339 (was 53, which included 5 R&R papers from OSDI 24; official 53 = 16%); excludes R&R like 2024/2026; chairs message"
+OS,OSDI,2026,1,134,669,https://www.usenix.org/sites/default/files/osdi26-message.pdf,134 of 669 reviewable (+2 R&R from OSDI 25)
 OS,SOSP,2001,1,17,85,,
 OS,SOSP,2003,1,22,128,,
 OS,SOSP,2005,1,20,155,,
@@ -693,7 +716,8 @@ OS,SOSP,2019,1,38,276,,
 OS,SOSP,2021,1,54,348,,
 OS,SOSP,2023,1,43,232,,
 OS,SOSP,2024,1,43,245,,
-OS,SOSP,2025,1,66,368,https://sigops.org/s/conferences/sosp/2025/accepted.html,66 accepted per official list; submitted 368 unverified
+OS,SOSP,2025,1,66,369,https://sosp25.hotcrp.com/,66 of 369 per HotCRP (was 368)
+OS,SOSP,2026,1,62,390,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3830418,"front matter: 390 submissions, 15.9% acceptance (= 62, matching the official accepted list of 62)"
 PL,CC,2013,1,13,53,,
 PL,CC,2014,1,14,47,,
 PL,CC,2015,1,11,34,,
@@ -744,6 +768,7 @@ PL,ECOOP,2022,1,36,78,,
 PL,ECOOP,2023,1,44,97,personal communication,
 PL,ECOOP,2024,1,47,112,https://drops.dagstuhl.de/storage/00lipics/lipics-vol313-ecoop2024/LIPIcs.ECOOP.2024.0/LIPIcs.ECOOP.2024.0.pdf#page=10.07,
 PL,ECOOP,2025,1,42,102,https://drops.dagstuhl.de/entities/volume/LIPIcs-volume-333,42 of 102; LIPIcs vol.333 preface
+PL,ECOOP,2026,1,30,98,https://drops.dagstuhl.de/storage/00lipics/lipics-vol372-ecoop2026/LIPIcs.ECOOP.2026.0/LIPIcs.ECOOP.2026.0.pdf,"30 of 98 unique papers, two rounds; LIPIcs vol.372 preface"
 PL,ICFP,1996,1,25,83,,
 PL,ICFP,1997,1,25,78,,
 PL,ICFP,1998,1,30,77,,
@@ -795,6 +820,7 @@ PL,ISMM,2022,1,4,7,,
 PL,ISMM,2023,1,10,19,,excludes 'intellectual abstracts'
 PL,ISMM,2024,1,8,17,,excludes 'intellectual abstracts'
 PL,ISMM,2025,1,10,16,https://ismm25.hotcrp.com/,10 of 16
+PL,ISMM,2026,1,9,11,https://ismm26.hotcrp.com/,9 of 11; HotCRP
 PL,OOPSLA,1999,1,30,152,,
 PL,OOPSLA,2000,1,26,142,,
 PL,OOPSLA,2001,1,27,145,,
@@ -886,6 +912,7 @@ PL,POPL,2023,1,74,275,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3554308,
 PL,POPL,2024,1,93,314,,
 PL,POPL,2025,1,79,298,,
 PL,POPL,2026,1,91,371,https://popl26.hotcrp.com/,91 of 371 (24.5%); HotCRP
+PL,POPL,2027,1,108,585,https://popl27.hotcrp.com/,108 of 585; HotCRP (pre-conference)
 PL,PPoPP,2010,1,29,173,,
 PL,PPoPP,2011,1,26,165,,
 PL,PPoPP,2012,1,26,173,,
@@ -991,6 +1018,7 @@ SE,FSE,2022,1,99,449,,
 SE,FSE,2023,1,127,465,,
 SE,FSE,2024,1,121,474,,
 SE,FSE,2025,1,135,515,,
+SE,FSE,2026,1,211,799,https://fse2026.hotcrp.com/,211 of 799 research track; HotCRP
 SE,ICSE,1995,1,28,155,,
 SE,ICSE,1996,1,52,213,,
 SE,ICSE,1997,1,50,219,,
@@ -1081,6 +1109,7 @@ Security,CCS,2023,2,158,795,,
 Security,CCS,2024,1,132,748,,
 Security,CCS,2024,2,196,1216,,
 Security,CCS,2025,1,316,2278,https://github.com/puzhuoliu/Computer-Security-Conference-Acceptance-Rate,
+Security,CCS,2026,1,486,2906,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3830454,front matter: Cycle A 187/980 + Cycle B 299/1926 reviewed (excl. 226+252 desk rejects; 3384 raw); 16.7%; matches 486 on official accepted list
 Security,NDSS,2009,1,20,171,,
 Security,NDSS,2010,1,24,156,,
 Security,NDSS,2011,1,28,139,,
@@ -1099,6 +1128,7 @@ Security,NDSS,2022,1,83,512,https://github.com/puzhuoliu/Computer-Security-Confe
 Security,NDSS,2023,1,94,581,https://github.com/puzhuoliu/Computer-Security-Conference-Acceptance-Rate,
 Security,NDSS,2024,1,140,694,https://github.com/puzhuoliu/Computer-Security-Conference-Acceptance-Rate,
 Security,NDSS,2025,1,211,1311,https://github.com/puzhuoliu/Computer-Security-Conference-Acceptance-Rate,
+Security,NDSS,2026,1,265,1481,https://www.ndss-symposium.org/wp-content/uploads/NDSS2026_Proceedings_Front_Matter.pdf,front matter; 1481 entered review across two cycles
 Security,Oakland,2008,1,28,249,,
 Security,Oakland,2009,1,26,253,,
 Security,Oakland,2010,1,31,267,,
@@ -1119,6 +1149,7 @@ Security,Oakland,2022,3,57,407,,
 Security,Oakland,2023,1,196,1147,,
 Security,Oakland,2024,1,258,1449,,
 Security,Oakland,2025,1,256,1739,https://github.com/puzhuoliu/Computer-Security-Conference-Acceptance-Rate,
+Security,Oakland,2026,1,253,1995,https://www.computer.org/csdl/proceedings-article/sp/2026/606500z037/2hBEqnsT8Os,PC chairs message; 925 (C1) + 1070 (C2) reviewed
 Security,UsenixSec,2001,1,24,83,https://people.engr.tamu.edu/guofei/sec_conf_stat.htm,
 Security,UsenixSec,2002,1,22,130,https://people.engr.tamu.edu/guofei/sec_conf_stat.htm,
 Security,UsenixSec,2003,1,21,128,https://people.engr.tamu.edu/guofei/sec_conf_stat.htm,
@@ -1144,6 +1175,7 @@ Security,UsenixSec,2022,1,256,1414,https://people.engr.tamu.edu/guofei/sec_conf_
 Security,UsenixSec,2023,1,442,1444,https://github.com/puzhuoliu/Computer-Security-Conference-Acceptance-Rate,
 Security,UsenixSec,2024,1,417,2276,https://github.com/puzhuoliu/Computer-Security-Conference-Acceptance-Rate,
 Security,UsenixSec,2025,1,407,2385,https://github.com/puzhuoliu/Computer-Security-Conference-Acceptance-Rate,
+Security,UsenixSec,2026,1,362,2750,https://www.usenix.org/sites/default/files/sec26_message.pdf,"valid submissions after 278 desk rejects (3028 raw); C1 166/1181, C2 196/1569"
 Theory,FOCS,2010,1,81,270,,
 Theory,FOCS,2011,1,85,292,,
 Theory,FOCS,2012,1,79,248,,
@@ -1190,6 +1222,7 @@ Theory,STOC,2022,1,134,457,,
 Theory,STOC,2023,1,155,480,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3564246,
 Theory,STOC,2024,1,188,592,,
 Theory,STOC,2025,1,219,735,https://acm-stoc.org/stoc2025/accepted-papers.html,
+Theory,STOC,2026,1,211,752,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3798129,"front matter: record 752 submissions; 212 selected, 1 withdrawn -> 211 in proceedings"
 Vision,CVPR,2010,1,461,1724,,
 Vision,CVPR,2011,1,438,1677,,
 Vision,CVPR,2012,1,466,1933,,
@@ -1206,6 +1239,7 @@ Vision,CVPR,2022,1,2067,8161,,
 Vision,CVPR,2023,1,2360,9155,,
 Vision,CVPR,2024,1,2719,11532,,
 Vision,CVPR,2025,1,2872,13008,https://github.com/lixin4ever/Conference-Acceptance-Rate,
+Vision,CVPR,2026,1,4089,16092,https://media.eventhosts.cc/Conferences/CVPR2026/CVPR_main_conf_2026_15.pdf,4089 of 16092 valid reviewed submissions; PC chairs message
 Vision,ECCV,2010,1,322,1174,,
 Vision,ECCV,2012,1,408,1437,,
 Vision,ECCV,2014,1,363,1444,,
@@ -1214,6 +1248,7 @@ Vision,ECCV,2018,1,776,2439,,
 Vision,ECCV,2020,1,1360,5150,,
 Vision,ECCV,2022,1,1645,5804,,
 Vision,ECCV,2024,1,2395,8585,https://aip.riken.jp/news/20240707eccv2024/,2395 of 8585 (27.9%); prior 2595 double-counted the 200 orals
+Vision,ECCV,2026,1,2834,10473,https://link.springer.com/content/pdf/bfm:978-3-032-36984-0/1,2834 of 10473 valid submissions; LNCS preface
 Vision,ICCV,1987,1,60,300,,
 Vision,ICCV,1988,1,89,306,,
 Vision,ICCV,1990,1,102,420,,
@@ -1249,6 +1284,7 @@ Web+IR,SIGIR,2021,1,151,720,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F34
 Web+IR,SIGIR,2022,1,161,793,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3477495,
 Web+IR,SIGIR,2023,1,165,822,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3539618,
 Web+IR,SIGIR,2024,1,160,791,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3626772,
+Web+IR,SIGIR,2025,1,239,1071,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3726302,front matter: full papers 239 of 1071 valid submissions (22%); 1913 valid across all tracks
 Web+IR,WSDM,2010,1,45,290,https://dl.acm.org/doi/proceedings/10.1145/1718487,
 Web+IR,WSDM,2011,1,83,372,https://dl.acm.org/doi/proceedings/10.1145/1935826,
 Web+IR,WSDM,2012,1,75,362,https://dl.acm.org/doi/proceedings/10.1145/2124295,
@@ -1265,6 +1301,7 @@ Web+IR,WSDM,2022,1,80,505,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3488
 Web+IR,WSDM,2023,1,123,690,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3539597,
 Web+IR,WSDM,2024,1,125,661,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3616855,
 Web+IR,WSDM,2025,1,106,606,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3701551#page=4.08,
+Web+IR,WSDM,2026,1,100,613,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3773966,front matter: full-paper research track; 613 considered after desk rejections and late withdrawals; 16.3%
 Web+IR,WWW,2010,1,91,754,https://dl.acm.org/doi/proceedings/10.1145/1772690,
 Web+IR,WWW,2011,1,81,658,https://dl.acm.org/doi/proceedings/10.1145/1963405,
 Web+IR,WWW,2012,1,108,885,https://dl.acm.org/doi/proceedings/10.1145/2187836,
@@ -1281,3 +1318,4 @@ Web+IR,WWW,2022,1,323,1822,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F348
 Web+IR,WWW,2023,1,365,1900,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3543507,
 Web+IR,WWW,2024,1,405,2008,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3589334,
 Web+IR,WWW,2025,1,409,2062,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3696410#page=5.08,
+Web+IR,WWW,2026,1,676,3112,https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3774904,"front matter: research track; 3370 full submissions, 3112 reviewed after desk rejects; 676 accepted (official 20.1% = 676/3370)"

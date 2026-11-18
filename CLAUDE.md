@@ -24,6 +24,44 @@
   client/CDN cache issue (hard-refresh) — NOT a repo problem. (This was the case for ICLR.png;
   ATC.png was a genuine never-committed miss.)
 
+## Update: November 2026
+
+Parallel research pass (6 agents by area), primary sources only for both columns. Spot-checked USENIX Sec/OSDI messages, PVLDB vol 18 front matter, and several HotCRP front pages directly.
+
+### New entries (Accepted / Submitted, primary source in CSV `Source` column)
+
+Oakland 2026 (253/1995, PC chairs msg), UsenixSec 2026 (362/2750, chairs msg), NDSS 2026 (265/1481, front matter), CRYPTO 2025 (156/642) & 2026 (189/752), EuroCrypt 2026 (142/675) (LNCS prefaces), OSDI 2026 (134/669, chairs msg), SIGCOMM 2026 (109/513, welcome-session report), SIGMETRICS 2026 (82/479), MobiSys 2026 (68/302), SenSys 2026 (48/257), RTAS 2026 (27/115), POPL 2027 (108/585), ISMM 2026 (9/11), FSE 2026 (211/799) (HotCRP), RTSS 2026 (48/350, official site), ISCA 2026 (161/850, PC chairs via SIGARCH), ECOOP 2026 (30/98) & LICS 2026 (82/286) (LIPIcs prefaces), CAV 2026 (54/319, LNCS), ACL 2026 (2222/6564) & EMNLP 2026 (2626/14206) (Anthology front matter, long-only), CHI 2026 (1705/5753), UIST 2026 (251/1175), SIGGRAPH 2026 (309/1124), CVPR 2026 (4089/16092, program PC msg), ECCV 2026 (2834/10473, LNCS), SIGMOD 2025 (250/1008, welcome PDF), VLDB 2025 (370/1324, PVLDB front matter), ICDE 2026 (261/1175, chairs msg).
+
+### Corrections
+- SOSP 2025 submitted 368 -> 369 (HotCRP "66 of 369"). FAST 2025 37 -> 36 accepted (HotCRP "36 of 167" and DBLP both list 36).
+- SIGGRAPH 2026 309 -> 327 accepted (132 TOG 45(4) + 195 conference track per DBLP; same sum gives exactly 306 for 2025).
+- CCS 2026 added: **486 / 2906** from front matter read manually by Emery Berger (Cycle A 187 of 980 reviewed, Cycle B 299 of 1926; 478 desk rejects excluded from 3384 raw).
+- STOC 2026 added: **211 / 752** from front matter read manually by Emery Berger (212 selected, 1 withdrawn; 211 in proceedings, same convention as CRYPTO).
+- SIGIR 2025 added: **239 / 1071** full papers (valid submissions), from front matter read manually by Emery Berger.
+- WWW 2026 added: **676 / 3112** research track (3370 full submissions, 3112 reviewed after desk rejects; official 20.1% uses 3370), from front matter read manually by Emery Berger.
+- WSDM 2026 added: **100 / 613** full-paper research track (after desk rejects and late withdrawals), from front matter read manually by Emery Berger.
+- EC 2025 added: **206 / 984** from front matter read manually by Emery Berger (DBLP lists 206; the Dec 2025 note's 207 came from the DBLP API). Front-matter DOIs: EC 2024 = 10.1145/3670865, EC 2025 = 10.1145/3736252. The EC 2024 and EC 2023 front matter contain **no submission counts**, so those years need the PC chairs or a SIGecom Exchanges report. EC 2026 proceedings were not yet in DBLP or Crossref as of 2026-11-18.
+- SOSP 2026 added: **62 / 390** from front matter (https://dl.acm.org/action/showFmPdf?doi=10.1145%2F3830418), which says "We received 390 submissions" and gives a 15.9% acceptance rate (390 × 15.9% ≈ 62, matching the official accepted list). Emery Berger read this front matter manually because ACM DL blocks automated fetches; it's worth asking him for other blocked ACM front matter (e.g. CCS 2026, STOC 2026, EC).
+- ATC 2024 submitted 488 -> 481 and ATC 2025 634 -> 619 (reviewed counts per the chairs' messages). OSDI 2022 submitted 251 -> 253. OSDI 2025 accepted 53 -> 48: OSDI numerators now exclude revise-and-resubmit papers carried over from the prior year (2024: 49 + 4 R&R, 2025: 48 + 5, 2026: 134 + 2). USENIX chairs' messages live at `usenix.org/sites/default/files/<conf><yy>_message.pdf` (or `-message.pdf`).
+- ICML 2026 kept at 6352/23918 (main track); official fact sheet's 6552/24661 appears to include the Position Paper track.
+
+### Caveats / decisions
+- **CHI/UIST denominator:** 2026 rows exclude desk/assisted-desk rejects per convention (CHI official base is 6730 -> 25.3%; stored 5753 -> 29.6%). Older CHI rows appear to include desk rejects, so the series has a convention break.
+- **HotCRP "N of M"** excludes withdrawn but includes desk-rejected submissions.
+- **ATC continues as an ACM SIGOPS conference.** USENIX sunset *USENIX* ATC after ATC '25 (https://www.usenix.org/blog/usenix-atc-announcement), and the conference continues as the ACM SIGOPS Annual Technical Conference: ATC '26, Nov 16-18, 2026 (https://sigops.org/s/conferences/atc/2026/, HotCRP atc26.hotcrp.com). Keep the `ATC` conference name for both eras. ATC 2026 = **135 / 935** (135 from the official accepted list; 935 = 968 HotCRP submissions − 33 desk-rejected, via personal communication from Emery Berger, who has access to the non-public ATC '26 HotCRP). The 3 papers withdrawn *after* round-2 reviews stay in the denominator because they were reviewed; the convention removes only papers withdrawn *before* review. For the graphs/links, check that DBLP's directory for the ACM-run ATC still matches the `dblp_dir_overrides` entry in `build.py` (`'ATC': 'usenix-atc'`).
+- **OSDI revise-and-resubmit (R&R) convention (decided Nov 2026).** OSDI accepts some papers through R&R, and they appear in the *following* year's proceedings. The Accepted column counts only papers accepted from that year's own submission pool and **excludes R&R carry-overs from the prior year**, because those papers were never part of that year's Submitted denominator. This means OSDI 2025 = **48 / 339**, not the official "53 papers ... overall acceptance rate of 16%" (53 = 48 + 5 R&R from OSDI '24; https://www.usenix.org/sites/default/files/osdi25-message.pdf). The rule matches OSDI 2024 (49, excluding 4 R&R from '23) and OSDI 2026 (134, excluding 2 R&R from '25), so the numerators stay consistent. Rates computed this way can differ from the chairs' published rate, so record the official figure in Notes.
+
+### Found but NOT added (missing primary submitted count)
+IMC 2025/2026, MobiCom 2026 (88 acc), SIGCOMM 2025 (only inferred), MICRO 2026 (213 acc), PLDI 2026, OOPSLA 2025 R2 / 2026, ICFP 2026, PPoPP 2026, CC 2026, ASE 2026, ISSTA 2026 (210 acc; 888 aggregator-only), CGO 2027 (72/315 HotCRP, but R1 revisions likely double-counted), AAAI 2026 (aggregator-only exact numbers), IJCAI 2026 (only all-tracks totals), NeurIPS 2026 (no submission count), SIGIR 2026, FOCS/SODA 2026, SIGMOD/PODS 2026, EC 2023/2024/2026, WINE 2026.
+
+### DBLP cross-check (local snapshot `~/git/CSrankings/dblp.xml.xz`)
+The CSrankings snapshot is a venue-filtered DBLP dump that works offline when the DBLP API is bot-walled. It gives accepted counts only, never submissions. Count with:
+`xz -dc ~/git/CSrankings/dblp.xml.xz | grep -oE '<url>db/(conf|journals)/[A-Za-z0-9]+/[A-Za-z0-9-]+\.html' | sort | uniq -c` (sum multi-volume `-N` keys; ACL `-1` volume includes 1 front-matter entry).
+Exact matches: ACL 2026 long 2222 / short 74, CRYPTO 2025 156 and 2026 189, EuroCrypt 2026 142, NDSS 2026 265, MobiSys 2026 68, UIST 2026 251, SOSP 2025 66, OSDI 2026 136 (= 134 + 2 R&R), ISCA 2026 172 (= 161 + 11 industry), Oakland 2026 254 (= 253 + 1 deferred), CAV 2026 82 (all categories, 81 + 1). Expected gaps: CHI 2026 1702 vs 1705 conditional; CVPR 2026 4042 vs 4089 at decision. Not comparable (DBLP volume includes posters, demos, short or industry papers, or splits the journal track out): SIGCOMM, SenSys, RTAS, ICDE, SIGGRAPH (journal-track papers are in TOG), LICS. ECCV 2026 is incomplete in the snapshot (64 of ~78 volumes). PACMPL/PACMSE/PACMMOD venues are filed by journal volume, not by conference.
+
+### Access notes (Nov 2026)
+ACM DL (showFmPdf/doi/pdf), SIAM epubs, and DBLP API are all bot-walled; Wayback mostly lacks 2026 front matter. HotCRP front pages, USENIX message PDFs, LIPIcs/Springer prefaces, ACL Anthology, and PVLDB were reachable.
+
 ## Update: July 2026
 
 Full cross-check pass across all ~65 conferences, dispatched as parallel research agents by area. Numbers verified against front matter (ACM DL showFmPdf, IEEE, Springer LNCS prefaces, ACL Anthology proceedings PDFs, LIPIcs), official conference/PC pages, HotCRP review-system pages, DBLP, Paper Copilot, and AIST (robotics).
