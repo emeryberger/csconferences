@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CS Conference Acceptance Rates — Explorer</title>
 <meta name="description" content="Interactive acceptance rates, submissions, and accepted papers for major computer science conferences, with primary sources.">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 <div class="viz-root">
@@ -36,8 +36,10 @@
       <label class="ctl search">
         <input id="search" type="search" placeholder="Filter conferences (e.g. PLDI, vision)" aria-label="Filter conferences">
       </label>
+      <button id="reset-filters" class="btn-plain btn-text" hidden>Reset filters</button>
       <button id="theme-toggle" class="btn-plain" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
     </div>
+    <div class="filter-status" id="filter-status" role="status" aria-live="polite"></div>
   </section>
 
   <section class="panel">
@@ -97,6 +99,6 @@
 <div id="tooltip" class="tooltip" role="status" aria-live="polite" hidden></div>
 </div>
 <script src="js/d3.v7.min.js"></script>
-<script src="app.js"></script>
+<script src="app.js?v=2"></script>
 </body>
 </html>

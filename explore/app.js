@@ -25,6 +25,7 @@
   const SUPER_VAR = { AI: "--area-ai", Systems: "--area-systems", Theory: "--area-theory", Interdisciplinary: "--area-inter" };
   const SUPER_SHAPE = { AI: d3.symbolCircle, Systems: d3.symbolSquare, Theory: d3.symbolTriangle, Interdisciplinary: d3.symbolDiamond };
   const MAX_SELECTED = 8;
+  const DEFAULT_FROM = 2000;
 
   const state = {
     supers: new Set(["AI", "Systems", "Theory", "Interdisciplinary"]),
@@ -78,7 +79,7 @@
   function writeHash() {
     const p = new URLSearchParams();
     if (state.selected.length) p.set("c", state.selected.join(","));
-    if (state.from !== allYears[0] + 0 && state.from) p.set("from", state.from);
+    if (state.from !== DEFAULT_FROM) p.set("from", state.from);
     if (state.to !== allYears[allYears.length - 1] && state.to) p.set("to", state.to);
     if (state.supers.size < 4) p.set("areas", [...state.supers].join(","));
     // absolute path: a <base href="explore/"> (homepage mode) must not redirect the URL into /explore/
@@ -118,7 +119,7 @@
   function setupControls() {
     const yf = d3.select("#year-from"), yt = d3.select("#year-to");
     for (const sel of [yf, yt]) sel.selectAll("option").data(allYears).join("option").attr("value", (d) => d).text((d) => d);
-    if (!state.from) state.from = 2000;
+    if (!state.from) state.from = DEFAULT_FROM;
     if (!state.to) state.to = allYears[allYears.length - 1];
     yf.property("value", state.from).on("change", function () { state.from = +this.value; if (state.from > state.to) { state.to = state.from; yt.property("value", state.to); } render(); });
     yt.property("value", state.to).on("change", function () { state.to = +this.value; if (state.to < state.from) { state.from = state.to; yf.property("value", state.from); } render(); });
@@ -130,6 +131,12 @@
         this.setAttribute("aria-pressed", state.supers.has(s));
         render();
       });
+    d3.select("#reset-filters").on("click", () => {
+      state.supers = new Set(Object.keys(SUPER_VAR)); state.search = ""; state.from = DEFAULT_FROM; state.to = allYears[allYears.length - 1];
+      d3.selectAll(".area-pill").attr("aria-pressed", true);
+      d3.select("#search").property("value", ""); yf.property("value", state.from); yt.property("value", state.to);
+      render();
+    });
     d3.select("#search").on("input", function () { state.search = this.value.trim().toLowerCase(); render(); });
     d3.select("#log-subs").on("change", function () { state.logSubs = this.checked; renderCharts(); });
     d3.selectAll("#conf-table th[data-sort]").on("click", function () {
@@ -148,10 +155,14 @@
 
   // ---------- derived data ----------
   function inRange(c) { return c.years.filter((y) => y.year >= state.from && y.year <= state.to); }
-  function visibleConfs() {
+  function passes(c) {
     const q = state.search;
-    return [...byConf.values()].filter((c) => state.supers.has(c.super) &&
-      (!q || c.conf.toLowerCase().includes(q) || c.areaName.toLowerCase().includes(q) || c.area.toLowerCase().includes(q)))
+    return state.supers.has(c.super) &&
+      (!q || c.conf.toLowerCase().includes(q) || c.areaName.toLowerCase().includes(q) || c.area.toLowerCase().includes(q));
+  }
+  const shownSelected = () => state.selected.filter((conf) => passes(byConf.get(conf)) && inRange(byConf.get(conf)).length);
+  function visibleConfs() {
+    return [...byConf.values()].filter(passes)
       .map((c) => {
         const ys = inRange(c);
         if (!ys.length) return null;
@@ -163,6 +174,11 @@
   }
 
   function render() {
+    const n = visibleConfs().length, total = byConf.size;
+    const hiddenSel = state.selected.length - shownSelected().length;
+    document.getElementById("filter-status").textContent =
+      `Showing ${n} of ${total} conferences` + (hiddenSel ? ` · ${hiddenSel} compared conference${hiddenSel > 1 ? "s" : ""} hidden by filters` : "");
+    document.getElementById("reset-filters").hidden = state.supers.size === 4 && !state.search && state.from === DEFAULT_FROM && state.to === allYears[allYears.length - 1];
     writeHash(); updateHint(); renderChips(); renderCharts(); renderTable(); renderSources();
   }
   function renderCharts() { renderLineChart("rate"); renderLineChart("subs"); renderScatter(); }
@@ -172,7 +188,9 @@
     const chips = d3.select("#chips");
     chips.selectAll("*").remove();
     for (const conf of state.selected) {
-      const ch = chips.append("span").attr("class", "chip");
+      const hidden = !shownSelected().includes(conf);
+      const ch = chips.append("span").attr("class", "chip" + (hidden ? " hidden-by-filter" : ""))
+        .attr("title", hidden ? `${conf} is hidden by the current filters` : null);
       ch.append("span").attr("class", "swatch").style("background", seriesColor(conf));
       ch.append("span").text(conf);
       ch.append("button").attr("aria-label", `Remove ${conf}`).text("×").on("click", () => removeSelected(conf));
@@ -185,8 +203,11 @@
   function renderLineChart(kind) {
     const el = document.getElementById(kind === "rate" ? "rate-chart" : "subs-chart");
     const root = d3.select(el); root.selectAll("*").remove();
-    const series = state.selected.map((conf) => ({ conf, values: inRange(byConf.get(conf)) })).filter((s) => s.values.length);
-    if (!series.length) { root.append("div").attr("class", "empty").text("No conferences selected."); return; }
+    const series = shownSelected().map((conf) => ({ conf, values: inRange(byConf.get(conf)) }));
+    if (!series.length) {
+      root.append("div").attr("class", "empty").text(state.selected.length ? "All selected conferences are hidden by the current filters." : "No conferences selected.");
+      return;
+    }
 
     const width = el.clientWidth || 900, height = kind === "rate" ? 300 : 220;
     const m = { top: 10, right: 84, bottom: 26, left: 52 };
@@ -353,8 +374,9 @@
   // ---------- sources table ----------
   function renderSources() {
     const panel = document.getElementById("sources-panel");
-    panel.hidden = !state.selected.length;
-    const rows = state.selected.flatMap((conf) => inRange(byConf.get(conf)).slice().reverse()
+    const shown = shownSelected();
+    panel.hidden = !shown.length;
+    const rows = shown.flatMap((conf) => inRange(byConf.get(conf)).slice().reverse()
       .flatMap((y) => y.rows.map((r) => ({ conf, r }))));
     d3.select("#sources-table tbody").selectAll("tr").data(rows).join("tr").html(({ conf, r }) => {
       const a = +r.Accepted, s = +r.Submitted;
