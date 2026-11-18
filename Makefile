@@ -11,7 +11,7 @@ all:
 # Undo with: make readme-home
 explorer-home:
 	sed -e 's#<head>#<head><base href="explore/">#' \
-	    -e 's#<a href="\.\./" data-static>#<a href="https://github.com/emeryberger/csconferences\#readme" data-static>#' \
+	    -e 's#href="\.\./" data-static#href="https://github.com/emeryberger/csconferences\#readme" data-static#' \
 	    explore/index.html > index.html
 
 readme-home:
