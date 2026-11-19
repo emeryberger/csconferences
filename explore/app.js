@@ -346,27 +346,45 @@
     const meta = td.append("div").attr("class", "detail-meta");
     meta.append("span").text(`${d.areaName} · ${d.lastYear}: ${fmtInt(d.accepted)} accepted of ${fmtInt(d.submitted)} submitted (${fmtPct(d.rate)})`);
     meta.append("a").attr("href", `../#${d.conf}`).style("margin-left", "8px").text("static graph");
+    // Stacked bars like the original static graphs: accepted (bottom) + rejected (top) = submissions.
+    // Green/red is not CVD-safe, so accepted stays green and rejected is a light neutral (strong luminance contrast).
     const box = td.append("div").attr("class", "detail-chart").node();
-    const w = Math.max(320, (document.getElementById("ranking-window").clientWidth || 640) - 70), h = 150, m = { t: 8, r: 12, b: 22, l: 40 };
+    const w = Math.max(320, (document.getElementById("ranking-window").clientWidth || 640) - 70), h = 180;
+    const m = { t: 12, r: 78, b: 22, l: 46 };
     const ys = d.ys;
-    const x = d3.scaleLinear().domain(ys.length > 1 ? d3.extent(ys, (v) => v.year) : [ys[0].year - 1, ys[0].year + 1]).range([m.l, w - m.r]);
-    const y = d3.scaleLinear().domain([0, Math.max(0.3, d3.max(ys, (v) => v.rate) * 1.1)]).nice().range([h - m.b, m.t]);
+    const yrs = d3.range(ys[0].year, ys[ys.length - 1].year + 1);
+    const x = d3.scaleBand().domain(yrs).range([m.l, w - m.r]).paddingInner(0.18).paddingOuter(0.05);
+    const y = d3.scaleLinear().domain([0, d3.max(ys, (v) => v.submitted) * 1.05]).nice().range([h - m.b, m.t]);
+    const ACC = "#2e8540", REJ = "#d3d3d3";
     const svg = d3.select(box).append("svg").attr("width", w).attr("height", h).attr("role", "img")
-      .attr("aria-label", `${d.conf} acceptance rate by year: ` + ys.map((v) => `${v.year} ${fmtPct(v.rate)}`).join(", "));
+      .attr("aria-label", `${d.conf} papers by year, accepted and rejected: ` + ys.map((v) => `${v.year} ${v.accepted} accepted, ${v.submitted - v.accepted} rejected`).join("; "));
     svg.append("g").attr("class", "grid").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickSize(-(w - m.l - m.r)).tickFormat(""));
-    svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickFormat(d3.format(".0%"))).call((g) => g.select(".domain").remove());
+    svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickFormat(d3.format("~s"))).call((g) => g.select(".domain").remove());
+    const every = Math.max(1, Math.ceil(yrs.length / 12));
     svg.append("g").attr("class", "axis").attr("transform", `translate(0,${h - m.b})`)
-      .call(d3.axisBottom(x).ticks(Math.min(10, Math.max(1, x.domain()[1] - x.domain()[0]))).tickFormat(d3.format("d")).tickSizeOuter(0));
-    const color = state.selected.includes(d.conf) ? seriesColor(d.conf) : catColor(d.cat);
-    svg.append("path").attr("class", "series-line").attr("stroke", color)
-      .attr("d", d3.line().defined((v) => !v.gap).x((v) => x(v.year)).y((v) => y(v.rate))(withGaps(ys)));
-    svg.append("g").selectAll("circle").data(ys).join("circle").attr("class", "series-dot").attr("r", 3.5).attr("fill", color)
-      .attr("cx", (v) => x(v.year)).attr("cy", (v) => y(v.rate));
-    svg.append("g").selectAll("circle").data(ys).join("circle").attr("r", 10).attr("fill", "transparent").style("cursor", "pointer")
-      .attr("cx", (v) => x(v.year)).attr("cy", (v) => y(v.rate))
+      .call(d3.axisBottom(x).tickValues(yrs.filter((yr, i) => (yrs.length - 1 - i) % every === 0)).tickFormat(d3.format("d")).tickSizeOuter(0));
+    svg.append("text").attr("x", m.l - 40).attr("y", m.t - 3).attr("font-size", 10).text("papers");
+    const bw = x.bandwidth(), r = Math.min(4, bw / 2);
+    const g = svg.append("g");
+    for (const v of ys) {
+      const bx = x(v.year), ya = y(v.accepted), yt = y(v.submitted), y0 = y(0);
+      // rejected segment on top, rounded top corners; 2px surface gap between segments
+      g.append("path").attr("fill", REJ).attr("d", roundedTop(bx, yt, bw, Math.max(0, ya - yt - 2), r));
+      g.append("rect").attr("fill", ACC).attr("x", bx).attr("y", ya).attr("width", bw).attr("height", Math.max(0, y0 - ya));
+    }
+    // direct labels beside the last bar (legend for two segments)
+    const last = ys[ys.length - 1], lx = x(last.year) + bw + 6;
+    const la = (y(last.accepted) + y(0)) / 2, lr = Math.min(la - 14, (y(last.submitted) + y(last.accepted)) / 2);
+    svg.append("text").attr("class", "end-label").attr("x", lx).attr("y", la).attr("dy", "0.35em").text("Accepted");
+    svg.append("text").attr("class", "end-label").attr("x", lx).attr("y", lr).attr("dy", "0.35em").attr("fill", "#666").text("Rejected");
+    // hover per year column (hit target = whole column)
+    svg.append("g").selectAll("rect").data(ys).join("rect").attr("fill", "transparent")
+      .attr("x", (v) => x(v.year) - (x.step() - bw) / 2).attr("width", x.step()).attr("y", m.t).attr("height", h - m.t - m.b)
       .on("pointerenter pointermove", (ev, v) => showTip(ev, `<div class="tt-title">${esc(d.conf)} ${v.year}</div>` +
-        `<div class="tt-row"><span class="tt-key">Acceptance rate</span><span class="tt-val">${fmtPct(v.rate)}</span></div>` +
-        `<div class="tt-row"><span class="tt-key">Accepted / submitted</span><span class="tt-val">${fmtInt(v.accepted)} / ${fmtInt(v.submitted)}</span></div>`))
+        `<div class="tt-row"><span class="tt-key"><span class="tt-sw" style="background:${ACC};height:8px"></span>Accepted</span><span class="tt-val">${fmtInt(v.accepted)}</span></div>` +
+        `<div class="tt-row"><span class="tt-key"><span class="tt-sw" style="background:${REJ};height:8px"></span>Rejected</span><span class="tt-val">${fmtInt(v.submitted - v.accepted)}</span></div>` +
+        `<div class="tt-row"><span class="tt-key">Submitted</span><span class="tt-val">${fmtInt(v.submitted)}</span></div>` +
+        `<div class="tt-row"><span class="tt-key">Acceptance rate</span><span class="tt-val">${fmtPct(v.rate)}</span></div>`))
       .on("pointerleave", hideTip);
 
     const t = td.append("table").attr("class", "src-table");
@@ -581,6 +599,12 @@
     if (left + r.width > innerWidth - 8) left = ev.clientX - r.width - pad;
     if (top + r.height > innerHeight - 8) top = ev.clientY - r.height - pad;
     tip.style.left = left + "px"; tip.style.top = top + "px";
+  }
+  // bar path with rounded top corners (data end), square at the baseline
+  function roundedTop(x, y, w, h, r) {
+    if (h <= 0) return "";
+    r = Math.min(r, h, w / 2);
+    return `M${x},${y + h}V${y + r}Q${x},${y} ${x + r},${y}H${x + w - r}Q${x + w},${y} ${x + w},${y + r}V${y + h}Z`;
   }
   function hideTip() { tip.hidden = true; }
   function esc(s) { return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
