@@ -234,9 +234,10 @@
         for (const conf of tierOrder(confs)) {
           if (conf === null) { list.append("tr").attr("class", "tier-divider").append("td").attr("colspan", 2).append("div").attr("class", "area-child-divider"); continue; }
           const r = list.append("tr").classed("next-tier", tierOf(conf) !== "top").attr("title", TIER_TITLE[tierOf(conf)] || null);
-          r.append("td").append("a").attr("href", staticAnchor(conf)).attr("title", `${conf} on the static page`).text(conf);
-          r.append("td").append("input").attr("type", "checkbox").attr("class", "conf-checkbox").attr("data-conf", conf)
-            .attr("aria-label", `Include ${conf}`).on("change", function () { setConfs([conf], this.checked); });
+          const cbId = `conf-cb-${conf.replace(/[^A-Za-z0-9_-]/g, "_")}`;
+          r.append("td").append("label").attr("class", "conf-toggle").attr("for", cbId).attr("title", `Include or exclude ${conf}`).text(conf);
+          r.append("td").append("input").attr("type", "checkbox").attr("class", "conf-checkbox").attr("id", cbId).attr("data-conf", conf)
+            .on("change", function () { setConfs([conf], this.checked); });
         }
         tr.append("td").attr("class", "area-check").append("input").attr("type", "checkbox").attr("id", `area-${area}`)
           .attr("class", "area-checkbox").attr("data-area", area)

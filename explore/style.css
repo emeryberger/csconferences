@@ -306,3 +306,6 @@ tr.detail-row > td { max-width: 0; }               /* let the cell shrink to the
 .dl-box ul { margin: 4px 0 2px; padding-left: 18px; }
 .dl-when { font-weight: bold; }
 .dl-src { font-size: 11px; }
+
+.conf-list .conf-toggle { color: var(--link-strong); cursor: pointer; }
+.conf-list .conf-toggle:hover { text-decoration: underline; }
