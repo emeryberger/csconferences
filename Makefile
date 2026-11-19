@@ -3,6 +3,7 @@ PYTHON = python3
 all:
 	$(PYTHON) build.py --sort
 	$(PYTHON) build.py --all > README.md
+	mkdir -p static && cp README.md static/index.md   # static page at /static/ (README.md is not rendered once index.html exists)
 	@if [ -f index.html ]; then $(MAKE) --no-print-directory explorer-home; fi
 
 # Make the interactive explorer the site homepage (csconferences.org/).
@@ -11,7 +12,6 @@ all:
 # Undo with: make readme-home
 explorer-home:
 	sed -e 's#<head>#<head><base href="explore/">#' \
-	    -e 's#href="\.\./" data-static#href="../README.html" data-static#' \
 	    explore/index.html > index.html
 
 readme-home:

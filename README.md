@@ -3,7 +3,7 @@
 ## Computer Science Conference Publication Stats
 
 
-**[Explore the data interactively →](https://csconferences.org/explore/)** compare conferences over time, filter by area, and see the source for every number.
+**[Explore the data interactively →](https://csconferences.org/)** compare conferences over time, filter by area, and see the source for every number.
 
 
 <details>
