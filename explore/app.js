@@ -33,7 +33,6 @@
   const TIER_TITLE = { next: "Next tier in CSrankings (off by default)", absent: "Not a CSrankings venue (off by default)" };
   // static (README) page; homepage mode retargets the [data-static] link (see Makefile explorer-home)
   const STATIC_URL = (document.querySelector("[data-static]") || { getAttribute: () => "../" }).getAttribute("href");
-  const staticAnchor = (conf) => (STATIC_URL.includes("#") ? STATIC_URL.split("#")[0] : STATIC_URL) + "#" + conf;
   const MAX_SELECTED = 8;
   const DEFAULT_FROM = 2000;
   const DEFAULT_SELECTION = ["ICLR", "NeurIPS", "SOSP", "PLDI", "STOC"];
@@ -449,7 +448,6 @@
   function renderDetail(td, d) {
     const meta = td.append("div").attr("class", "detail-meta");
     meta.append("span").text(`${d.areaName} · ${d.lastYear}: ${fmtInt(d.accepted)} accepted of ${fmtInt(d.submitted)} submitted (${fmtPct(d.rate)})`);
-    meta.append("a").attr("href", staticAnchor(d.conf)).style("margin-left", "8px").text("static graph");
     meta.append("button").attr("class", "pdf-btn").attr("title", `Download this chart as PDF`).text("PDF")
       .on("click", (ev) => { ev.stopPropagation(); exportPDF(td.select(".detail-chart svg").node(), `${d.conf}-papers`, `${d.conf}: papers accepted and rejected per year`); });
     renderDeadlines(td, d);
