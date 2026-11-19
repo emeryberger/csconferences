@@ -273,3 +273,9 @@ tr.detail-row > td { max-width: 0; }               /* let the cell shrink to the
 .src-table td.notes { white-space: normal; overflow-wrap: anywhere; }
 
 [hidden] { display: none !important; }
+
+/* comparison charts: gray context lines + median */
+.context-line { fill: none; stroke: #c9c9c9; stroke-width: 1px; stroke-linejoin: round; }
+.context-line.hot { stroke: #555; stroke-width: 2px; }
+.median-line { fill: none; stroke: #333; stroke-width: 2.5px; stroke-dasharray: 6 3; }
+.median-label { font-style: italic; }

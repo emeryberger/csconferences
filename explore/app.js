@@ -111,9 +111,10 @@
     setTimeout(() => { h.style.color = ""; updateHint(); }, 2500);
   }
   function updateHint() {
-    document.getElementById("compare-hint").textContent = state.selected.length
-      ? "Hover the charts for exact values. Click a conference name in the table or a point in the scatter plot to add or remove it."
-      : "Click a conference name in the table or a point in the scatter plot to compare it (up to 8).";
+    const n = visibleConfs().length;
+    document.getElementById("compare-hint").textContent = n <= MAX_SELECTED
+      ? `Showing all ${n} selected conferences. Use the area list or search to change which conferences appear.`
+      : `Showing all ${n} selected conferences in gray with their median; conferences you click (table names, scatter points, or gray lines) are highlighted in color. Narrow the area list or search to ${MAX_SELECTED} or fewer to color every line.`;
   }
 
   // ---------- enabled-set helpers (area selection) ----------
@@ -399,65 +400,127 @@
   }
 
   // ---------- comparison line charts ----------
+  // Every conference chosen by the area/search/year filters is drawn. Up to MAX_SELECTED are drawn
+  // in color with labels; beyond that they are thin gray context lines with a bold median, and only
+  // the conferences clicked into the comparison are colored.
+  function chartModel() {
+    const visible = visibleConfs().map((c) => c.conf);
+    const shownSel = shownSelected();
+    const auto = visible.length <= MAX_SELECTED;
+    const hl = auto ? [...new Set([...shownSel, ...visible.slice().sort((a, b) => a.localeCompare(b))])] : shownSel;
+    const colors = new Map();
+    const used = new Set();
+    for (const c of hl) if (state.slotOf.has(c)) { colors.set(c, seriesColor(c)); used.add(state.slotOf.get(c)); }
+    const free = d3.range(1, MAX_SELECTED + 1).filter((s) => !used.has(s));
+    for (const c of hl) if (!colors.has(c)) colors.set(c, css(`--series-${free.shift()}`));
+    return { visible, auto, hl, colors, bg: auto ? [] : visible.filter((c) => !hl.includes(c)) };
+  }
+
   function renderLineChart(kind) {
     const el = document.getElementById(kind === "rate" ? "rate-chart" : "subs-chart");
     const root = d3.select(el); root.selectAll("*").remove();
-    const series = shownSelected().map((conf) => ({ conf, values: inRange(byConf.get(conf)) }));
-    if (!series.length) {
-      root.append("div").attr("class", "empty").text(state.selected.length ? "All compared conferences are hidden by the current filters." : "No conferences selected.");
-      return;
-    }
-    const width = el.clientWidth || 900, height = kind === "rate" ? 300 : 220, m = { top: 10, right: 84, bottom: 26, left: 52 };
+    const model = chartModel();
+    if (!model.visible.length) { root.append("div").attr("class", "empty").text("No conferences match the filters."); return; }
     const val = kind === "rate" ? (d) => d.rate : (d) => d.submitted;
-    const years = d3.extent(series.flatMap((s) => s.values), (d) => d.year);
+    const valuesOf = (conf) => inRange(byConf.get(conf));
+    const hlSeries = model.hl.map((conf) => ({ conf, values: valuesOf(conf) }));
+    const bgSeries = model.bg.map((conf) => ({ conf, values: valuesOf(conf) }));
+    const everything = hlSeries.concat(bgSeries);
+    // median across all visible conferences per year (only when the gray-context view is active)
+    let median = [];
+    if (!model.auto) {
+      const byYear = d3.group(everything.flatMap((s) => s.values), (v) => v.year);
+      median = [...byYear].filter(([, vs]) => vs.length >= 3).map(([year, vs]) => ({ year, n: vs.length, v: d3.median(vs, val) }))
+        .sort((a, b) => a.year - b.year);
+    }
+    const width = el.clientWidth || 900, height = kind === "rate" ? 320 : 240, m = { top: 10, right: 90, bottom: 26, left: 52 };
+    const years = d3.extent(everything.flatMap((s) => s.values), (d) => d.year);
     if (years[0] === years[1]) { years[0] -= 1; years[1] += 1; }
     const x = d3.scaleLinear().domain(years).range([m.left, width - m.right]);
-    const allV = series.flatMap((s) => s.values.map(val));
+    const allV = everything.flatMap((s) => s.values.map(val)).filter((v) => v > 0);
     let y;
-    if (kind === "rate") y = d3.scaleLinear().domain([0, Math.min(1, d3.max(allV) * 1.08)]).nice().range([height - m.bottom, m.top]);
+    if (kind === "rate") y = d3.scaleLinear().domain([0, Math.min(1, d3.max(allV) * 1.05)]).nice().range([height - m.bottom, m.top]);
     else if (state.logSubs) y = d3.scaleLog().domain([Math.max(1, d3.min(allV) * 0.8), d3.max(allV) * 1.2]).range([height - m.bottom, m.top]);
     else y = d3.scaleLinear().domain([0, d3.max(allV) * 1.05]).nice().range([height - m.bottom, m.top]);
     const svg = root.append("svg").attr("width", width).attr("height", height).attr("role", "img")
-      .attr("aria-label", `${kind === "rate" ? "Acceptance rate" : "Submissions"} over time for ${series.map((s) => s.conf).join(", ")}`);
+      .attr("aria-label", `${kind === "rate" ? "Acceptance rate" : "Submissions"} over time for ${model.visible.length} conferences` +
+        (model.hl.length ? `; highlighted: ${model.hl.join(", ")}` : ""));
     const yTicks = kind === "rate" ? y.ticks(5) : (state.logSubs ? logTicks(y) : y.ticks(5));
     const yFmt = kind === "rate" ? d3.format(".0%") : d3.format("~s");
     svg.append("g").attr("class", "grid").attr("transform", `translate(${m.left},0)`).call(d3.axisLeft(y).tickValues(yTicks).tickSize(-(width - m.left - m.right)).tickFormat(""));
     svg.append("g").attr("class", "axis").attr("transform", `translate(${m.left},0)`).call(d3.axisLeft(y).tickValues(yTicks).tickFormat(yFmt).tickSizeOuter(0)).call((g) => g.select(".domain").remove());
     svg.append("g").attr("class", "axis").attr("transform", `translate(0,${height - m.bottom})`).call(d3.axisBottom(x).ticks(Math.min(12, years[1] - years[0])).tickFormat(d3.format("d")).tickSizeOuter(0));
-    for (const s of series) {
-      const color = seriesColor(s.conf);
-      svg.append("path").attr("class", "series-line").attr("stroke", color)
-        .attr("d", d3.line().defined((d) => !d.gap && val(d) > 0).x((d) => x(d.year)).y((d) => y(val(d)))(withGaps(s.values)));
+    const line = d3.line().defined((d) => !d.gap && val(d) > 0).x((d) => x(d.year)).y((d) => y(val(d)));
+
+    // gray context lines
+    const bgG = svg.append("g");
+    const bgPaths = new Map();
+    for (const s of bgSeries) bgPaths.set(s.conf, bgG.append("path").attr("class", "context-line").attr("d", line(withGaps(s.values))));
+    // median
+    if (median.length) svg.append("path").attr("class", "median-line").attr("d", d3.line().x((d) => x(d.year)).y((d) => y(d.v))(median));
+    // highlighted series
+    for (const s of hlSeries) {
+      const color = model.colors.get(s.conf);
+      svg.append("path").attr("class", "series-line").attr("stroke", color).attr("d", line(withGaps(s.values)));
       svg.append("g").selectAll("circle").data(s.values).join("circle").attr("class", "series-dot").attr("r", 3).attr("fill", color)
         .attr("cx", (d) => x(d.year)).attr("cy", (d) => y(val(d)));
     }
-    // labels in the right gutter, nudged apart; dashed leader from each series' last point
+    // labels in the right gutter (highlighted series + median), nudged apart with dashed leaders
     const gx = width - m.right + 10;
-    const labels = series.map((s) => { const l = s.values[s.values.length - 1]; return { conf: s.conf, px: x(l.year), py: y(val(l)), y: y(val(l)) }; }).sort((a, b) => a.y - b.y);
+    const labels = hlSeries.filter((s) => s.values.length).map((s) => {
+      const l = s.values[s.values.length - 1];
+      return { text: s.conf, color: model.colors.get(s.conf), px: x(l.year), py: y(val(l)), y: y(val(l)) };
+    });
+    if (median.length) { const l = median[median.length - 1]; labels.push({ text: "Median", color: "#333", px: x(l.year), py: y(l.v), y: y(l.v), median: true }); }
+    labels.sort((a, b) => a.y - b.y);
     for (let i = 1; i < labels.length; i++) if (labels[i].y - labels[i - 1].y < 14) labels[i].y = labels[i - 1].y + 14;
     const over = labels.length ? labels[labels.length - 1].y - (height - m.bottom) : 0;
     if (over > 0) for (const l of labels) l.y -= over;
     const lg = svg.append("g");
-    lg.selectAll("line").data(labels).join("line").attr("stroke", (d) => seriesColor(d.conf)).attr("stroke-dasharray", "2 3")
+    lg.selectAll("line").data(labels).join("line").attr("stroke", (d) => d.color).attr("stroke-dasharray", "2 3")
       .attr("x1", (d) => d.px + 4).attr("y1", (d) => d.py).attr("x2", gx - 3).attr("y2", (d) => d.y);
-    lg.selectAll("text").data(labels).join("text").attr("class", "end-label").attr("x", gx).attr("y", (d) => d.y).attr("dy", "0.35em").text((d) => d.conf);
+    lg.selectAll("text").data(labels).join("text").attr("class", (d) => "end-label" + (d.median ? " median-label" : ""))
+      .attr("x", gx).attr("y", (d) => d.y).attr("dy", "0.35em").text((d) => d.text);
+
+    // crosshair + tooltip; in the gray view, the gray line nearest the pointer is highlighted and clickable
     const cross = svg.append("line").attr("class", "crosshair").attr("y1", m.top).attr("y2", height - m.bottom).style("display", "none");
     const hover = svg.append("g");
+    let hot = null;
+    const setHot = (conf) => {
+      if (hot === conf) return;
+      if (hot && bgPaths.has(hot)) bgPaths.get(hot).classed("hot", false);
+      hot = conf;
+      if (hot && bgPaths.has(hot)) bgPaths.get(hot).classed("hot", true).raise();
+    };
     svg.append("rect").attr("class", "hit").attr("x", m.left).attr("y", m.top).attr("width", width - m.left - m.right).attr("height", height - m.top - m.bottom)
-      .on("pointermove", (ev) => {
-        const yr = Math.round(x.invert(d3.pointer(ev)[0]));
+      .style("cursor", "crosshair")
+      .on("pointermove", function (ev) {
+        const [px, py] = d3.pointer(ev);
+        const yr = Math.round(x.invert(px));
         cross.style("display", null).attr("x1", x(yr)).attr("x2", x(yr));
-        const pts = series.map((s) => ({ conf: s.conf, d: s.values.find((v) => v.year === yr) })).filter((p) => p.d);
+        let near = null, best = 7;
+        for (const s of bgSeries) {
+          const v = s.values.find((q) => q.year === yr);
+          if (v && val(v) > 0 && Math.abs(y(val(v)) - py) < best) { best = Math.abs(y(val(v)) - py); near = s.conf; }
+        }
+        setHot(near);
+        d3.select(this).style("cursor", near ? "pointer" : "crosshair");
+        const pts = hlSeries.map((s) => ({ conf: s.conf, color: model.colors.get(s.conf), d: s.values.find((v) => v.year === yr) })).filter((p) => p.d);
+        if (near) pts.unshift({ conf: near, color: "#555", d: bgSeries.find((s) => s.conf === near).values.find((v) => v.year === yr), gray: true });
         hover.selectAll("circle").data(pts).join("circle").attr("r", 4.5).attr("class", "series-dot")
-          .attr("fill", (p) => seriesColor(p.conf)).attr("cx", x(yr)).attr("cy", (p) => y(val(p.d)));
-        if (!pts.length) { hideTip(); return; }
-        pts.sort((a, b) => val(b.d) - val(a.d));
-        showTip(ev, `<div class="tt-title">${yr}</div>` + pts.map((p) =>
-          `<div class="tt-row"><span class="tt-key"><span class="tt-sw" style="background:${seriesColor(p.conf)}"></span>${esc(p.conf)}</span>` +
+          .attr("fill", (p) => p.color).attr("cx", x(yr)).attr("cy", (p) => y(val(p.d)));
+        const med = median.find((q) => q.year === yr);
+        if (!pts.length && !med) { hideTip(); return; }
+        const rows = pts.sort((a, b) => (b.gray - a.gray) || val(b.d) - val(a.d)).map((p) =>
+          `<div class="tt-row"><span class="tt-key"><span class="tt-sw" style="background:${p.color}"></span>${esc(p.conf)}</span>` +
           `<span class="tt-val">${kind === "rate" ? fmtPct(p.d.rate) : fmtInt(p.d.submitted)}</span></div>` +
-          `<div class="tt-row muted"><span></span><span>${fmtInt(p.d.accepted)} / ${fmtInt(p.d.submitted)}</span></div>`).join(""));
+          `<div class="tt-row muted"><span>${p.gray ? "click to highlight" : ""}</span><span>${fmtInt(p.d.accepted)} / ${fmtInt(p.d.submitted)}</span></div>`).join("");
+        const medRow = med ? `<div class="tt-row"><span class="tt-key"><span class="tt-sw" style="background:#333"></span>Median of ${med.n}</span>` +
+          `<span class="tt-val">${kind === "rate" ? fmtPct(med.v) : fmtInt(Math.round(med.v))}</span></div>` : "";
+        showTip(ev, `<div class="tt-title">${yr}</div>` + rows + medRow);
       })
-      .on("pointerleave", () => { cross.style("display", "none"); hover.selectAll("*").remove(); hideTip(); });
+      .on("pointerleave", () => { cross.style("display", "none"); hover.selectAll("*").remove(); setHot(null); hideTip(); })
+      .on("click", () => { if (hot) { const c = hot; setHot(null); addSelected(c); } });
   }
   function logTicks(y) {
     const [a, b] = y.domain(), out = [];
