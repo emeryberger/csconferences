@@ -50,12 +50,20 @@
   const fmtInt = d3.format(",");
   const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
   const tip = document.getElementById("tooltip");
+  const deadlinesBy = new Map();   // conf -> deadline rows (from ccf-deadlines via deadlines.py), sorted by time
+  const NOW = new Date();
+  const DAY = 864e5;
   let byConf = new Map();
   let allYears = [];
   let lastYear = 0;
 
-  d3.text("../csconferences.csv").then((text) => {
+  Promise.all([d3.text("../csconferences.csv"), d3.text("../deadlines.csv").catch(() => "")]).then(([text, dtext]) => {
     const rows = d3.csvParse(text);
+    for (const r of dtext ? d3.csvParse(dtext) : []) {
+      r.when = new Date(r.Deadline);
+      if (!isNaN(r.when)) (deadlinesBy.get(r.Conference) || deadlinesBy.set(r.Conference, []).get(r.Conference)).push(r);
+    }
+    for (const list of deadlinesBy.values()) list.sort((p, q) => p.when - q.when);
     for (const [conf, rs] of d3.group(rows, (r) => r.Conference)) {
       const area = rs[0].Area;
       const years = Array.from(d3.group(rs, (r) => +r.Year), ([year, yr]) => {
@@ -183,10 +191,13 @@
       for (const conf of confs) og.append("option").attr("value", conf).text(conf);
     }
     pick.on("change", function () { const v = this.value; this.value = ""; if (v) { state.enabled.add(v); addSelected(v); } });
+    d3.select("#pdf-rate").on("click", () => exportPDF(document.querySelector("#rate-chart svg"), "acceptance-rates", "Acceptance rate over time"));
+    d3.select("#pdf-subs").on("click", () => exportPDF(document.querySelector("#subs-chart svg"), "submissions", `Submissions over time${state.logSubs ? " (log scale)" : ""}`));
+    d3.select("#pdf-scatter").on("click", () => exportPDF(document.querySelector("#scatter svg"), "selectivity-vs-size", "Acceptance rate vs. submissions (most recent year)"));
     d3.select("#log-subs").on("change", function () { state.logSubs = this.checked; renderCharts(); });
     d3.selectAll("#conf-table th[data-sort]").on("click", function () {
       const k = this.dataset.sort;
-      state.sortDir = state.sortKey === k ? -state.sortDir : (k === "conf" ? 1 : k === "rate" || k === "mean5" ? 1 : -1);
+      state.sortDir = state.sortKey === k ? -state.sortDir : (k === "conf" || k === "rate" || k === "mean5" || k === "daysToDl" ? 1 : -1);
       state.sortKey = k; renderTable();
     });
     document.addEventListener("click", () => { if (state.openCat) { state.openCat = null; syncAreaControls(); } });
@@ -316,7 +327,10 @@
       if (!ys.length) return null;
       const last = ys[ys.length - 1];
       const last5 = ys.filter((y) => y.year > last.year - 5);
-      return { ...c, ys, lastYear: last.year, accepted: last.accepted, submitted: last.submitted, rate: last.rate, mean5: d3.mean(last5, (y) => y.rate) };
+      const dls = deadlinesBy.get(c.conf) || [];
+      const next = dls.find((r) => r.when >= NOW) || null;
+      return { ...c, ys, lastYear: last.year, accepted: last.accepted, submitted: last.submitted, rate: last.rate, mean5: d3.mean(last5, (y) => y.rate),
+        nextDl: next, daysToDl: next ? (next.when - NOW) / DAY : 1e9, lastDl: next ? null : dls[dls.length - 1] || null };
     }).filter(Boolean);
   }
   // insert break markers so lines don't bridge gaps longer than MAX_GAP years
@@ -357,7 +371,7 @@
     });
     const tbody = d3.select("#conf-table tbody");
     tbody.selectAll("*").remove();
-    if (!data.length) { tbody.append("tr").append("td").attr("colspan", 8).attr("class", "empty").text("No conferences match. Turn on more areas or clear the search."); return; }
+    if (!data.length) { tbody.append("tr").append("td").attr("colspan", 9).attr("class", "empty").text("No conferences match. Turn on more areas or clear the search."); return; }
     for (const d of data) {
       const sel = state.selected.includes(d.conf);
       const ex = state.expandedConfs.has(d.conf);
@@ -385,8 +399,9 @@
       tr.append("td").attr("class", "num").text(fmtPct(d.mean5));
       tr.append("td").attr("class", "num").text(fmtInt(d.submitted));
       tr.append("td").attr("class", "num").text(d.lastYear);
+      deadlineCell(tr.append("td").attr("class", "num dl-col"), d);
       sparkline(tr.append("td").attr("class", "spark-col").node(), d);
-      if (ex) renderDetail(tbody.append("tr").attr("class", "detail-row").append("td").attr("colspan", 8), d);
+      if (ex) renderDetail(tbody.append("tr").attr("class", "detail-row").append("td").attr("colspan", 9), d);
     }
   }
 
@@ -422,11 +437,14 @@
     const meta = td.append("div").attr("class", "detail-meta");
     meta.append("span").text(`${d.areaName} · ${d.lastYear}: ${fmtInt(d.accepted)} accepted of ${fmtInt(d.submitted)} submitted (${fmtPct(d.rate)})`);
     meta.append("a").attr("href", staticAnchor(d.conf)).style("margin-left", "8px").text("static graph");
+    meta.append("button").attr("class", "pdf-btn").attr("title", `Download this chart as PDF`).text("PDF")
+      .on("click", (ev) => { ev.stopPropagation(); exportPDF(td.select(".detail-chart svg").node(), `${d.conf}-papers`, `${d.conf}: papers accepted and rejected per year`); });
+    renderDeadlines(td, d);
     // Stacked bars like the original static graphs: accepted (bottom) + rejected (top) = submissions.
     // Green/red is not CVD-safe, so accepted stays green and rejected is a light neutral (strong luminance contrast).
     const box = td.append("div").attr("class", "detail-chart").node();
     const w = Math.max(320, (document.getElementById("ranking-window").clientWidth || 640) - 70), h = 180;
-    const m = { t: 12, r: 78, b: 22, l: 46 };
+    const m = { t: 20, r: 78, b: 22, l: 46 };
     const ys = d.ys;
     const yrs = d3.range(ys[0].year, ys[ys.length - 1].year + 1);
     const x = d3.scaleBand().domain(yrs).range([m.l, w - m.r]).paddingInner(0.18).paddingOuter(0.05);
@@ -439,7 +457,7 @@
     const every = Math.max(1, Math.ceil(yrs.length / 12));
     svg.append("g").attr("class", "axis").attr("transform", `translate(0,${h - m.b})`)
       .call(d3.axisBottom(x).tickValues(yrs.filter((yr, i) => (yrs.length - 1 - i) % every === 0)).tickFormat(d3.format("d")).tickSizeOuter(0));
-    svg.append("text").attr("x", m.l - 40).attr("y", m.t - 3).attr("font-size", 10).text("papers");
+    svg.append("text").attr("x", m.l - 40).attr("y", m.t - 9).attr("font-size", 10).text("papers");
     const bw = x.bandwidth(), r = Math.min(4, bw / 2);
     const g = svg.append("g");
     for (const v of ys) {
@@ -682,6 +700,99 @@
     r = Math.min(r, h, w / 2);
     return `M${x},${y + h}V${y + r}Q${x},${y} ${x + r},${y}H${x + w - r}Q${x + w},${y} ${x + w},${y + r}V${y + h}Z`;
   }
+
+  // ---------- submission deadlines ----------
+  // Display a deadline in the timezone its CFP uses (AoE, UTC±N, PT/ET...), with the viewer's local time in the tooltip.
+  function ianaZone(tz) {
+    const t = (tz || "UTC").trim().toUpperCase();
+    const named = { AOE: "Etc/GMT+12", UTC: "UTC", GMT: "UTC", PT: "America/Los_Angeles", PST: "America/Los_Angeles", PDT: "America/Los_Angeles",
+      ET: "America/New_York", EST: "America/New_York", EDT: "America/New_York", CT: "America/Chicago", MT: "America/Denver", CET: "Europe/Paris", CEST: "Europe/Paris", JST: "Asia/Tokyo" };
+    if (named[t]) return named[t];
+    const m = t.match(/^(?:UTC|GMT)\s*([+-])(\d{1,2})$/);
+    return m ? `Etc/GMT${m[1] === "+" ? "-" : "+"}${+m[2]}` : "UTC";
+  }
+  function fmtIn(date, tz, withTime = true) {
+    const opts = { year: "numeric", month: "short", day: "numeric", timeZone: ianaZone(tz) };
+    if (withTime) Object.assign(opts, { hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
+    try { return new Intl.DateTimeFormat("en-US", opts).format(date) + (withTime ? ` ${tz || "UTC"}` : ""); }
+    catch (_e) { return date.toISOString().slice(0, 16).replace("T", " ") + " UTC"; }
+  }
+  function relDays(days) {
+    if (days < 1) return "today";
+    const n = Math.ceil(days);
+    return n < 60 ? `in ${n} day${n > 1 ? "s" : ""}` : `in ${Math.round(n / 30)} months`;
+  }
+  function deadlineCell(td, d) {
+    if (d.nextDl) {
+      const r = d.nextDl;
+      td.classed("dl-soon", d.daysToDl <= 30)
+        .attr("title", `${d.conf} ${r.Year}${r.Round ? " · " + r.Round : ""}\nDeadline: ${fmtIn(r.when, r.Timezone)}\nYour time: ${r.when.toLocaleString()}` +
+          (r.AbstractDeadline ? `\nAbstract: ${fmtIn(new Date(r.AbstractDeadline), r.Timezone)}` : "") + "\nClick ▶ for details and the official site")
+        .html(`${esc(fmtIn(r.when, r.Timezone, false).replace(/, \d{4}$/, ""))} <span class="dl-rel">${relDays(d.daysToDl)}</span>`);
+    } else {
+      td.attr("class", "num dl-col text-muted").attr("title", d.lastDl ? `No upcoming deadline listed; last: ${fmtIn(d.lastDl.when, d.lastDl.Timezone, false)}` : "No deadline data")
+        .text("—");
+    }
+  }
+  function renderDeadlines(td, d) {
+    const dls = deadlinesBy.get(d.conf) || [];
+    const upcoming = dls.filter((r) => r.when >= NOW);
+    const box = td.append("div").attr("class", "dl-box");
+    if (!dls.length) { box.append("span").attr("class", "text-muted").text("No submission-deadline data for this venue."); return; }
+    const list = upcoming.length ? upcoming : dls.slice(-1);
+    box.append("strong").text(upcoming.length ? "Upcoming submission deadlines" : "Most recent submission deadline (no upcoming one listed)");
+    const ul = box.append("ul");
+    for (const r of list) {
+      const li = ul.append("li");
+      li.append("span").attr("class", "dl-when").text(fmtIn(r.when, r.Timezone));
+      li.append("span").attr("class", "text-muted").text(` (${r.when >= NOW ? relDays((r.when - NOW) / DAY) : "past"})`);
+      li.append("span").text(` · ${d.conf} ${r.Year}${r.Round ? " · " + r.Round : ""}`);
+      if (r.AbstractDeadline) li.append("span").attr("class", "text-muted").text(` · abstracts ${fmtIn(new Date(r.AbstractDeadline), r.Timezone, false)}`);
+      if (r.Dates || r.Place) li.append("span").attr("class", "text-muted").text(` · ${[r.Dates, r.Place].filter(Boolean).join(", ").replace(/\s+/g, " ")}`);
+      if (r.Link) li.append("a").attr("href", r.Link).attr("rel", "noopener").style("margin-left", "6px").text("official site");
+    }
+    box.append("div").attr("class", "dl-src text-muted").html(`Deadlines from <a href="https://github.com/ccfddl/ccf-deadlines" rel="noopener">ccf-deadlines</a> (community-maintained); confirm on the official site.`);
+  }
+
+  // ---------- PDF export (jsPDF + svg2pdf.js, vendored, loaded on first use) ----------
+  let pdfLibs = null;
+  function loadScript(src) {
+    return new Promise((resolve, reject) => { const s = document.createElement("script"); s.src = src; s.onload = resolve; s.onerror = () => reject(new Error(src)); document.head.appendChild(s); });
+  }
+  function ensurePdfLibs() {
+    if (!pdfLibs) pdfLibs = loadScript("js/jspdf.umd.min.js").then(() => loadScript("js/svg2pdf.umd.min.js"));
+    return pdfLibs;
+  }
+  const STYLE_PROPS = ["fill", "fill-opacity", "stroke", "stroke-width", "stroke-dasharray", "stroke-opacity", "stroke-linecap", "stroke-linejoin",
+    "opacity", "font-size", "font-family", "font-weight", "font-style", "text-anchor", "display", "visibility"];
+  // svg2pdf ignores page stylesheets, so copy computed styles onto a clone; drop invisible hit targets
+  function inlinedClone(svg) {
+    const clone = svg.cloneNode(true);
+    const src = svg.querySelectorAll("*"), dst = clone.querySelectorAll("*");
+    for (let i = 0; i < src.length; i++) {
+      const cs = getComputedStyle(src[i]);
+      if (cs.display === "none") { dst[i].setAttribute("display", "none"); continue; }
+      for (const p of STYLE_PROPS) dst[i].style.setProperty(p, cs.getPropertyValue(p));
+      if ((dst[i].tagName === "rect" || dst[i].tagName === "circle") && /transparent|rgba\(0, 0, 0, 0\)/.test(cs.fill) && cs.stroke === "none") dst[i].remove();
+    }
+    return clone;
+  }
+  async function exportPDF(svg, filename, title) {
+    if (!svg) return;
+    try { await ensurePdfLibs(); } catch (e) { alert("Could not load the PDF library: " + e.message); return; }
+    const w = +svg.getAttribute("width"), h = +svg.getAttribute("height");
+    const margin = 36, head = 40, foot = 22;
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ orientation: w >= h ? "landscape" : "portrait", unit: "pt", format: [w + 2 * margin, h + 2 * margin + head + foot] });
+    doc.setFont("helvetica", "bold"); doc.setFontSize(14); doc.setTextColor(51, 51, 51);
+    doc.text(title, margin, margin + 14);
+    doc.setFont("helvetica", "normal"); doc.setFontSize(9); doc.setTextColor(119, 119, 119);
+    doc.text(`Years ${state.from}–${state.to} · csconferences.org · generated ${new Date().toISOString().slice(0, 10)}`, margin, margin + 30);
+    await doc.svg(inlinedClone(svg), { x: margin, y: margin + head, width: w, height: h });
+    doc.text("Data: csconferences.org (github.com/emeryberger/csconferences); sources listed per conference-year.", margin, margin + head + h + 16);
+    doc.save(`${filename}.pdf`);
+  }
+
   function hideTip() { tip.hidden = true; }
   function esc(s) { return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
   function debounce(f, ms) { let t; return () => { clearTimeout(t); t = setTimeout(f, ms); }; }

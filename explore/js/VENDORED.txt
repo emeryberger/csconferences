@@ -1,0 +1,4 @@
+Vendored third-party libraries (MIT licensed):
+d3.v7.min.js  https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js
+jspdf.umd.min.js  https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js  sha256=85ba2cc3ff858a20fa49fe6e457bec863ea40b55a9f3725e58a940e62f6f61a4  (365730 bytes)
+svg2pdf.umd.min.js  https://cdn.jsdelivr.net/npm/svg2pdf.js@2.2.4/dist/svg2pdf.umd.min.js  sha256=fdfbbf24d434fe653f7a553bd52093177702ddb285a57508f28cba3f303a33f6  (84587 bytes)

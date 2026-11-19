@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CSConferences: Computer Science Conference Acceptance Rates</title>
 <meta name="description" content="Acceptance rates, submissions, and accepted papers for top computer science conferences, with primary sources for every number.">
-<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="style.css?v=13">
 </head>
 <body>
 <div class="container">
@@ -73,6 +73,7 @@
             <th data-sort="mean5" class="num"><abbr title="Mean acceptance rate over the last 5 years in range">5-yr</abbr></th>
             <th data-sort="submitted" class="num"><abbr title="Submissions in the most recent year in range">Submitted</abbr></th>
             <th data-sort="lastYear" class="num"><abbr title="Most recent year in range">Year</abbr></th>
+            <th data-sort="daysToDl" class="num dl-col"><abbr title="Next submission deadline (from ccf-deadlines; confirm on the official site). Sort to see what is coming up.">Next deadline</abbr></th>
             <th class="spark-col"><abbr title="Submissions per year over the last 15 years of the range; each row has its own scale (hover for values)">Submissions trend</abbr></th>
           </tr></thead>
           <tbody></tbody>
@@ -90,9 +91,9 @@
     </div>
     <div class="panel-body">
       <p class="hint text-muted" id="compare-hint"></p>
-      <div class="chart-title">Acceptance rate</div>
+      <div class="chart-title">Acceptance rate <button id="pdf-rate" class="pdf-btn" title="Download this chart as PDF">PDF</button></div>
       <div id="rate-chart" class="chart"></div>
-      <div class="chart-title">Submissions <label class="inline-ctl"><input type="checkbox" id="log-subs"> log scale</label></div>
+      <div class="chart-title">Submissions <button id="pdf-subs" class="pdf-btn" title="Download this chart as PDF">PDF</button> <label class="inline-ctl"><input type="checkbox" id="log-subs"> log scale</label></div>
       <div id="subs-chart" class="chart"></div>
     </div>
   </div>
@@ -101,17 +102,18 @@
     <div class="panel-heading section-heading">
       <span class="section-title">Selectivity vs. size</span>
       <span class="text-muted small" id="scatter-caption"></span>
+      <button id="pdf-scatter" class="pdf-btn" title="Download this chart as PDF">PDF</button>
     </div>
     <div class="panel-body"><div id="scatter" class="chart"></div></div>
   </div>
 
   <div class="page-footer">
-    <p>Data: <a href="../csconferences.csv">csconferences.csv</a>, from conference front matter, program chairs' reports, HotCRP, and other primary sources. Counts exclude papers withdrawn or desk-rejected before review where sources distinguish them; long/full research papers only. · <a href="https://github.com/emeryberger/csconferences">GitHub</a> · Corrections welcome via pull request.</p>
+    <p>Data: <a href="../csconferences.csv">csconferences.csv</a>, from conference front matter, program chairs' reports, HotCRP, and other primary sources. Submission deadlines: <a href="https://github.com/ccfddl/ccf-deadlines">ccf-deadlines</a> (MIT; community-maintained). Counts exclude papers withdrawn or desk-rejected before review where sources distinguish them; long/full research papers only. · <a href="https://github.com/emeryberger/csconferences">GitHub</a> · Corrections welcome via pull request.</p>
     <p>Maintained by <a href="https://emeryberger.com">Emery Berger</a> · Companion to <a href="https://csrankings.org">CSRankings</a>.</p>
   </div>
 </div>
 <div id="tooltip" class="tooltip" role="status" aria-live="polite" hidden></div>
 <script src="js/d3.v7.min.js"></script>
-<script src="app.js?v=12"></script>
+<script src="app.js?v=13"></script>
 </body>
 </html>

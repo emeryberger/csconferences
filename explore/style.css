@@ -291,3 +291,18 @@ tr.detail-row > td { max-width: 0; }               /* let the cell shrink to the
 .area-child-divider { height: 1px; background: var(--border); margin: 6px 0; }
 .next-tier { opacity: .7; }
 .conf-list tr.tier-divider td { padding: 0; }
+
+/* PDF buttons */
+.pdf-btn { font: inherit; font-size: 11px; font-weight: 600; color: var(--link); background: #fff; border: 1px solid var(--link);
+  border-radius: 3px; padding: 0 6px; margin-left: 6px; cursor: pointer; line-height: 16px; vertical-align: 1px; }
+.pdf-btn:hover { background: #f0f7fd; }
+.section-heading .pdf-btn { margin-left: auto; }
+/* deadlines */
+.ranking .dl-col { white-space: nowrap; font-size: 14px; }
+.dl-rel { display: block; font-size: 11px; color: var(--muted); line-height: 1.1; }
+.dl-soon { color: #9e5200; font-weight: bold; }
+.dl-soon .dl-rel { color: #9e5200; font-weight: normal; }
+.dl-box { font-size: 13px; margin: 6px 0 8px; }
+.dl-box ul { margin: 4px 0 2px; padding-left: 18px; }
+.dl-when { font-weight: bold; }
+.dl-src { font-size: 11px; }

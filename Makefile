@@ -17,4 +17,10 @@ explorer-home:
 readme-home:
 	rm -f index.html
 
-.PHONY: explorer-home readme-home
+# Refresh submission deadlines (deadlines.csv) from https://github.com/ccfddl/ccf-deadlines (MIT).
+# Needs network + PyYAML; the checkout lives in .ccfddl/ (git-ignored). Commit deadlines.csv afterwards.
+deadlines:
+	if [ -d .ccfddl/.git ]; then git -C .ccfddl pull -q --ff-only; else git clone -q --depth 1 https://github.com/ccfddl/ccf-deadlines.git .ccfddl; fi
+	$(PYTHON) deadlines.py .ccfddl
+
+.PHONY: explorer-home readme-home deadlines
