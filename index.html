@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="explore/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSConferences: Computer Science Conference Acceptance Rates</title>
+<meta name="description" content="Acceptance rates, submissions, and accepted papers for top computer science conferences, with primary sources for every number.">
+<link rel="stylesheet" href="style.css?v=9">
+</head>
+<body>
+<div class="container">
+
+  <div class="page-header">
+    <h1>CSConferences: Computer Science Conference Acceptance Rates</h1>
+
+    <div class="panel panel-info intro-panel">
+      <div class="panel-heading">
+        <p>CSConferences tracks submissions, accepted papers, and acceptance rates for selective computer science conferences, with a source for every number.</p>
+      </div>
+    </div>
+
+    <div class="panel panel-info rank-controls-panel">
+      <div class="panel-heading">
+        <div class="rank-controls-flex">
+          <div class="rank-controls-main">
+            <span class="year-slider-container" title="Year range">
+              <select id="year-from" class="year-display" aria-label="From year"></select>
+              <span class="year-dash">–</span>
+              <select id="year-to" class="year-display" aria-label="To year"></select>
+            </span>
+            <label class="all-toggle" id="all-toggle" title="Toggle all areas">
+              <input type="checkbox" class="all-toggle-checkbox" id="all-areas" checked>
+              <span class="all-toggle-slider" aria-hidden="true"></span>
+              <span class="all-toggle-label">All</span>
+            </label>
+            <span class="area-indicators" id="area-indicators" role="group" aria-label="Area categories"></span>
+            <input id="search" class="search-box" type="search" placeholder="Find a conference…" aria-label="Find a conference">
+            <button id="reset-filters" class="btn-outline" hidden>Reset</button>
+          </div>
+          <div class="rank-controls-right">
+            <a class="btn-outline" href="../README.html" data-static>Static page</a>
+            <a class="btn-sponsor" href="../csconferences.csv">Download data</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- area selection (left), as in CSrankings -->
+    <div class="col-areas">
+      <table class="table-fit table table-sm table-striped area-table" id="area-table">
+        <thead><tr><th colspan="2">
+          <label class="all-toggle all-toggle-sidebar" id="all-toggle-side" title="Toggle all areas">
+            <input type="checkbox" class="all-toggle-checkbox" id="all-areas-side" checked>
+            <span class="all-toggle-slider" aria-hidden="true"></span>
+            <span class="all-toggle-label">All Areas</span>
+          </label>
+        </th></tr></thead>
+        <!-- category groups inserted by app.js -->
+      </table>
+    </div>
+
+    <!-- conference table (right) -->
+    <div class="col-ranking">
+      <div id="ranking-window">
+        <table class="table table-sm table-striped ranking" id="conf-table">
+          <thead><tr>
+            <th class="rank-col">#</th>
+            <th class="expand-col"></th>
+            <th data-sort="conf" class="name-col"><abbr title="Click ▶ to see the conference's history and sources; click the name to add it to the comparison charts">Conference</abbr></th>
+            <th data-sort="rate" class="num"><abbr title="Acceptance rate in the most recent year in range">Rate</abbr></th>
+            <th data-sort="mean5" class="num"><abbr title="Mean acceptance rate over the last 5 years in range">5-yr</abbr></th>
+            <th data-sort="submitted" class="num"><abbr title="Submissions in the most recent year in range">Submitted</abbr></th>
+            <th data-sort="lastYear" class="num"><abbr title="Most recent year in range">Year</abbr></th>
+            <th class="spark-col"><abbr title="Submissions per year over the last 15 years of the range; each row has its own scale (hover for values)">Submissions trend</abbr></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="status text-muted" id="filter-status" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div class="panel panel-info section-panel">
+    <div class="panel-heading section-heading">
+      <span class="section-title">Compare conferences over time</span>
+      <span class="chips" id="chips"></span>
+      <select id="add-conf" class="add-conf" aria-label="Add a conference to the comparison"></select>
+    </div>
+    <div class="panel-body">
+      <p class="hint text-muted" id="compare-hint"></p>
+      <div class="chart-title">Acceptance rate</div>
+      <div id="rate-chart" class="chart"></div>
+      <div class="chart-title">Submissions <label class="inline-ctl"><input type="checkbox" id="log-subs" checked> log scale</label></div>
+      <div id="subs-chart" class="chart"></div>
+    </div>
+  </div>
+
+  <div class="panel panel-info section-panel">
+    <div class="panel-heading section-heading">
+      <span class="section-title">Selectivity vs. size</span>
+      <span class="text-muted small" id="scatter-caption"></span>
+    </div>
+    <div class="panel-body"><div id="scatter" class="chart"></div></div>
+  </div>
+
+  <div class="page-footer">
+    <p>Data: <a href="../csconferences.csv">csconferences.csv</a>, from conference front matter, program chairs' reports, HotCRP, and other primary sources. Counts exclude papers withdrawn or desk-rejected before review where sources distinguish them; long/full research papers only. · <a href="https://github.com/emeryberger/csconferences">GitHub</a> · Corrections welcome via pull request.</p>
+    <p>Maintained by <a href="https://emeryberger.com">Emery Berger</a> · Companion to <a href="https://csrankings.org">CSRankings</a>.</p>
+  </div>
+</div>
+<div id="tooltip" class="tooltip" role="status" aria-live="polite" hidden></div>
+<script src="js/d3.v7.min.js"></script>
+<script src="app.js?v=10"></script>
+</body>
+</html>

@@ -33,6 +33,7 @@
   - **URL:** the default state keeps a clean URL. The hash (`c=`, `from=`, `to=`, `on=`) is written only after the user changes something.
   - **Asset versions:** bump `?v=N` on `style.css`/`app.js` in `index.html` whenever they change (Pages caches for about 10 minutes).
   - **Testing:** `.work/scripts/cdp.py` (local only; `.work/` is git-excluded) is a stdlib-only CDP client. Run `python3 -I .work/scripts/cdp.py check 9335 http://127.0.0.1:8765/explore/` with a loopback `http.server` on 8765 and headless Chrome started with `--remote-debugging-address=127.0.0.1 --remote-debugging-port=9335`. It clicks through the filters, dropdowns and expanders and prints the counts.
+  - **Current state (Nov 2026): the explorer IS the homepage.** A root `index.html` is committed, and the README / static graphs are served at `/README.html`. The explorer's "Static page" button and per-conference "static graph" links all derive from the `[data-static]` link (`STATIC_URL` in `app.js`).
   - **To make the explorer the homepage:** run `make explorer-home`. This writes a root `index.html` that loads `explore/` through `<base href="explore/">`, and Pages prefers `index.html` over `README.md`. Its "Static page" link then points to the GitHub README. While root `index.html` exists, `make` regenerates it automatically. **To revert:** run `make readme-home` (deletes root `index.html`). Commit either change.
 
 ## Update: November 2026

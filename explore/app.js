@@ -31,6 +31,9 @@
     "PPoPP": "absent", "WSDM": "absent" };
   const tierOf = (c) => TIER[c] || "top";
   const TIER_TITLE = { next: "Next tier in CSrankings (off by default)", absent: "Not a CSrankings venue (off by default)" };
+  // static (README) page; homepage mode retargets the [data-static] link (see Makefile explorer-home)
+  const STATIC_URL = (document.querySelector("[data-static]") || { getAttribute: () => "../" }).getAttribute("href");
+  const staticAnchor = (conf) => (STATIC_URL.includes("#") ? STATIC_URL.split("#")[0] : STATIC_URL) + "#" + conf;
   const MAX_SELECTED = 8;
   const DEFAULT_FROM = 2000;
   const DEFAULT_SELECTION = ["ICLR", "NeurIPS", "SOSP", "PLDI", "STOC"];
@@ -221,7 +224,7 @@
         for (const conf of tierOrder(confs)) {
           if (conf === null) { list.append("tr").attr("class", "tier-divider").append("td").attr("colspan", 2).append("div").attr("class", "area-child-divider"); continue; }
           const r = list.append("tr").classed("next-tier", tierOf(conf) !== "top").attr("title", TIER_TITLE[tierOf(conf)] || null);
-          r.append("td").append("a").attr("href", `../#${conf}`).attr("title", `${conf} on the static page`).text(conf);
+          r.append("td").append("a").attr("href", staticAnchor(conf)).attr("title", `${conf} on the static page`).text(conf);
           r.append("td").append("input").attr("type", "checkbox").attr("class", "conf-checkbox").attr("data-conf", conf)
             .attr("aria-label", `Include ${conf}`).on("change", function () { setConfs([conf], this.checked); });
         }
@@ -418,7 +421,7 @@
   function renderDetail(td, d) {
     const meta = td.append("div").attr("class", "detail-meta");
     meta.append("span").text(`${d.areaName} · ${d.lastYear}: ${fmtInt(d.accepted)} accepted of ${fmtInt(d.submitted)} submitted (${fmtPct(d.rate)})`);
-    meta.append("a").attr("href", `../#${d.conf}`).style("margin-left", "8px").text("static graph");
+    meta.append("a").attr("href", staticAnchor(d.conf)).style("margin-left", "8px").text("static graph");
     // Stacked bars like the original static graphs: accepted (bottom) + rejected (top) = submissions.
     // Green/red is not CVD-safe, so accepted stays green and rejected is a light neutral (strong luminance contrast).
     const box = td.append("div").attr("class", "detail-chart").node();
