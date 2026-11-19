@@ -471,9 +471,9 @@ ML,ICML,2020,1,1088,4990,,
 ML,ICML,2021,1,1184,5513,,
 ML,ICML,2022,1,1235,5630,,
 ML,ICML,2023,1,1827,6538,https://github.com/lixin4ever/Conference-Acceptance-Rate,
-ML,ICML,2024,1,2610,9473,https://github.com/lixin4ever/Conference-Acceptance-Rate,
-ML,ICML,2025,1,3260,12107,https://papercopilot.com/statistics/icml-statistics/icml-2025-statistics/,
-ML,ICML,2026,1,6352,23918,https://group.ntt/en/topics/2026/07/06/icml2026.html,"6352 of 23918 main track (26.6%); official fact sheet https://media.icml.cc/Conferences/ICML2026/ICML2026_Fact_Sheet.pdf reports 6552/24661, which appears to include the Position Paper track (213 accepted per virtual site)"
+ML,ICML,2024,1,2610,9473,https://media.icml.cc/Conferences/ICML2024/ICML2024_Fact_Sheet.pdf,"main track only (fact sheet: over 2600 main-track papers, 27.5%); excludes 75 position papers (first year of the position track)"
+ML,ICML,2025,1,3260,12107,https://media.icml.cc/Conferences/ICML2025/ICML2025_Fact_Sheet.pdf,"main track only (fact sheet: Main Track 3260, 27%); excludes 73 position papers"
+ML,ICML,2026,1,6352,23918,https://media.icml.cc/Conferences/ICML2026/ICML2026_Fact_Sheet.pdf,main track only: fact sheet 6552/24661 includes the position track; 6552 - 200 position papers (ICML 2026 virtual site: 6307 main + 200 Position_Paper_Track entries) = 6352; 23918 main-track submissions per NTT opening-day report
 ML,NeurIPS,2014,1,414,1678,,
 ML,NeurIPS,2015,1,403,1838,,
 ML,NeurIPS,2016,1,569,2403,,
@@ -484,8 +484,8 @@ ML,NeurIPS,2020,1,1900,9454,,
 ML,NeurIPS,2021,1,2344,9122,,
 ML,NeurIPS,2022,1,2671,10411,https://papercopilot.com/statistics/neurips-statistics/neurips-2022-statistics/,
 ML,NeurIPS,2023,1,3218,12343,https://papercopilot.com/statistics/neurips-statistics/neurips-2023-statistics/,
-ML,NeurIPS,2024,1,4035,15671,https://papercopilot.com/statistics/neurips-statistics/neurips-2024-statistics/,
-ML,NeurIPS,2025,1,5290,21575,https://github.com/lixin4ever/Conference-Acceptance-Rate,
+ML,NeurIPS,2024,1,4037,15671,https://media.neurips.cc/Conferences/NeurIPS2024/NeurIPS2024-Fact_Sheet.pdf,"main conference track (fact sheet: 4,037 of 15,671, 25.8%); excludes 460 datasets & benchmarks papers (was 4035)"
+ML,NeurIPS,2025,1,5290,21575,https://blog.neurips.cc/2025/09/30/reflections-on-the-2025-review-process-from-the-program-committee-chairs/,main track only; excludes datasets & benchmarks (462) and position papers (33) per NeurIPS 2025 virtual site
 Metrics,IMC,2011,1,28,111,https://dl.acm.org/doi/proceedings/10.1145/2068816,
 Metrics,IMC,2012,1,35,101,https://dl.acm.org/doi/proceedings/10.1145/2398776,
 Metrics,IMC,2014,1,32,103,https://dl.acm.org/doi/proceedings/10.1145/2663716,

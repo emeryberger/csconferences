@@ -57,10 +57,9 @@
   let allYears = [];
   let lastYear = 0;
 
-  Promise.all([d3.text("../csconferences.csv"), d3.text("../deadlines.csv").catch(() => "")]).then(([text, dtext]) => {
+  d3.text("../csconferences.csv").then(async (text) => {
     const rows = d3.csvParse(text);
-    for (const r of dtext ? d3.csvParse(dtext) : []) {
-      r.when = new Date(r.Deadline);
+    for (const r of await loadDeadlines([...new Set(rows.map((q) => q.Conference))])) {
       if (!isNaN(r.when)) (deadlinesBy.get(r.Conference) || deadlinesBy.set(r.Conference, []).get(r.Conference)).push(r);
     }
     for (const list of deadlinesBy.values()) list.sort((p, q) => p.when - q.when);
@@ -358,7 +357,12 @@
   function renderCharts() { renderLineChart("rate"); renderLineChart("subs"); renderScatter(); }
 
   // ---------- right column: conference table ----------
-  function renderTable() {
+  function renderTable(anchorConf) {
+    // keep the table's scroll position, and keep the clicked row at the same place on screen
+    const win = document.getElementById("ranking-window");
+    const prevScroll = win.scrollTop, pageX = window.scrollX, pageY = window.scrollY;
+    const rowOf = (c) => win.querySelector(`tr.conf-row[data-conf="${CSS.escape(c)}"]`);
+    const anchorTop = anchorConf && rowOf(anchorConf) ? rowOf(anchorConf).getBoundingClientRect().top : null;
     const data = visibleConfs();
     const k = state.sortKey, dir = state.sortDir;
     const cmp = (a, b) => (typeof a[k] === "string" ? a[k].localeCompare(b[k]) : a[k] - b[k]) * dir;
@@ -375,7 +379,7 @@
     for (const d of data) {
       const sel = state.selected.includes(d.conf);
       const ex = state.expandedConfs.has(d.conf);
-      const tr = tbody.append("tr").attr("class", "conf-row" + (sel ? " selected" : ""));
+      const tr = tbody.append("tr").attr("class", "conf-row" + (sel ? " selected" : "")).attr("data-conf", d.conf);
       tr.append("td").attr("class", "rank-col").text(d.rank);
       tr.append("td").attr("class", "expand-col").append("span").attr("class", "hovertip" + (ex ? " expanded" : ""))
         .attr("role", "button").attr("tabindex", 0).attr("aria-expanded", ex).attr("title", "Show history and sources").html("&#9658;")
@@ -383,7 +387,7 @@
           if (ev.type === "keydown" && ev.key !== "Enter" && ev.key !== " ") return;
           ev.preventDefault();
           ex ? state.expandedConfs.delete(d.conf) : state.expandedConfs.add(d.conf);
-          renderTable();
+          renderTable(d.conf);
         });
       const name = tr.append("td").attr("class", "name-col");
       name.append("span").attr("class", "conf-mark").attr("data-cat", d.cat).style("background", catColor(d.cat)).attr("aria-hidden", "true");
@@ -402,6 +406,14 @@
       deadlineCell(tr.append("td").attr("class", "num dl-col"), d);
       sparkline(tr.append("td").attr("class", "spark-col").node(), d);
       if (ex) renderDetail(tbody.append("tr").attr("class", "detail-row").append("td").attr("colspan", 9), d);
+    }
+    win.scrollTop = prevScroll;
+    window.scrollTo(pageX, pageY);
+    if (anchorTop !== null && rowOf(anchorConf)) {
+      const row = rowOf(anchorConf);
+      win.scrollTop += row.getBoundingClientRect().top - anchorTop;
+      const btn = row.querySelector(".hovertip");
+      if (btn) btn.focus({ preventScroll: true });
     }
   }
 
@@ -701,6 +713,78 @@
     return `M${x},${y + h}V${y + r}Q${x},${y} ${x + r},${y}H${x + w - r}Q${x + w},${y} ${x + w},${y + r}V${y + h}Z`;
   }
 
+
+  // ---------- live deadlines (ccf-deadlines), with committed snapshot fallback ----------
+  const LIVE_DEADLINES = "https://ccfddl.com/conference/initial.json";
+  // our Conference -> ccf-deadlines `dblp` key where they differ (keep in sync with deadlines.py)
+  const DBLP_ALIAS = { NeurIPS: "nips", Oakland: "sp", UsenixSec: "uss", ATC: "usenix", EC: "sigecom", FSE: "sigsoft", ASE: "kbse", ISMM: "iwmm" };
+  let deadlineSource = { mode: "none" };
+  const safeLink = (u) => (/^https?:\/\//i.test(String(u || "").trim()) ? String(u).trim() : "");
+  // wall-clock time in a CFP timezone -> Date (UTC); returns null for unknown zones / TBD
+  function cfpToDate(local, tz) {
+    const m = String(local || "").match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})(?::(\d{2}))?/);
+    if (!m) return null;
+    const wall = Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4], +m[5], +(m[6] || 0));
+    const t = String(tz || "UTC").trim().toUpperCase();
+    const fixed = { AOE: -12, UTC: 0, GMT: 0, PST: -8, PDT: -7, EST: -5, EDT: -4, CET: 1, CEST: 2, JST: 9 };
+    if (t in fixed) return new Date(wall - fixed[t] * 36e5);
+    const off = t.match(/^(?:UTC|GMT)\s*([+-])(\d{1,2})(?::?(\d{2}))?$/);
+    if (off) return new Date(wall - (off[1] === "-" ? -1 : 1) * (+off[2] * 36e5 + +(off[3] || 0) * 6e4));
+    const dst = { PT: "America/Los_Angeles", ET: "America/New_York", CT: "America/Chicago", MT: "America/Denver" }[t];
+    if (!dst) return null;
+    const offsetAt = (ms) => {   // zone offset (ms) at instant ms, via Intl
+      const p = Object.fromEntries(new Intl.DateTimeFormat("en-US", { timeZone: dst, hourCycle: "h23", year: "numeric", month: "2-digit", day: "2-digit",
+        hour: "2-digit", minute: "2-digit", second: "2-digit" }).formatToParts(new Date(ms)).map((x) => [x.type, x.value]));
+      return Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour, +p.minute, +p.second) - ms;
+    };
+    let utc = wall - offsetAt(wall);
+    utc = wall - offsetAt(utc);
+    return new Date(utc);
+  }
+  function rowsFromCcf(json, ours) {
+    const byKey = new Map(ours.map((c) => [(DBLP_ALIAS[c] || c).toLowerCase(), c]));
+    const out = [];
+    for (const e of (json && json.conferences) || []) {
+      const conf = byKey.get(String(e.dblp || "").toLowerCase());
+      if (!conf) continue;
+      for (const c of e.confs || []) {
+        const tl = c.timeline || [];
+        tl.forEach((t, i) => {
+          const when = cfpToDate(t.deadline, c.timezone);
+          if (!when) return;
+          const ab = cfpToDate(t.abstract_deadline, c.timezone);
+          out.push({ Conference: conf, Year: String(c.year || ""), Round: String(t.comment || (tl.length > 1 ? `round ${i + 1}` : "")),
+            Deadline: when.toISOString(), AbstractDeadline: ab ? ab.toISOString() : "", Timezone: String(c.timezone || "UTC"),
+            Dates: String(c.date || ""), Place: String(c.place || ""), Link: safeLink(c.link), when });
+        });
+      }
+    }
+    return out;
+  }
+  async function loadDeadlines(ours) {
+    try {
+      const ctl = new AbortController();
+      const timer = setTimeout(() => ctl.abort(), 6000);
+      const resp = await fetch(LIVE_DEADLINES, { signal: ctl.signal, credentials: "omit", referrerPolicy: "no-referrer" });
+      clearTimeout(timer);
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      const rows = rowsFromCcf(await resp.json(), ours);
+      if (rows.length < 20) throw new Error(`only ${rows.length} matching deadlines`);
+      deadlineSource = { mode: "live", at: new Date() };
+      return rows;
+    } catch (err) {
+      console.warn("Live deadlines unavailable; using snapshot:", err.message || err);
+      const text = await d3.text("../deadlines.csv").catch(() => "");
+      deadlineSource = { mode: text ? "snapshot" : "none", reason: String(err.message || err) };
+      return text ? d3.csvParse(text).map((r) => Object.assign(r, { when: new Date(r.Deadline), Link: safeLink(r.Link) })) : [];
+    }
+  }
+  function deadlineSourceText() {
+    if (deadlineSource.mode === "live") return "fetched live from ccf-deadlines when this page loaded";
+    if (deadlineSource.mode === "snapshot") return "from a saved snapshot (the live ccf-deadlines feed could not be reached)";
+    return "unavailable";
+  }
+
   // ---------- submission deadlines ----------
   // Display a deadline in the timezone its CFP uses (AoE, UTC±N, PT/ET...), with the viewer's local time in the tooltip.
   function ianaZone(tz) {
@@ -749,9 +833,9 @@
       li.append("span").text(` · ${d.conf} ${r.Year}${r.Round ? " · " + r.Round : ""}`);
       if (r.AbstractDeadline) li.append("span").attr("class", "text-muted").text(` · abstracts ${fmtIn(new Date(r.AbstractDeadline), r.Timezone, false)}`);
       if (r.Dates || r.Place) li.append("span").attr("class", "text-muted").text(` · ${[r.Dates, r.Place].filter(Boolean).join(", ").replace(/\s+/g, " ")}`);
-      if (r.Link) li.append("a").attr("href", r.Link).attr("rel", "noopener").style("margin-left", "6px").text("official site");
+      if (safeLink(r.Link)) li.append("a").attr("href", safeLink(r.Link)).attr("rel", "noopener").style("margin-left", "6px").text("official site");
     }
-    box.append("div").attr("class", "dl-src text-muted").html(`Deadlines from <a href="https://github.com/ccfddl/ccf-deadlines" rel="noopener">ccf-deadlines</a> (community-maintained); confirm on the official site.`);
+    box.append("div").attr("class", "dl-src text-muted").html(`Deadlines from <a href="https://github.com/ccfddl/ccf-deadlines" rel="noopener">ccf-deadlines</a> (community-maintained), ${deadlineSourceText()}; confirm on the official site.`);
   }
 
   // ---------- PDF export (jsPDF + svg2pdf.js, vendored, loaded on first use) ----------
