@@ -42,7 +42,7 @@
   const state = {
     enabled: new Set(), from: null, to: null, search: "",
     selected: [], slotOf: new Map(),
-    sortKey: "rate", sortDir: 1, logSubs: true,
+    sortKey: "rate", sortDir: 1, logSubs: false,
     expandedConfs: new Set(), expandedAreas: new Set(), openCat: null,
   };
 
