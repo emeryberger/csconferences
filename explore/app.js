@@ -58,7 +58,8 @@
 
   d3.text("../csconferences.csv").then(async (text) => {
     const rows = d3.csvParse(text);
-    for (const r of await loadDeadlines([...new Set(rows.map((q) => q.Conference))])) {
+    const ourConfs = [...new Set(rows.map((q) => q.Conference))];
+    for (const r of mergeDeadlines(await loadDeadlines(ourConfs), await loadExtraDeadlines(ourConfs))) {
       if (!isNaN(r.when)) (deadlinesBy.get(r.Conference) || deadlinesBy.set(r.Conference, []).get(r.Conference)).push(r);
     }
     for (const list of deadlinesBy.values()) list.sort((p, q) => p.when - q.when);
@@ -329,7 +330,8 @@
       const dls = deadlinesBy.get(c.conf) || [];
       const next = dls.find((r) => r.when >= NOW) || null;
       return { ...c, ys, lastYear: last.year, accepted: last.accepted, submitted: last.submitted, rate: last.rate, mean5: d3.mean(last5, (y) => y.rate),
-        nextDl: next, daysToDl: next ? (next.when - NOW) / DAY : 1e9, lastDl: next ? null : dls[dls.length - 1] || null };
+        nextDl: next, lastDl: next ? null : dls[dls.length - 1] || null, estDl: next ? null : estimateNext(dls),
+        get daysToDl() { return this.nextDl ? (this.nextDl.when - NOW) / DAY : this.estDl ? 1e6 + (this.estDl.when - NOW) / DAY : 1e9; } };
     }).filter(Boolean);
   }
   // insert break markers so lines don't bridge gaps longer than MAX_GAP years
@@ -784,6 +786,40 @@
     return "unavailable";
   }
 
+
+  // Officially sourced deadlines the feed lacks (deadlines-extra.csv: local wall time + CFP timezone + official URL)
+  async function loadExtraDeadlines(ours) {
+    const text = await d3.text("../deadlines-extra.csv").catch(() => "");
+    const known = new Set(ours);
+    return (text ? d3.csvParse(text) : []).map((r) => {
+      const when = cfpToDate(r.Deadline, r.Timezone);
+      const ab = cfpToDate(r.AbstractDeadline, r.Timezone);
+      return when && known.has(r.Conference) ? { Conference: r.Conference, Year: r.Year, Round: r.Round || "", Deadline: when.toISOString(),
+        AbstractDeadline: ab ? ab.toISOString() : "", Timezone: r.Timezone || "AoE", Dates: r.Dates || "", Place: r.Place || "",
+        Link: safeLink(r.Link), when, official: true } : null;
+    }).filter(Boolean);
+  }
+  // feed rows win; an extra row is dropped if the feed already has a deadline for that venue within 2 days of it
+  function mergeDeadlines(feed, extra) {
+    const out = feed.slice();
+    for (const x of extra) if (!feed.some((f) => f.Conference === x.Conference && Math.abs(f.when - x.when) < 2 * DAY)) out.push(x);
+    return out;
+  }
+  // estimate the next deadline from the most recent one: +1 year, or +2 if the venue is biennial (ICCV, ECCV)
+  function cadence(conf) {   // 2 if the venue's last three editions in our data are two years apart (ICCV, ECCV), else 1
+    const ys = (byConf.get(conf) || { years: [] }).years.map((v) => v.year).slice(-3);
+    return ys.length === 3 && ys[1] - ys[0] === 2 && ys[2] - ys[1] === 2 ? 2 : 1;
+  }
+  function estimateNext(dls) {
+    if (!dls.length) return null;
+    const last = dls[dls.length - 1];
+    const step = cadence(last.Conference);
+    const est = new Date(last.when);
+    let n = 0;
+    do { est.setUTCFullYear(est.getUTCFullYear() + step); n++; } while (est < NOW && n < 10);
+    return { when: est, basis: last, step };
+  }
+
   // ---------- submission deadlines ----------
   // Display a deadline in the timezone its CFP uses (AoE, UTC±N, PT/ET...), with the viewer's local time in the tooltip.
   function ianaZone(tz) {
@@ -812,9 +848,14 @@
         .attr("title", `${d.conf} ${r.Year}${r.Round ? " · " + r.Round : ""}\nDeadline: ${fmtIn(r.when, r.Timezone)}\nYour time: ${r.when.toLocaleString()}` +
           (r.AbstractDeadline ? `\nAbstract: ${fmtIn(new Date(r.AbstractDeadline), r.Timezone)}` : "") + "\nClick ▶ for details and the official site")
         .html(`${esc(fmtIn(r.when, r.Timezone, false).replace(/, \d{4}$/, ""))} <span class="dl-rel">${relDays(d.daysToDl)}</span>`);
+    } else if (d.estDl) {
+      const e = d.estDl, b = e.basis;
+      td.attr("class", "num dl-col dl-est")
+        .attr("title", `Estimated, not yet announced: ${d.conf}'s last deadline was ${fmtIn(b.when, b.Timezone)} (${d.conf} ${b.Year}); ` +
+          `next assumed ~${e.step === 2 ? "two years" : "a year"} later. Check the official site.`)
+        .html(`~${esc(new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric", timeZone: "UTC" }).format(e.when))} <span class="dl-rel">est.</span>`);
     } else {
-      td.attr("class", "num dl-col text-muted").attr("title", d.lastDl ? `No upcoming deadline listed; last: ${fmtIn(d.lastDl.when, d.lastDl.Timezone, false)}` : "No deadline data")
-        .text("—");
+      td.attr("class", "num dl-col text-muted").attr("title", "No deadline data").text("—");
     }
   }
   function renderDeadlines(td, d) {
@@ -823,7 +864,10 @@
     const box = td.append("div").attr("class", "dl-box");
     if (!dls.length) { box.append("span").attr("class", "text-muted").text("No submission-deadline data for this venue."); return; }
     const list = upcoming.length ? upcoming : dls.slice(-1);
-    box.append("strong").text(upcoming.length ? "Upcoming submission deadlines" : "Most recent submission deadline (no upcoming one listed)");
+    box.append("strong").text(upcoming.length ? "Upcoming submission deadlines" : "Most recent submission deadline (no upcoming one announced yet)");
+    const est = upcoming.length ? null : estimateNext(dls);
+    if (est) box.append("div").attr("class", "dl-est-note")
+      .text(`Estimated next deadline: ~${fmtIn(est.when, est.basis.Timezone, false)} (${est.step === 2 ? "two years" : "one year"} after the last one; not announced).`);
     const ul = box.append("ul");
     for (const r of list) {
       const li = ul.append("li");
@@ -832,9 +876,10 @@
       li.append("span").text(` · ${d.conf} ${r.Year}${r.Round ? " · " + r.Round : ""}`);
       if (r.AbstractDeadline) li.append("span").attr("class", "text-muted").text(` · abstracts ${fmtIn(new Date(r.AbstractDeadline), r.Timezone, false)}`);
       if (r.Dates || r.Place) li.append("span").attr("class", "text-muted").text(` · ${[r.Dates, r.Place].filter(Boolean).join(", ").replace(/\s+/g, " ")}`);
+      if (r.official) li.append("span").attr("class", "dl-official").attr("title", "From the official call for papers (deadlines-extra.csv)").text(" official CFP");
       if (safeLink(r.Link)) li.append("a").attr("href", safeLink(r.Link)).attr("rel", "noopener").style("margin-left", "6px").text("official site");
     }
-    box.append("div").attr("class", "dl-src text-muted").html(`Deadlines from <a href="https://github.com/ccfddl/ccf-deadlines" rel="noopener">ccf-deadlines</a> (community-maintained), ${deadlineSourceText()}; confirm on the official site.`);
+    box.append("div").attr("class", "dl-src text-muted").html(`Deadlines from <a href="https://github.com/ccfddl/ccf-deadlines" rel="noopener">ccf-deadlines</a> (community-maintained), ${deadlineSourceText()}, plus official CFPs; confirm on the official site. See also <a href="https://dants.github.io/index_sysvenues_deadline.html" rel="noopener">Dan Tsafrir's systems-venue deadlines</a>.`);
   }
 
   // ---------- PDF export (jsPDF + svg2pdf.js, vendored, loaded on first use) ----------

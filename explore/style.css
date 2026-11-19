@@ -309,3 +309,7 @@ tr.detail-row > td { max-width: 0; }               /* let the cell shrink to the
 
 .conf-list .conf-toggle { color: var(--link-strong); cursor: pointer; }
 .conf-list .conf-toggle:hover { text-decoration: underline; }
+
+.ranking td.dl-est { color: var(--muted); font-style: italic; }
+.dl-est-note { color: var(--muted); font-style: italic; margin: 2px 0; }
+.dl-official { font-size: 11px; color: #157240; margin-left: 4px; }

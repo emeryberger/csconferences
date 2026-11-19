@@ -35,6 +35,13 @@
     - **Fallback:** on any failure (6 s timeout, HTTP error, or fewer than 20 matching rows), it falls back to the committed snapshot `deadlines.csv`. The expanded-row footnote says which source was used.
     - **Third-party data:** it is rendered only as text, and links are restricted to http(s) (`safeLink`).
     - **Keep in sync:** `DBLP_ALIAS` in `app.js` must match `deadlines.py`.
+    - **Official supplement: `deadlines-extra.csv`.** It holds deadlines missing from the feed, each taken from the conference's own call for papers. Columns: local wall time + the CFP's timezone + official `Link` + a verbatim `Quote`.
+      - The browser merges it with the feed, which wins: an extra row within 2 days of a feed deadline for the same venue is dropped.
+      - Rows are labeled "official CFP" in the expanded view.
+      - Add rows only after checking the quote on the official page (`.work/scripts/verify_cfps.py` pattern).
+      - Prune past rows occasionally (harmless if left).
+    - **Estimates:** for venues with no dated upcoming deadline, the table shows "~Mon YYYY est." in italics. That is the last deadline plus one year, or plus two if our acceptance history shows the last three editions two years apart (ICCV, ECCV). Estimates sort after all confirmed deadlines, and the tooltip/expanded row say they are not announced.
+    - **Dan Tsafrir's list** (https://dants.github.io/index_sysvenues_deadline.html): its repo `dants/dants.github.io` has **no license**, so it is linked only ("see also"), never copied or scraped. Using its data needs his permission.
     - **No scheduled workflow:** there is deliberately no GitHub Action (removed Nov 2026 in favor of the live fetch). Refresh the fallback snapshot occasionally with `make deadlines` (clones into the git-ignored `.ccfddl/`), then commit `deadlines.csv`.
 
     Notes:
