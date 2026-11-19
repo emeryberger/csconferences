@@ -279,3 +279,15 @@ tr.detail-row > td { max-width: 0; }               /* let the cell shrink to the
 .context-line.hot { stroke: #555; stroke-width: 2px; }
 .median-line { fill: none; stroke: #333; stroke-width: 2.5px; stroke-dasharray: 6 3; }
 .median-label { font-style: italic; }
+
+/* sparkline column + comparison picker */
+.ranking .spark-col { width: 128px; padding-top: 3px; }
+.ranking th.spark-col { font-weight: bold; }
+.add-conf { font: inherit; font-size: 12px; padding: 2px 6px; border: 1px solid var(--info-border); border-radius: 12px;
+  background: #fff; color: var(--link); cursor: pointer; }
+.add-conf:focus { outline: none; border-color: var(--link); box-shadow: 0 0 0 2px rgba(51,122,183,.2); }
+
+/* CSrankings next-tier styling */
+.area-child-divider { height: 1px; background: var(--border); margin: 6px 0; }
+.next-tier { opacity: .7; }
+.conf-list tr.tier-divider td { padding: 0; }

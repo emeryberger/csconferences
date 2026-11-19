@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CSConferences: Computer Science Conference Acceptance Rates</title>
 <meta name="description" content="Acceptance rates, submissions, and accepted papers for top computer science conferences, with primary sources for every number.">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 <div class="container">
@@ -73,6 +73,7 @@
             <th data-sort="mean5" class="num"><abbr title="Mean acceptance rate over the last 5 years in range">5-yr</abbr></th>
             <th data-sort="submitted" class="num"><abbr title="Submissions in the most recent year in range">Submitted</abbr></th>
             <th data-sort="lastYear" class="num"><abbr title="Most recent year in range">Year</abbr></th>
+            <th class="spark-col"><abbr title="Submissions per year over the last 15 years of the range; each row has its own scale (hover for values)">Submissions trend</abbr></th>
           </tr></thead>
           <tbody></tbody>
         </table>
@@ -85,6 +86,7 @@
     <div class="panel-heading section-heading">
       <span class="section-title">Compare conferences over time</span>
       <span class="chips" id="chips"></span>
+      <select id="add-conf" class="add-conf" aria-label="Add a conference to the comparison"></select>
     </div>
     <div class="panel-body">
       <p class="hint text-muted" id="compare-hint"></p>
@@ -110,6 +112,6 @@
 </div>
 <div id="tooltip" class="tooltip" role="status" aria-live="polite" hidden></div>
 <script src="js/d3.v7.min.js"></script>
-<script src="app.js?v=7"></script>
+<script src="app.js?v=9"></script>
 </body>
 </html>
