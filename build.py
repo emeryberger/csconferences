@@ -140,7 +140,7 @@ full_conf_data = full_conf_data.groupby(['Year', 'Conference', 'Area']).agg({'Ac
 def print_readme():
     print('# csconferences.org\n')
     print("## Computer Science Conference Publication Stats\n\n")
-    print("**[Explore the data interactively →](https://csconferences.org/)** compare conferences over time, filter by area, and see the source for every number.\n\n")
+    print("**[Explore the data interactively →](https://csconferences.org/)** conference information with a source for every number: compare acceptance rates and submissions over time, filter by area, see upcoming submission deadlines, and download charts as PDFs.\n\n")
 
     previous_area = ''
 

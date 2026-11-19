@@ -1,0 +1,46 @@
+# Keep deadlines.csv current: daily, regenerate it from ccf-deadlines (MIT, community-maintained) and,
+# only if it changed, commit it and request a GitHub Pages rebuild so csconferences.org shows it.
+name: Refresh submission deadlines
+
+on:
+  schedule:
+    - cron: "23 7 * * *"      # daily, 07:23 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write              # commit deadlines.csv
+  pages: write                 # request a Pages build (pushes made with GITHUB_TOKEN may not trigger one)
+
+concurrency:
+  group: refresh-deadlines
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0  # v7.1.0
+        with:
+          python-version: "3.12"
+      - name: Install PyYAML
+        run: python -m pip install --disable-pip-version-check pyyaml==6.0.2
+      - name: Regenerate deadlines.csv
+        run: make deadlines PYTHON=python
+      - name: Sanity-check output
+        run: |
+          rows=$(($(wc -l < deadlines.csv) - 1))
+          echo "deadlines.csv has $rows rows"
+          if [ "$rows" -lt 300 ]; then echo "::error::deadlines.csv unexpectedly small ($rows rows); not committing"; exit 1; fi
+      - name: Commit and redeploy if changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- deadlines.csv; then echo "deadlines unchanged"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add deadlines.csv
+          git commit -m "Refresh submission deadlines from ccf-deadlines"
+          git push
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds" || echo "::warning::could not request a Pages build"
