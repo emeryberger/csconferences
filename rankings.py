@@ -63,7 +63,7 @@ def core(conf):
     best, note = cands[0], ""
     if best["rank"] not in ("A*", "A", "B", "C") and "?" not in best["link"]:
         prev = re.search(r"Source:\s*CORE2023\s*Rank:\s*([A-Za-z*: ]+?)\s*Field Of Research", clean(fetch(best["link"])))
-        note = f"CORE2023: {prev.group(1).strip()}" if prev and prev.group(1).strip() != best["rank"] else ""
+        note = f"was {prev.group(1).strip()} in CORE2023" if prev and prev.group(1).strip() != best["rank"] else ""
     return {"CORE": best["rank"], "CORESource": best["source"], "CORETitle": best["title"], "CORELink": best["link"], "CORENote": note}
 
 
@@ -193,6 +193,13 @@ def gsm(conf, rows, window):
             "H5Note": GSM_SHARED.get(conf, "")}
 
 
+EXPLAIN = {  # curated explanations for anomalous ranks, verified on the authorities' own pages
+    'NSDI': ('CORENote', 'CORE has classified NSDI as a national (USA) venue since CORE2020; it was ranked B from ERA2010 through CORE2018'),
+    'IROS': ('CCFNote', 'CCF has no robotics category; robotics venues are rated within its AI category (ICRA B, IROS C)'),
+    'ICRA': ('CCFNote', 'CCF has no robotics category; robotics venues are rated within its AI category (ICRA B, IROS C)'),
+}
+
+
 def main():
     want = {a.lstrip("-") for a in sys.argv[1:]} or {"core", "ccf", "gsm"}
     ours = sorted({r["Conference"] for r in csv.DictReader(open("csconferences.csv"))})
@@ -215,6 +222,9 @@ def main():
             table[c].update(gsm(c, rows, window))
         print(f"GSM ({window}):", sum(1 for c in ours if table[c]["H5"]), "of", len(ours), "with h5; missing:",
               ", ".join(c for c in ours if not table[c]["H5"]))
+    for c, (field, note) in EXPLAIN.items():
+        if c in table:
+            table[c][field] = note
     cols = ["Conference"] + sorted({k for r in table.values() for k in r} - {"Conference"},
                                    key=lambda k: (["CORE", "CCF", "H5"].index(next(p for p in ["CORE", "CCF", "H5"] if k.startswith(p))), k))
     with open(OUT, "w", newline="") as f:

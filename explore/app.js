@@ -738,7 +738,7 @@
   function coreTitle(r, conf) {
     if (!r || !r.CORE) return `${conf} is not listed in the CORE conference portal`;
     const what = CORE_ORDER[r.CORE] ? `CORE rank ${r.CORE}` : `CORE: ${r.CORE} (no letter rank)`;
-    return `${what} (${r.CORESource}) for "${r.CORETitle}"` + (r.CORENote ? `; previously ${r.CORENote}` : "") + ". Click ▶ for the CORE record.";
+    return `${what} (${r.CORESource}) for "${r.CORETitle}"` + (r.CORENote ? `; ${r.CORENote}` : "") + ". Click ▶ for the CORE record.";
   }
   function coreCell(td, d) {
     const r = rankBy.get(d.conf);
@@ -748,7 +748,7 @@
   function ccfCell(td, d) {
     const r = rankBy.get(d.conf) || {};
     td.classed("core-letter", !!r.CCF).text(r.CCF || "—")
-      .attr("title", r.CCF ? `CCF rank ${r.CCF} (${r.CCFEdition}) for "${r.CCFTitle}"` : `${d.conf} is not in the CCF recommended list (${r.CCFEdition || "CCF"})`);
+      .attr("title", r.CCF ? `CCF rank ${r.CCF} (${r.CCFEdition}) for "${r.CCFTitle}"` + (r.CCFNote ? `. ${r.CCFNote}` : "") : `${d.conf} is not in the CCF recommended list (${r.CCFEdition || "CCF"})`);
   }
   function h5Cell(td, d) {
     const r = rankBy.get(d.conf) || {};
@@ -762,12 +762,13 @@
     box.append("strong").text("CORE ranking: ");
     if (!r || !r.CORE) { box.append("span").attr("class", "text-muted").text("not listed in the CORE portal."); return; }
     box.append("span").text(`${r.CORE} (${r.CORESource})`);
-    if (r.CORENote) box.append("span").attr("class", "text-muted").text(` · previously ${r.CORENote}`);
+    if (r.CORENote) box.append("span").attr("class", "text-muted").text(` · ${r.CORENote}`);
     if (safeLink(r.CORELink)) box.append("a").attr("href", safeLink(r.CORELink)).attr("rel", "noopener").style("margin-left", "6px").text("CORE record");
     const c = td.append("div").attr("class", "core-box");
     c.append("strong").text("CCF: ");
     if (r.CCF) {
       c.append("span").text(`${r.CCF} (${r.CCFEdition})`);
+      if (r.CCFNote) c.append("span").attr("class", "text-muted").text(` · ${r.CCFNote}`);
       if (safeLink(r.CCFLink)) c.append("a").attr("href", safeLink(r.CCFLink)).attr("rel", "noopener").style("margin-left", "6px").text("CCF list");
     } else c.append("span").attr("class", "text-muted").text(`not in the CCF recommended list (${r.CCFEdition || "CCF"}).`);
     const g = td.append("div").attr("class", "core-box");
