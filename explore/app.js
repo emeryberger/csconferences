@@ -383,6 +383,8 @@
       this.classList.toggle("sorted-desc", this.dataset.sort === k && dir < 0);
     });
     const tbody = d3.select("#conf-table tbody");
+    const starred = (c) => { const r = rankBy.get(c) || {}; return !!(r.H5 && r.H5Note); };
+    d3.select("#h5-footnote").attr("hidden", data.some((d) => starred(d.conf)) ? null : true);
     tbody.selectAll("*").remove();
     if (!data.length) { tbody.append("tr").append("td").attr("colspan", 12).attr("class", "empty").text("No conferences match. Turn on more areas or clear the search."); return; }
     for (const d of data) {
