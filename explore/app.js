@@ -752,7 +752,7 @@
   }
   function h5Cell(td, d) {
     const r = rankBy.get(d.conf) || {};
-    td.text(r.H5 || "—").classed("text-muted", !r.H5)
+    td.text(r.H5 ? r.H5 + (r.H5Note ? "*" : "") : "—").classed("text-muted", !r.H5)
       .attr("title", r.H5 ? `Google Scholar h5-index ${r.H5} (h5-median ${r.H5Median}) for "${r.H5Venue}"; ${r.H5Edition}` + (r.H5Note ? `. Note: ${r.H5Note}` : "")
         : `No h5-index: ${r.H5Note || "not listed"}`);
   }
