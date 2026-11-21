@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CSConferences: Computer Science Conference Information</title>
 <meta name="description" content="Computer science conference information: acceptance rates, submissions, and accepted papers with a source for every number, plus upcoming submission deadlines.">
-<link rel="stylesheet" href="style.css?v=22">
+<link rel="stylesheet" href="style.css?v=24">
 </head>
 <body>
 <div class="container">
@@ -71,10 +71,12 @@
             <th data-sort="rate" class="num"><abbr title="Acceptance rate in the most recent year in range">Rate</abbr></th>
             <th data-sort="mean5" class="num"><abbr title="Mean acceptance rate over the last 5 years in range">5-yr</abbr></th>
             <th data-sort="coreKey" class="core-col"><abbr title="CORE conference rank (ICORE2026: CORE + GII/GRIN/SCIE): A*, A, B, C. Click to sort.">CORE</abbr></th>
+            <th data-sort="ccfKey" class="core-col"><abbr title="China Computer Federation recommended venues (2026, 7th edition): A, B, C. Click to sort.">CCF</abbr></th>
+            <th data-sort="h5" class="num h5-col"><abbr title="Google Scholar Metrics h5-index (articles 2020–2024); shown only for venues in the top 20 of a Scholar computing subcategory. Click to sort.">h5</abbr></th>
             <th data-sort="submitted" class="num"><abbr title="Submissions in the most recent year in range">Submitted</abbr></th>
             <th data-sort="lastYear" class="num"><abbr title="Most recent year in range">Year</abbr></th>
             <th data-sort="daysToDl" class="num dl-col"><abbr title="Next submission deadline (ccf-deadlines feed plus official CFPs; ~italic = estimated from last year, not announced). Sort to see what is coming up.">Next deadline</abbr></th>
-            <th class="spark-col"><abbr title="Submissions per year over the last 15 years of the range; each row has its own scale (hover for values)">Submissions trend</abbr></th>
+            <th class="spark-col"><abbr title="Submissions per year over the last 15 years of the range; each row has its own scale (hover for values)">Trend</abbr></th>
           </tr></thead>
           <tbody></tbody>
         </table>
@@ -108,12 +110,12 @@
   </div>
 
   <div class="page-footer">
-    <p>Data: <a href="../csconferences.csv">csconferences.csv</a>, from conference front matter, program chairs' reports, HotCRP, and other primary sources. Submission deadlines: <a href="https://github.com/ccfddl/ccf-deadlines">ccf-deadlines</a> (MIT; community-maintained), fetched live by your browser from ccfddl.com, with a saved snapshot as fallback, plus deadlines from official calls for papers; estimates (~) are projected from the previous deadline. Always confirm on the conference's official site. Counts exclude papers withdrawn or desk-rejected before review where sources distinguish them; long/full research papers only. Conference ranks: <a href="https://portal.core.edu.au/conf-ranks/">ICORE2026</a> (CORE with GII-GRIN-SCIE). · <a href="https://github.com/emeryberger/csconferences">GitHub</a> · Corrections welcome via pull request.</p>
+    <p>Data: <a href="../csconferences.csv">csconferences.csv</a>, from conference front matter, program chairs' reports, HotCRP, and other primary sources. Submission deadlines: <a href="https://github.com/ccfddl/ccf-deadlines">ccf-deadlines</a> (MIT; community-maintained), fetched live by your browser from ccfddl.com, with a saved snapshot as fallback, plus deadlines from official calls for papers; estimates (~) are projected from the previous deadline. Always confirm on the conference's official site. Counts exclude papers withdrawn or desk-rejected before review where sources distinguish them; long/full research papers only. Conference ranks: <a href="https://portal.core.edu.au/conf-ranks/">ICORE2026</a> (CORE with GII-GRIN-SCIE), <a href="https://www.ccf.org.cn/Academic_Evaluation/By_category/">CCF</a> (2026, 7th edition), and <a href="https://scholar.google.com/citations?view_op=top_venues&amp;hl=en&amp;vq=eng">Google Scholar Metrics</a> h5-index. · <a href="https://github.com/emeryberger/csconferences">GitHub</a> · Corrections welcome via pull request.</p>
     <p>Maintained by <a href="https://emeryberger.com">Emery Berger</a> · <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a> · Companion to <a href="https://csrankings.org">CSRankings</a>.</p>
   </div>
 </div>
 <div id="tooltip" class="tooltip" role="status" aria-live="polite" hidden></div>
 <script src="js/d3.v7.min.js"></script>
-<script src="app.js?v=22"></script>
+<script src="app.js?v=24"></script>
 </body>
 </html>

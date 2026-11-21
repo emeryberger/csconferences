@@ -281,7 +281,7 @@ tr.detail-row > td { max-width: 0; }               /* let the cell shrink to the
 .median-label { font-style: italic; }
 
 /* sparkline column + comparison picker */
-.ranking .spark-col { width: 128px; padding-top: 3px; }
+.ranking .spark-col { width: 90px; padding-top: 3px; }
 .ranking th.spark-col { font-weight: bold; }
 .add-conf { font: inherit; font-size: 12px; padding: 2px 6px; border: 1px solid var(--info-border); border-radius: 12px;
   background: #fff; color: var(--link); cursor: pointer; }
@@ -320,3 +320,6 @@ tr.detail-row > td { max-width: 0; }               /* let the cell shrink to the
 
 .ranking td.name-col { white-space: nowrap; }
 .ranking th.core-col { font-size: inherit; color: var(--text); }
+
+.ranking .h5-col { font-size: 13px; }
+.ranking th.h5-col { font-size: inherit; }

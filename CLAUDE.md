@@ -59,6 +59,14 @@
     - **Matching:** by acronym, with `SEARCH` overrides in `rankings.py` (Oakland→SP, UsenixSec→USENIX-Security, ATC→USENIX, FSE and CC pinned by title).
     - **Non-letter ranks are CORE's own:** NSDI "National: USA" (also in CORE2023; public comments on the record dispute it) and SenSys "unranked: merged" (A* in CORE2023, kept in `CORENote`). WINE is not in the portal.
     - **Refresh:** rerun `rankings.py` when a new edition appears (`--source ICORE20xx`) and review the output. It makes about 70 polite requests.
+  - **CCF and Google Scholar h5** (also in `rankings.csv`; `rankings.py --core/--ccf/--gsm`, default all):
+    - **CCF source:** the CCF recommended list, 7th edition, released 2026-03-31. `rankings.py` parses the 10 official category pages at `ccf.org.cn/Academic_Evaluation/<CAT>/`. Journal and conference sections are tracked as a running state, because the B/C lists don't repeat the 会议/刊物 heading.
+    - **CCF matching:** by DBLP dir (`DBLP_KEY`), with acronym as fallback.
+    - **CCF coverage:** 62 of 66 venues. CC, EC, ICLR and ISMM are not in the CCF list; ICLR's absence is a well-known CCF omission.
+    - **h5 source:** Google Scholar Metrics h5-index/median. Only the robots.txt-allowed `view_op=top_venues` pages are fetched (17 computing subcategories, 3 s apart); the venue search is disallowed, so it is never used.
+    - **h5 coverage:** a venue gets a number only if it is in some subcategory's top 20 (51 of 66). Missing: CC, CGO, ECOOP, FAST, IMC, ISMM, MobiCom, MobiSys, PODS, PPoPP, RTAS, RTSS, SIGCOMM, SIGMETRICS, SenSys.
+    - **Shared h5 entries:** POPL, ICFP and OOPSLA share PACMPL's h5 (PLDI has its own entry); SIGGRAPH uses ACM TOG's. Both are flagged in `H5Note`.
+    - **Edition:** the current Scholar edition covers 2020–2024 articles.
   - **License:** like CSrankings, the site is **CC BY-NC-ND 4.0**. `COPYING` is a verbatim copy of CSrankings' `COPYING`; the footer and README state the license. `NOTICE` lists third-party components and their licenses (D3, jsPDF, svg2pdf.js, ccf-deadlines (all MIT or similar), and the CORE attribution).
   - **To make the explorer the homepage:** run `make explorer-home`. This writes a root `index.html` that loads `explore/` through `<base href="explore/">`, and Pages prefers `index.html` over `README.md`. While root `index.html` exists, `make` regenerates it automatically. **To revert:** run `make readme-home` (deletes root `index.html`). Commit either change.
 

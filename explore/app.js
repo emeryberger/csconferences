@@ -199,7 +199,7 @@
     d3.select("#log-subs").on("change", function () { state.logSubs = this.checked; renderCharts(); });
     d3.selectAll("#conf-table th[data-sort]").on("click", function () {
       const k = this.dataset.sort;
-      state.sortDir = state.sortKey === k ? -state.sortDir : (k === "conf" || k === "rate" || k === "mean5" || k === "daysToDl" || k === "coreKey" ? 1 : -1);
+      state.sortDir = state.sortKey === k ? -state.sortDir : (k === "conf" || k === "rate" || k === "mean5" || k === "daysToDl" || k === "coreKey" || k === "ccfKey" ? 1 : -1);
       state.sortKey = k; renderTable();
     });
     document.addEventListener("click", () => { if (state.openCat) { state.openCat = null; syncAreaControls(); } });
@@ -334,6 +334,8 @@
       const next = dls.find((r) => r.when >= NOW) || null;
       return { ...c, ys, lastYear: last.year, accepted: last.accepted, submitted: last.submitted, rate: last.rate, mean5: d3.mean(last5, (y) => y.rate),
         core: (rankBy.get(c.conf) || {}).CORE || "", coreKey: CORE_ORDER[(rankBy.get(c.conf) || {}).CORE] || 9,
+        ccfKey: { A: 1, B: 2, C: 3 }[(rankBy.get(c.conf) || {}).CCF] || 9,
+        h5: +((rankBy.get(c.conf) || {}).H5 || 0),
         nextDl: next, lastDl: next ? null : dls[dls.length - 1] || null, estDl: next ? null : estimateNext(dls),
         get daysToDl() { return this.nextDl ? (this.nextDl.when - NOW) / DAY : this.estDl ? 1e6 + (this.estDl.when - NOW) / DAY : 1e9; } };
     }).filter(Boolean);
@@ -381,7 +383,7 @@
     });
     const tbody = d3.select("#conf-table tbody");
     tbody.selectAll("*").remove();
-    if (!data.length) { tbody.append("tr").append("td").attr("colspan", 10).attr("class", "empty").text("No conferences match. Turn on more areas or clear the search."); return; }
+    if (!data.length) { tbody.append("tr").append("td").attr("colspan", 12).attr("class", "empty").text("No conferences match. Turn on more areas or clear the search."); return; }
     for (const d of data) {
       const sel = state.selected.includes(d.conf);
       const ex = state.expandedConfs.has(d.conf);
@@ -408,11 +410,13 @@
       tr.append("td").attr("class", "num").text(fmtPct(d.rate));
       tr.append("td").attr("class", "num").text(fmtPct(d.mean5));
       coreCell(tr.append("td").attr("class", "core-col"), d);
+      ccfCell(tr.append("td").attr("class", "core-col"), d);
+      h5Cell(tr.append("td").attr("class", "num h5-col"), d);
       tr.append("td").attr("class", "num").text(fmtInt(d.submitted));
       tr.append("td").attr("class", "num").text(d.lastYear);
       deadlineCell(tr.append("td").attr("class", "num dl-col"), d);
       sparkline(tr.append("td").attr("class", "spark-col").node(), d);
-      if (ex) renderDetail(tbody.append("tr").attr("class", "detail-row").append("td").attr("colspan", 10), d);
+      if (ex) renderDetail(tbody.append("tr").attr("class", "detail-row").append("td").attr("colspan", 12), d);
     }
     win.scrollTop = prevScroll;
     window.scrollTo(pageX, pageY);
@@ -426,7 +430,7 @@
 
   function sparkline(td, d) {
     // submissions over the trailing 15 years of the range; own y-scale per row (shape of growth)
-    const W = 120, H = 24, x1 = Math.min(state.to, d.lastYear), x0 = Math.max(state.from, x1 - 14);
+    const W = 84, H = 24, x1 = Math.min(state.to, d.lastYear), x0 = Math.max(state.from, x1 - 14);
     const ys = d.ys.filter((v) => v.year >= x0 && v.year <= x1);
     const svg = d3.select(td).append("svg").attr("width", W).attr("height", H).attr("role", "img")
       .attr("aria-label", `${d.conf} submissions ${x0}-${x1}: ` + ys.map((v) => `${v.year} ${v.submitted}`).join(", "));
@@ -739,6 +743,18 @@
     const r = rankBy.get(d.conf);
     td.classed("core-letter", !!(r && CORE_ORDER[r.CORE])).attr("title", coreTitle(r, d.conf)).text(coreLabel(r && r.CORE));
   }
+
+  function ccfCell(td, d) {
+    const r = rankBy.get(d.conf) || {};
+    td.classed("core-letter", !!r.CCF).text(r.CCF || "—")
+      .attr("title", r.CCF ? `CCF rank ${r.CCF} (${r.CCFEdition}) for "${r.CCFTitle}"` : `${d.conf} is not in the CCF recommended list (${r.CCFEdition || "CCF"})`);
+  }
+  function h5Cell(td, d) {
+    const r = rankBy.get(d.conf) || {};
+    td.text(r.H5 || "—").classed("text-muted", !r.H5)
+      .attr("title", r.H5 ? `Google Scholar h5-index ${r.H5} (h5-median ${r.H5Median}) for "${r.H5Venue}"; ${r.H5Edition}` + (r.H5Note ? `. Note: ${r.H5Note}` : "")
+        : `No h5-index: ${r.H5Note || "not listed"}`);
+  }
   function renderCore(td, d) {
     const r = rankBy.get(d.conf);
     const box = td.append("div").attr("class", "core-box");
@@ -747,6 +763,19 @@
     box.append("span").text(`${r.CORE} (${r.CORESource})`);
     if (r.CORENote) box.append("span").attr("class", "text-muted").text(` · previously ${r.CORENote}`);
     if (safeLink(r.CORELink)) box.append("a").attr("href", safeLink(r.CORELink)).attr("rel", "noopener").style("margin-left", "6px").text("CORE record");
+    const c = td.append("div").attr("class", "core-box");
+    c.append("strong").text("CCF: ");
+    if (r.CCF) {
+      c.append("span").text(`${r.CCF} (${r.CCFEdition})`);
+      if (safeLink(r.CCFLink)) c.append("a").attr("href", safeLink(r.CCFLink)).attr("rel", "noopener").style("margin-left", "6px").text("CCF list");
+    } else c.append("span").attr("class", "text-muted").text(`not in the CCF recommended list (${r.CCFEdition || "CCF"}).`);
+    const g = td.append("div").attr("class", "core-box");
+    g.append("strong").text("Google Scholar h5-index: ");
+    if (r.H5) {
+      g.append("span").text(`${r.H5} (h5-median ${r.H5Median}) · ${r.H5Edition}`);
+      if (r.H5Note) g.append("span").attr("class", "text-muted").text(` · ${r.H5Note}`);
+      if (safeLink(r.H5Link)) g.append("a").attr("href", safeLink(r.H5Link)).attr("rel", "noopener").style("margin-left", "6px").text("Scholar list");
+    } else g.append("span").attr("class", "text-muted").text(`not available (${r.H5Note || "not listed"}).`);
   }
 
   // ---------- live deadlines (ccf-deadlines), with committed snapshot fallback ----------

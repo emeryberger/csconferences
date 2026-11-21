@@ -11,3 +11,6 @@ Third-party components keep their own licenses:
   https://github.com/ccfddl/ccf-deadlines - Copyright (c) the ccf-deadlines contributors.
 - rankings.csv: conference ranks from the ICORE conference portal (CORE with GII-GRIN-SCIE),
   https://portal.core.edu.au/conf-ranks/ - cited with attribution.
+- rankings.csv: China Computer Federation recommended-venue ranks (7th edition, 2026),
+  https://www.ccf.org.cn/Academic_Evaluation/ - cited with attribution.
+- rankings.csv: Google Scholar Metrics h5-index/h5-median, https://scholar.google.com/citations?view_op=top_venues - cited with attribution.
