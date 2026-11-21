@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CSConferences: Computer Science Conference Information</title>
 <meta name="description" content="Computer science conference information: acceptance rates, submissions, and accepted papers with a source for every number, plus upcoming submission deadlines.">
-<link rel="stylesheet" href="style.css?v=17">
+<link rel="stylesheet" href="style.css?v=22">
 </head>
 <body>
 <div class="container">
@@ -38,7 +38,6 @@
             <button id="reset-filters" class="btn-outline" hidden>Reset</button>
           </div>
           <div class="rank-controls-right">
-            <a class="btn-outline" href="../static/" data-static>Static page</a>
             <a class="btn-sponsor" href="../csconferences.csv">Download data</a>
           </div>
         </div>
@@ -71,6 +70,7 @@
             <th data-sort="conf" class="name-col"><abbr title="Click ▶ to see the conference's history and sources; click the name to add it to the comparison charts">Conference</abbr></th>
             <th data-sort="rate" class="num"><abbr title="Acceptance rate in the most recent year in range">Rate</abbr></th>
             <th data-sort="mean5" class="num"><abbr title="Mean acceptance rate over the last 5 years in range">5-yr</abbr></th>
+            <th data-sort="coreKey" class="core-col"><abbr title="CORE conference rank (ICORE2026: CORE + GII/GRIN/SCIE): A*, A, B, C. Click to sort.">CORE</abbr></th>
             <th data-sort="submitted" class="num"><abbr title="Submissions in the most recent year in range">Submitted</abbr></th>
             <th data-sort="lastYear" class="num"><abbr title="Most recent year in range">Year</abbr></th>
             <th data-sort="daysToDl" class="num dl-col"><abbr title="Next submission deadline (ccf-deadlines feed plus official CFPs; ~italic = estimated from last year, not announced). Sort to see what is coming up.">Next deadline</abbr></th>
@@ -108,12 +108,12 @@
   </div>
 
   <div class="page-footer">
-    <p>Data: <a href="../csconferences.csv">csconferences.csv</a>, from conference front matter, program chairs' reports, HotCRP, and other primary sources. Submission deadlines: <a href="https://github.com/ccfddl/ccf-deadlines">ccf-deadlines</a> (MIT; community-maintained), fetched live by your browser from ccfddl.com, with a saved snapshot as fallback, plus deadlines from official calls for papers; estimates (~) are projected from the previous deadline. Always confirm on the conference's official site. See also <a href="https://dants.github.io/index_sysvenues_deadline.html">Dan Tsafrir's systems-venue deadlines</a>. Counts exclude papers withdrawn or desk-rejected before review where sources distinguish them; long/full research papers only. · <a href="https://github.com/emeryberger/csconferences">GitHub</a> · Corrections welcome via pull request.</p>
-    <p>Maintained by <a href="https://emeryberger.com">Emery Berger</a> · Companion to <a href="https://csrankings.org">CSRankings</a>.</p>
+    <p>Data: <a href="../csconferences.csv">csconferences.csv</a>, from conference front matter, program chairs' reports, HotCRP, and other primary sources. Submission deadlines: <a href="https://github.com/ccfddl/ccf-deadlines">ccf-deadlines</a> (MIT; community-maintained), fetched live by your browser from ccfddl.com, with a saved snapshot as fallback, plus deadlines from official calls for papers; estimates (~) are projected from the previous deadline. Always confirm on the conference's official site. Counts exclude papers withdrawn or desk-rejected before review where sources distinguish them; long/full research papers only. Conference ranks: <a href="https://portal.core.edu.au/conf-ranks/">ICORE2026</a> (CORE with GII-GRIN-SCIE). · <a href="https://github.com/emeryberger/csconferences">GitHub</a> · Corrections welcome via pull request.</p>
+    <p>Maintained by <a href="https://emeryberger.com">Emery Berger</a> · <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a> · Companion to <a href="https://csrankings.org">CSRankings</a>.</p>
   </div>
 </div>
 <div id="tooltip" class="tooltip" role="status" aria-live="polite" hidden></div>
 <script src="js/d3.v7.min.js"></script>
-<script src="app.js?v=19"></script>
+<script src="app.js?v=22"></script>
 </body>
 </html>

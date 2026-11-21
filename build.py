@@ -199,6 +199,7 @@ def print_readme():
 * For any corrections or updates, please make a pull request to the above site.
 * To regenerate this page and all the graphs, run `make` (you may first need to install some Python packages, via `python3 -m pip install -r requirements.txt`).
 * This site was developed by and is maintained by [Emery Berger](https://github.com/emeryberger).
+* Licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) (see `COPYING`); third-party components keep their own licenses (see `NOTICE`).
     """)
 
 async def generate_plot(conference_name):

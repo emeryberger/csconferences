@@ -1,0 +1,13 @@
+csconferences (https://csconferences.org) by Emery Berger is licensed under
+Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0);
+see COPYING or https://creativecommons.org/licenses/by-nc-nd/4.0/.
+
+Third-party components keep their own licenses:
+- explore/js/d3.v7.min.js: D3 (ISC/BSD-style license, Mike Bostock) - https://d3js.org
+- explore/js/jspdf.umd.min.js: jsPDF (MIT) - https://github.com/parallax/jsPDF
+- explore/js/svg2pdf.umd.min.js: svg2pdf.js (MIT) - https://github.com/yWorks/svg2pdf.js
+  (versions and sha256 in explore/js/VENDORED.txt)
+- deadlines.csv (snapshot) and the live deadline feed: derived from ccf-deadlines (MIT),
+  https://github.com/ccfddl/ccf-deadlines - Copyright (c) the ccf-deadlines contributors.
+- rankings.csv: conference ranks from the ICORE conference portal (CORE with GII-GRIN-SCIE),
+  https://portal.core.edu.au/conf-ranks/ - cited with attribution.

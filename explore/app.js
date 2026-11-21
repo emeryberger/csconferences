@@ -49,6 +49,8 @@
   const fmtInt = d3.format(",");
   const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
   const tip = document.getElementById("tooltip");
+  const rankBy = new Map();        // conf -> CORE ranking row (rankings.csv, from the ICORE portal via rankings.py)
+  const CORE_ORDER = { "A*": 1, A: 2, B: 3, C: 4 };
   const deadlinesBy = new Map();   // conf -> deadline rows (from ccf-deadlines via deadlines.py), sorted by time
   const NOW = new Date();
   const DAY = 864e5;
@@ -59,6 +61,7 @@
   d3.text("../csconferences.csv").then(async (text) => {
     const rows = d3.csvParse(text);
     const ourConfs = [...new Set(rows.map((q) => q.Conference))];
+    for (const r of d3.csvParse(await d3.text("../rankings.csv").catch(() => ""))) rankBy.set(r.Conference, r);
     for (const r of mergeDeadlines(await loadDeadlines(ourConfs), await loadExtraDeadlines(ourConfs))) {
       if (!isNaN(r.when)) (deadlinesBy.get(r.Conference) || deadlinesBy.set(r.Conference, []).get(r.Conference)).push(r);
     }
@@ -196,7 +199,7 @@
     d3.select("#log-subs").on("change", function () { state.logSubs = this.checked; renderCharts(); });
     d3.selectAll("#conf-table th[data-sort]").on("click", function () {
       const k = this.dataset.sort;
-      state.sortDir = state.sortKey === k ? -state.sortDir : (k === "conf" || k === "rate" || k === "mean5" || k === "daysToDl" ? 1 : -1);
+      state.sortDir = state.sortKey === k ? -state.sortDir : (k === "conf" || k === "rate" || k === "mean5" || k === "daysToDl" || k === "coreKey" ? 1 : -1);
       state.sortKey = k; renderTable();
     });
     document.addEventListener("click", () => { if (state.openCat) { state.openCat = null; syncAreaControls(); } });
@@ -330,6 +333,7 @@
       const dls = deadlinesBy.get(c.conf) || [];
       const next = dls.find((r) => r.when >= NOW) || null;
       return { ...c, ys, lastYear: last.year, accepted: last.accepted, submitted: last.submitted, rate: last.rate, mean5: d3.mean(last5, (y) => y.rate),
+        core: (rankBy.get(c.conf) || {}).CORE || "", coreKey: CORE_ORDER[(rankBy.get(c.conf) || {}).CORE] || 9,
         nextDl: next, lastDl: next ? null : dls[dls.length - 1] || null, estDl: next ? null : estimateNext(dls),
         get daysToDl() { return this.nextDl ? (this.nextDl.when - NOW) / DAY : this.estDl ? 1e6 + (this.estDl.when - NOW) / DAY : 1e9; } };
     }).filter(Boolean);
@@ -377,7 +381,7 @@
     });
     const tbody = d3.select("#conf-table tbody");
     tbody.selectAll("*").remove();
-    if (!data.length) { tbody.append("tr").append("td").attr("colspan", 9).attr("class", "empty").text("No conferences match. Turn on more areas or clear the search."); return; }
+    if (!data.length) { tbody.append("tr").append("td").attr("colspan", 10).attr("class", "empty").text("No conferences match. Turn on more areas or clear the search."); return; }
     for (const d of data) {
       const sel = state.selected.includes(d.conf);
       const ex = state.expandedConfs.has(d.conf);
@@ -400,14 +404,15 @@
           ev.preventDefault(); toggleSelected(d.conf);
         });
       if (sel) name.append("span").attr("class", "compare-dot").style("background", seriesColor(d.conf)).attr("title", "In comparison");
-      name.append("span").attr("class", "area-sub").text(d.areaName + (tierOf(d.conf) === "next" ? " · next tier" : tierOf(d.conf) === "absent" ? " · not in CSrankings" : ""));
+      name.attr("title", d.areaName + (tierOf(d.conf) === "next" ? " · next tier in CSrankings" : tierOf(d.conf) === "absent" ? " · not a CSrankings venue" : ""));
       tr.append("td").attr("class", "num").text(fmtPct(d.rate));
       tr.append("td").attr("class", "num").text(fmtPct(d.mean5));
+      coreCell(tr.append("td").attr("class", "core-col"), d);
       tr.append("td").attr("class", "num").text(fmtInt(d.submitted));
       tr.append("td").attr("class", "num").text(d.lastYear);
       deadlineCell(tr.append("td").attr("class", "num dl-col"), d);
       sparkline(tr.append("td").attr("class", "spark-col").node(), d);
-      if (ex) renderDetail(tbody.append("tr").attr("class", "detail-row").append("td").attr("colspan", 9), d);
+      if (ex) renderDetail(tbody.append("tr").attr("class", "detail-row").append("td").attr("colspan", 10), d);
     }
     win.scrollTop = prevScroll;
     window.scrollTo(pageX, pageY);
@@ -452,6 +457,7 @@
     meta.append("span").text(`${d.areaName} · ${d.lastYear}: ${fmtInt(d.accepted)} accepted of ${fmtInt(d.submitted)} submitted (${fmtPct(d.rate)})`);
     meta.append("button").attr("class", "pdf-btn").attr("title", `Download this chart as PDF`).text("PDF")
       .on("click", (ev) => { ev.stopPropagation(); exportPDF(td.select(".detail-chart svg").node(), `${d.conf}-papers`, `${d.conf}: papers accepted and rejected per year`); });
+    renderCore(td, d);
     renderDeadlines(td, d);
     // Stacked bars like the original static graphs: accepted (bottom) + rejected (top) = submissions.
     // Green/red is not CVD-safe, so accepted stays green and rejected is a light neutral (strong luminance contrast).
@@ -715,6 +721,34 @@
   }
 
 
+
+  // ---------- CORE (ICORE) conference ranks ----------
+  function coreLabel(rank) {
+    if (!rank) return "—";
+    if (CORE_ORDER[rank]) return rank;
+    if (/^national/i.test(rank)) return "Nat'l";
+    if (/merged/i.test(rank)) return "merged";
+    return "unranked";
+  }
+  function coreTitle(r, conf) {
+    if (!r || !r.CORE) return `${conf} is not listed in the CORE conference portal`;
+    const what = CORE_ORDER[r.CORE] ? `CORE rank ${r.CORE}` : `CORE: ${r.CORE} (no letter rank)`;
+    return `${what} (${r.CORESource}) for "${r.CORETitle}"` + (r.CORENote ? `; previously ${r.CORENote}` : "") + ". Click ▶ for the CORE record.";
+  }
+  function coreCell(td, d) {
+    const r = rankBy.get(d.conf);
+    td.classed("core-letter", !!(r && CORE_ORDER[r.CORE])).attr("title", coreTitle(r, d.conf)).text(coreLabel(r && r.CORE));
+  }
+  function renderCore(td, d) {
+    const r = rankBy.get(d.conf);
+    const box = td.append("div").attr("class", "core-box");
+    box.append("strong").text("CORE ranking: ");
+    if (!r || !r.CORE) { box.append("span").attr("class", "text-muted").text("not listed in the CORE portal."); return; }
+    box.append("span").text(`${r.CORE} (${r.CORESource})`);
+    if (r.CORENote) box.append("span").attr("class", "text-muted").text(` · previously ${r.CORENote}`);
+    if (safeLink(r.CORELink)) box.append("a").attr("href", safeLink(r.CORELink)).attr("rel", "noopener").style("margin-left", "6px").text("CORE record");
+  }
+
   // ---------- live deadlines (ccf-deadlines), with committed snapshot fallback ----------
   const LIVE_DEADLINES = "https://ccfddl.com/conference/initial.json";
   // our Conference -> ccf-deadlines `dblp` key where they differ (keep in sync with deadlines.py)
@@ -879,7 +913,7 @@
       if (r.official) li.append("span").attr("class", "dl-official").attr("title", "From the official call for papers (deadlines-extra.csv)").text(" official CFP");
       if (safeLink(r.Link)) li.append("a").attr("href", safeLink(r.Link)).attr("rel", "noopener").style("margin-left", "6px").text("official site");
     }
-    box.append("div").attr("class", "dl-src text-muted").html(`Deadlines from <a href="https://github.com/ccfddl/ccf-deadlines" rel="noopener">ccf-deadlines</a> (community-maintained), ${deadlineSourceText()}, plus official CFPs; confirm on the official site. See also <a href="https://dants.github.io/index_sysvenues_deadline.html" rel="noopener">Dan Tsafrir's systems-venue deadlines</a>.`);
+    box.append("div").attr("class", "dl-src text-muted").html(`Deadlines from <a href="https://github.com/ccfddl/ccf-deadlines" rel="noopener">ccf-deadlines</a> (community-maintained), ${deadlineSourceText()}, plus official CFPs; confirm on the official site.`);
   }
 
   // ---------- PDF export (jsPDF + svg2pdf.js, vendored, loaded on first use) ----------

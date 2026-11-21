@@ -313,3 +313,10 @@ tr.detail-row > td { max-width: 0; }               /* let the cell shrink to the
 .ranking td.dl-est { color: var(--muted); font-style: italic; }
 .dl-est-note { color: var(--muted); font-style: italic; margin: 2px 0; }
 .dl-official { font-size: 11px; color: #157240; margin-left: 4px; }
+
+.ranking .core-col { text-align: center; white-space: nowrap; font-size: 13px; color: var(--muted); }
+.ranking td.core-letter { color: var(--text); font-weight: bold; }
+.core-box { font-size: 13px; margin: 4px 0; }
+
+.ranking td.name-col { white-space: nowrap; }
+.ranking th.core-col { font-size: inherit; color: var(--text); }
