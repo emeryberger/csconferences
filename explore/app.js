@@ -49,6 +49,7 @@
   const fmtInt = d3.format(",");
   const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
   const tip = document.getElementById("tooltip");
+  const REVALIDATE = { cache: "no-cache" };   // data files: always revalidate (ETag) so updates appear at once
   const rankBy = new Map();        // conf -> CORE ranking row (rankings.csv, from the ICORE portal via rankings.py)
   const CORE_ORDER = { "A*": 1, A: 2, B: 3, C: 4 };
   const deadlinesBy = new Map();   // conf -> deadline rows (from ccf-deadlines via deadlines.py), sorted by time
@@ -58,10 +59,10 @@
   let allYears = [];
   let lastYear = 0;
 
-  d3.text("../csconferences.csv").then(async (text) => {
+  d3.text("../csconferences.csv", REVALIDATE).then(async (text) => {
     const rows = d3.csvParse(text);
     const ourConfs = [...new Set(rows.map((q) => q.Conference))];
-    for (const r of d3.csvParse(await d3.text("../rankings.csv").catch(() => ""))) rankBy.set(r.Conference, r);
+    for (const r of d3.csvParse(await d3.text("../rankings.csv", REVALIDATE).catch(() => ""))) rankBy.set(r.Conference, r);
     for (const r of mergeDeadlines(await loadDeadlines(ourConfs), await loadExtraDeadlines(ourConfs))) {
       if (!isNaN(r.when)) (deadlinesBy.get(r.Conference) || deadlinesBy.set(r.Conference, []).get(r.Conference)).push(r);
     }
@@ -838,7 +839,7 @@
       return rows;
     } catch (err) {
       console.warn("Live deadlines unavailable; using snapshot:", err.message || err);
-      const text = await d3.text("../deadlines.csv").catch(() => "");
+      const text = await d3.text("../deadlines.csv", REVALIDATE).catch(() => "");
       deadlineSource = { mode: text ? "snapshot" : "none", reason: String(err.message || err) };
       return text ? d3.csvParse(text).map((r) => Object.assign(r, { when: new Date(r.Deadline), Link: safeLink(r.Link) })) : [];
     }
@@ -852,7 +853,7 @@
 
   // Officially sourced deadlines the feed lacks (deadlines-extra.csv: local wall time + CFP timezone + official URL)
   async function loadExtraDeadlines(ours) {
-    const text = await d3.text("../deadlines-extra.csv").catch(() => "");
+    const text = await d3.text("../deadlines-extra.csv", REVALIDATE).catch(() => "");
     const known = new Set(ours);
     return (text ? d3.csvParse(text) : []).map((r) => {
       const when = cfpToDate(r.Deadline, r.Timezone);
