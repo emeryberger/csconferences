@@ -323,3 +323,5 @@ tr.detail-row > td { max-width: 0; }               /* let the cell shrink to the
 
 .ranking .h5-col { font-size: 13px; }
 .ranking th.h5-col { font-size: inherit; }
+
+.h5-dagger { color: #aaa; margin-left: 1px; }
