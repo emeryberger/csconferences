@@ -855,6 +855,8 @@ PL,OOPSLA,2024,1,53,123,,
 PL,OOPSLA,2024,2,95,261,,
 PL,OOPSLA,2025,1,67,151,,
 PL,OOPSLA,2025,2,147,439,https://dl.acm.org/toc/pacmpl/2025/9/OOPSLA2,Round 2 (PACMPL 9 OOPSLA2 editorial): 147 articles selected from 439 submitted by the March 2025 deadline (editorial read manually by Emery Berger); DBLP lists 149 entries for the issue
+PL,OOPSLA,2026,1,77,206,https://dl.acm.org/toc/pacmpl/2026/10/OOPSLA1,"Round 1 (Oct 10, 2025 deadline), PACMPL 10 OOPSLA1 editorial: 227 submissions; 77 accepted (75 in OOPSLA1 + 2 published in OOPSLA2); the 21 papers still in revision continued to Round 2 and are counted there, so 206 = 227 - 21 decided in this round; read manually by Emery Berger"
+PL,OOPSLA,2026,2,93,357,https://dl.acm.org/doi/10.1145/3839445,"Round 2 (Mar 17, 2026 deadline), PACMPL 10 OOPSLA2 editorial: 380 considered = 359 new + 21 continuing from Round 1; 357 reviewed to completion after 23 desk-rejected/withdrawn; 93 accepted = 78 new + 15 continued; year total 170/563 unique reviewed papers (227 + 359 - 23); read manually by Emery Berger"
 PL,PLDI,1995,1,28,105,,
 PL,PLDI,1996,1,28,112,,
 PL,PLDI,1997,1,31,158,,
