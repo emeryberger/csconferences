@@ -163,7 +163,7 @@ GSM_NAME = {
     "WSDM": "ACM International Conference on Web Search and Data Mining", "WWW": "International World Wide Web Conferences (WWW)",
 }
 GSM_SHARED = {"POPL": "PACMPL (shared by POPL, PLDI, ICFP, OOPSLA)", "ICFP": "PACMPL (shared by POPL, PLDI, ICFP, OOPSLA)",
-              "OOPSLA": "PACMPL (shared by POPL, PLDI, ICFP, OOPSLA)", "SIGGRAPH": "ACM Transactions on Graphics (SIGGRAPH papers appear in TOG)"}
+              "OOPSLA": "PACMPL (shared by POPL, PLDI, ICFP, OOPSLA)", "SIGGRAPH": "ACM Transactions on Graphics (also publishes SIGGRAPH Asia papers)"}
 
 
 def gsm_all():
